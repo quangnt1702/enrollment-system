@@ -1,0 +1,29 @@
+login(Trieu)
+
+Student(Quang)
+all course chua enroll
+search ten,gv
+filter subject
+enroll=>popup
+tab enrolled course
+view grades
+feedback
+
+tab profile(Trieu)
+edit profile
+change pass
+
+Lecturer(Duong)
+all course of the lecturer
+view list grade, add grade
+
+Admin(Khoa)
+all course
+	view list feedback
+	list student of course
+	assign lecture
+	add course
+all account 
+student
+lecturer crud
+
