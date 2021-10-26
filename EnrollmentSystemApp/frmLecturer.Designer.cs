@@ -29,207 +29,255 @@ namespace EnrollmentSystemApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.btnGrades = new System.Windows.Forms.Button();
-            this.btnProfile = new System.Windows.Forms.Button();
-            this.btnCourses = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbRole = new System.Windows.Forms.Label();
-            this.lbUserName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
+            this.btnGrades = new FontAwesome.Sharp.IconButton();
+            this.btnProfile = new FontAwesome.Sharp.IconButton();
+            this.btnCourses = new FontAwesome.Sharp.IconButton();
+            this.pnLogo = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.pnMenu.SuspendLayout();
+            this.pnLogo.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.pnlNav);
-            this.panel1.Controls.Add(this.btnGrades);
-            this.panel1.Controls.Add(this.btnProfile);
-            this.panel1.Controls.Add(this.btnCourses);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(196, 805);
-            this.panel1.TabIndex = 2;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(0, 733);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(196, 72);
-            this.btnLogout.TabIndex = 6;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
+            this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnMenu.Controls.Add(this.pnlNav);
+            this.pnMenu.Controls.Add(this.btnLogout);
+            this.pnMenu.Controls.Add(this.btnGrades);
+            this.pnMenu.Controls.Add(this.btnProfile);
+            this.pnMenu.Controls.Add(this.btnCourses);
+            this.pnMenu.Controls.Add(this.pnLogo);
+            this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(196, 805);
+            this.pnMenu.TabIndex = 2;
             // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlNav.Location = new System.Drawing.Point(0, 209);
+            this.pnlNav.Location = new System.Drawing.Point(3, 188);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(10, 195);
-            this.pnlNav.TabIndex = 5;
+            this.pnlNav.Size = new System.Drawing.Size(10, 216);
+            this.pnlNav.TabIndex = 6;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnLogout.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(0, 731);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(196, 74);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // btnGrades
             // 
-            this.btnGrades.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnGrades.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGrades.FlatAppearance.BorderSize = 0;
             this.btnGrades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrades.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGrades.ForeColor = System.Drawing.Color.Black;
-            this.btnGrades.Location = new System.Drawing.Point(0, 332);
+            this.btnGrades.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGrades.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnGrades.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
+            this.btnGrades.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnGrades.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGrades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrades.Location = new System.Drawing.Point(0, 330);
             this.btnGrades.Name = "btnGrades";
-            this.btnGrades.Size = new System.Drawing.Size(196, 72);
+            this.btnGrades.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnGrades.Size = new System.Drawing.Size(196, 74);
             this.btnGrades.TabIndex = 3;
             this.btnGrades.Text = "Grades";
-            this.btnGrades.UseVisualStyleBackColor = false;
+            this.btnGrades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGrades.UseVisualStyleBackColor = true;
             this.btnGrades.Click += new System.EventHandler(this.btnGrades_Click);
             // 
             // btnProfile
             // 
-            this.btnProfile.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnProfile.ForeColor = System.Drawing.Color.Black;
-            this.btnProfile.Location = new System.Drawing.Point(0, 260);
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProfile.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProfile.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnProfile.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfile.Location = new System.Drawing.Point(0, 256);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(196, 72);
+            this.btnProfile.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnProfile.Size = new System.Drawing.Size(196, 74);
             this.btnProfile.TabIndex = 2;
             this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnCourses
             // 
-            this.btnCourses.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCourses.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCourses.FlatAppearance.BorderSize = 0;
             this.btnCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourses.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCourses.ForeColor = System.Drawing.Color.Black;
-            this.btnCourses.Location = new System.Drawing.Point(0, 188);
+            this.btnCourses.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCourses.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCourses.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btnCourses.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnCourses.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCourses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCourses.Location = new System.Drawing.Point(0, 182);
             this.btnCourses.Name = "btnCourses";
-            this.btnCourses.Size = new System.Drawing.Size(196, 72);
+            this.btnCourses.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnCourses.Size = new System.Drawing.Size(196, 74);
             this.btnCourses.TabIndex = 1;
             this.btnCourses.Text = "Courses";
-            this.btnCourses.UseVisualStyleBackColor = false;
+            this.btnCourses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCourses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCourses.UseVisualStyleBackColor = true;
             this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
             // 
-            // panel2
+            // pnLogo
             // 
-            this.panel2.Controls.Add(this.lbRole);
-            this.panel2.Controls.Add(this.lbUserName);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 188);
-            this.panel2.TabIndex = 0;
+            this.pnLogo.Controls.Add(this.lbTitle);
+            this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnLogo.Name = "pnLogo";
+            this.pnLogo.Size = new System.Drawing.Size(196, 182);
+            this.pnLogo.TabIndex = 0;
             // 
-            // lbRole
+            // lbTitle
             // 
-            this.lbRole.AutoSize = true;
-            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbRole.ForeColor = System.Drawing.Color.Black;
-            this.lbRole.Location = new System.Drawing.Point(57, 156);
-            this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(80, 20);
-            this.lbRole.TabIndex = 2;
-            this.lbRole.Text = "Lecturer";
-            // 
-            // lbUserName
-            // 
-            this.lbUserName.AutoSize = true;
-            this.lbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbUserName.ForeColor = System.Drawing.Color.Black;
-            this.lbUserName.Location = new System.Drawing.Point(45, 116);
-            this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(103, 20);
-            this.lbUserName.TabIndex = 1;
-            this.lbUserName.Text = "User Name";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbTitle.Location = new System.Drawing.Point(6, 64);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(184, 23);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "FPT Enrollment System";
             // 
             // pnlFormLoader
             // 
             this.pnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFormLoader.Location = new System.Drawing.Point(196, 31);
+            this.pnlFormLoader.Location = new System.Drawing.Point(196, 33);
             this.pnlFormLoader.Name = "pnlFormLoader";
-            this.pnlFormLoader.Size = new System.Drawing.Size(1119, 774);
-            this.pnlFormLoader.TabIndex = 6;
+            this.pnlFormLoader.Size = new System.Drawing.Size(1119, 772);
+            this.pnlFormLoader.TabIndex = 8;
             // 
-            // btnClose
+            // panel1
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Gray;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1290, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.TabIndex = 10;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.btnMinimize);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(196, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1119, 34);
+            this.panel1.TabIndex = 9;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // frmLecturer
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            this.iconButton1.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 20;
+            this.iconButton1.Location = new System.Drawing.Point(1066, 3);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(23, 21);
+            this.iconButton1.TabIndex = 9;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 20;
+            this.btnMinimize.Location = new System.Drawing.Point(1037, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(23, 21);
+            this.btnMinimize.TabIndex = 8;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnExit.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 20;
+            this.btnExit.Location = new System.Drawing.Point(1095, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(23, 21);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // frmLecturer1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1315, 805);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.pnlFormLoader);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlFormLoader);
+            this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLecturer";
+            this.Name = "frmLecturer1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLecturers";
-            this.Load += new System.EventHandler(this.frmLecturer_Load);
+            this.Text = "frmLecturer1";
+            this.Load += new System.EventHandler(this.frmLecturer1_Load);
+            this.pnMenu.ResumeLayout(false);
+            this.pnLogo.ResumeLayout(false);
+            this.pnLogo.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Panel pnlNav;
-        private System.Windows.Forms.Button btnGrades;
-        private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.Button btnCourses;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lbRole;
-        private System.Windows.Forms.Label lbUserName;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnGrades;
+        private FontAwesome.Sharp.IconButton btnProfile;
+        private FontAwesome.Sharp.IconButton btnCourses;
+        private System.Windows.Forms.Panel pnLogo;
+        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Panel pnlFormLoader;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnMinimize;
+        private FontAwesome.Sharp.IconButton btnExit;
     }
 }

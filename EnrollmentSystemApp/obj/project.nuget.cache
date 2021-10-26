@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dgZV/JJktDdzopBy9PYY9yW784ATzCS2VV/TNkWcB4FZtxJcuJsgb8SRhARnmnUF0jKT52AFWkbI0Jdv6SW8Ng==",
+  "dgSpecHash": "53abBXNHrGTbKIMAjhSGmANmiqsBAGKXY0UCljzrSJ3dSA7ct5tR7yhwSfOyj1O46tsiZ3QAzSqbo8U6zpbfiA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lakho\\.nuget\\packages\\fontawesome.sharp\\5.15.3\\fontawesome.sharp.5.15.3.nupkg.sha512"
+  ],
   "logs": []
 }
