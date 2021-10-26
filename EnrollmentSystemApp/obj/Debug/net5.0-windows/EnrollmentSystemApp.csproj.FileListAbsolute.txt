@@ -30,3 +30,5 @@ C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentFeedback.resources
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentGrades.resources
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentProfile.resources
+C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\bin\Debug\net5.0-windows\FontAwesome.Sharp.dll
+C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.Properties.Resources.resources

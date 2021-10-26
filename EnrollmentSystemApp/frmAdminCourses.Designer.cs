@@ -57,6 +57,7 @@ namespace EnrollmentSystemApp
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.textBox8);
             this.panel2.Controls.Add(this.textBox7);
@@ -229,6 +230,7 @@ namespace EnrollmentSystemApp
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 223);
             this.panel1.Name = "panel1";
@@ -237,6 +239,7 @@ namespace EnrollmentSystemApp
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";

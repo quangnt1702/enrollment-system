@@ -13,28 +13,26 @@ namespace EnrollmentSystemApp
 {
     public partial class frmAdmin : Form
     {
-
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
-
         public frmAdmin()
         {
             InitializeComponent();
-
         }
 
-        private void frmAdmin_Load(object sender, EventArgs e)
+        //Drag Form
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            ReleaseCapture();
+            SendMessage(this.Handle, 0X112, 0xf012, 0);
+        }
+
+        private void frmAdmin1_Load(object sender, EventArgs e)
+        {
             pnlNav.Height = btnCourses.Height;
             pnlNav.Top = btnCourses.Top;
             pnlNav.Left = btnCourses.Left;
@@ -47,7 +45,7 @@ namespace EnrollmentSystemApp
             frmAdminCourses.Show();
         }
 
-        private void btnCourse_Click(object sender, EventArgs e)
+        private void btnCourses_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnCourses.Height;
             pnlNav.Top = btnCourses.Top;
@@ -98,6 +96,28 @@ namespace EnrollmentSystemApp
             frmAdminFeedbacks.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmAdminFeedbacks);
             frmAdminFeedbacks.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if(WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else if(WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
         }
     }
 }
