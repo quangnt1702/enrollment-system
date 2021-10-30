@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    class ICourseRepository
+    class IGradeRepository
     {
     }
 }
