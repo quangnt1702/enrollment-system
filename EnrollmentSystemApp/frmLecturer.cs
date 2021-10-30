@@ -108,5 +108,10 @@ namespace EnrollmentSystemApp
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
