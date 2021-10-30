@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnrollmentSystemApp", "EnrollmentSystemApp\EnrollmentSystemApp.csproj", "{C9D7B31A-A274-40A5-9752-31C78F3EDF21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnrollmentSystemApp", "EnrollmentSystemApp\EnrollmentSystemApp.csproj", "{C9D7B31A-A274-40A5-9752-31C78F3EDF21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{CD2364AC-0AC0-48D9-BFED-69347B80F171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C9D7B31A-A274-40A5-9752-31C78F3EDF21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9D7B31A-A274-40A5-9752-31C78F3EDF21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9D7B31A-A274-40A5-9752-31C78F3EDF21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2364AC-0AC0-48D9-BFED-69347B80F171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2364AC-0AC0-48D9-BFED-69347B80F171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2364AC-0AC0-48D9-BFED-69347B80F171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2364AC-0AC0-48D9-BFED-69347B80F171}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

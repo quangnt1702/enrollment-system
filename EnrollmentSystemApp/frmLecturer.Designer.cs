@@ -90,6 +90,7 @@ namespace EnrollmentSystemApp
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnGrades
             // 
@@ -243,7 +244,7 @@ namespace EnrollmentSystemApp
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // frmLecturer1
+            // frmLecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -252,7 +253,7 @@ namespace EnrollmentSystemApp
             this.Controls.Add(this.pnlFormLoader);
             this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLecturer1";
+            this.Name = "frmLecturer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLecturer1";
             this.Load += new System.EventHandler(this.frmLecturer1_Load);

@@ -17,8 +17,8 @@ namespace EnrollmentSystemApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
-            //Application.Run(new frmAdmin());
+            //Application.Run(new frmLogin());
+            Application.Run(new frmAdmin());
             //Application.Run(new frmStudent());
             //Application.Run(new frmLecturer());
         }
