@@ -17,21 +17,21 @@ namespace DataAccess.Models
         {
         }
 
-        public virtual DbSet<TblCourse> TblCourses { get; set; }
-        public virtual DbSet<TblFeedback> TblFeedbacks { get; set; }
-        public virtual DbSet<TblGrade> TblGrades { get; set; }
-        public virtual DbSet<TblRole> TblRoles { get; set; }
-        public virtual DbSet<TblStatusCourse> TblStatusCourses { get; set; }
-        public virtual DbSet<TblStatusUser> TblStatusUsers { get; set; }
-        public virtual DbSet<TblSubject> TblSubjects { get; set; }
-        public virtual DbSet<TblUser> TblUsers { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Feedback> Feedbacks { get; set; }
+        public virtual DbSet<Grade> Grades { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<StatusCourse> StatusCourses { get; set; }
+        public virtual DbSet<StatusUser> StatusUsers { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=(local);Database=EnrollmentSystem;uid=sa;pwd=123456");
+                optionsBuilder.UseSqlServer("Server=(local);Database=EnrollmentSystem;uid=sa;pwd=123456;");
             }
         }
 
@@ -39,21 +39,14 @@ namespace DataAccess.Models
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<TblCourse>(entity =>
+            modelBuilder.Entity<Course>(entity =>
             {
-                entity.HasKey(e => e.CourseId);
+                entity.Property(e => e.CourseId).HasColumnName("courseID");
 
-                entity.ToTable("tblCourses");
-
-                entity.Property(e => e.CourseId)
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("courseID");
-
-                entity.Property(e => e.CoursetName)
+                entity.Property(e => e.CourseName)
                     .IsRequired()
-                    .HasMaxLength(100)
-                    .HasColumnName("coursetName");
+                    .HasMaxLength(50)
+                    .HasColumnName("courseName");
 
                 entity.Property(e => e.EndDate)
                     .HasColumnType("date")
@@ -61,7 +54,7 @@ namespace DataAccess.Models
 
                 entity.Property(e => e.LecturerId)
                     .IsRequired()
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("lecturerID");
 
@@ -69,153 +62,110 @@ namespace DataAccess.Models
                     .HasColumnType("date")
                     .HasColumnName("startDate");
 
-                entity.Property(e => e.StatusId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("statusID");
+                entity.Property(e => e.StatusId).HasColumnName("statusID");
 
                 entity.Property(e => e.StudentQuantity).HasColumnName("studentQuantity");
 
-                entity.Property(e => e.SubjectId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("subjectID");
+                entity.Property(e => e.SubjectId).HasColumnName("subjectID");
 
                 entity.HasOne(d => d.Lecturer)
-                    .WithMany(p => p.TblCourses)
+                    .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.LecturerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblSubjects_tblUsers1");
+                    .HasConstraintName("FK_Courses_Users");
 
                 entity.HasOne(d => d.Status)
-                    .WithMany(p => p.TblCourses)
+                    .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.StatusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblSubjects_tblStatusSubjects");
+                    .HasConstraintName("FK_Courses_StatusCourses");
 
                 entity.HasOne(d => d.Subject)
-                    .WithMany(p => p.TblCourses)
+                    .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.SubjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblCourses_tblSubject");
+                    .HasConstraintName("FK_Courses_Subject");
             });
 
-            modelBuilder.Entity<TblFeedback>(entity =>
+            modelBuilder.Entity<Feedback>(entity =>
             {
-                entity.HasKey(e => e.FeedbackId)
-                    .HasName("PK_tblFeedback_1");
+                entity.Property(e => e.FeedbackId).HasColumnName("feedbackID");
 
-                entity.ToTable("tblFeedback");
+                entity.Property(e => e.CourseId).HasColumnName("courseID");
 
-                entity.Property(e => e.FeedbackId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("feedbackID");
-
-                entity.Property(e => e.CourseId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("courseID");
-
-                entity.Property(e => e.FeedbackContent)
-                    .HasColumnType("ntext")
-                    .HasColumnName("feedbackContent");
+                entity.Property(e => e.FeedbackContent).HasColumnName("feedbackContent");
 
                 entity.Property(e => e.StudentId)
                     .IsRequired()
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("studentID");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany(p => p.TblFeedbacks)
+                    .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.CourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblFeedback_tblCourses");
+                    .HasConstraintName("FK_Feedbacks_Courses");
 
                 entity.HasOne(d => d.Student)
-                    .WithMany(p => p.TblFeedbacks)
+                    .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblFeedback_tblUsers");
+                    .HasConstraintName("FK_Feedbacks_Users");
             });
 
-            modelBuilder.Entity<TblGrade>(entity =>
+            modelBuilder.Entity<Grade>(entity =>
             {
-                entity.HasKey(e => e.GradeId)
-                    .HasName("PK_tblGradeList");
+                entity.Property(e => e.GradeId).HasColumnName("gradeID");
 
-                entity.ToTable("tblGrades");
-
-                entity.Property(e => e.GradeId)
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("gradeID");
-
-                entity.Property(e => e.CourseId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("courseID");
+                entity.Property(e => e.CourseId).HasColumnName("courseID");
 
                 entity.Property(e => e.FinalTest).HasColumnName("finalTest");
 
                 entity.Property(e => e.MidTermTest).HasColumnName("midTermTest");
 
-                entity.Property(e => e.PracticalTest)
-                    .HasMaxLength(10)
-                    .HasColumnName("practicalTest")
-                    .IsFixedLength(true);
+                entity.Property(e => e.PracticalTest).HasColumnName("practicalTest");
 
                 entity.Property(e => e.ProgressTest).HasColumnName("progressTest");
 
                 entity.Property(e => e.StudentId)
                     .IsRequired()
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("studentID");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany(p => p.TblGrades)
+                    .WithMany(p => p.Grades)
                     .HasForeignKey(d => d.CourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblGrades_tblSubjects");
+                    .HasConstraintName("FK_Grades_Courses");
 
                 entity.HasOne(d => d.Student)
-                    .WithMany(p => p.TblGrades)
+                    .WithMany(p => p.Grades)
                     .HasForeignKey(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblGrades_tblUsers");
+                    .HasConstraintName("FK_Grades_Users");
             });
 
-            modelBuilder.Entity<TblRole>(entity =>
+            modelBuilder.Entity<Role>(entity =>
             {
-                entity.HasKey(e => e.RoleId);
-
-                entity.ToTable("tblRoles");
-
                 entity.Property(e => e.RoleId)
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
+                    .ValueGeneratedNever()
                     .HasColumnName("roleID");
 
                 entity.Property(e => e.RoleName)
                     .IsRequired()
-                    .HasMaxLength(100)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
                     .HasColumnName("roleName");
             });
 
-            modelBuilder.Entity<TblStatusCourse>(entity =>
+            modelBuilder.Entity<StatusCourse>(entity =>
             {
                 entity.HasKey(e => e.StatusId);
 
-                entity.ToTable("tblStatusCourses");
-
                 entity.Property(e => e.StatusId)
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
+                    .ValueGeneratedNever()
                     .HasColumnName("statusID");
 
                 entity.Property(e => e.StatusName)
@@ -224,46 +174,37 @@ namespace DataAccess.Models
                     .HasColumnName("statusName");
             });
 
-            modelBuilder.Entity<TblStatusUser>(entity =>
+            modelBuilder.Entity<StatusUser>(entity =>
             {
                 entity.HasKey(e => e.StatusId);
 
-                entity.ToTable("tblStatusUsers");
-
                 entity.Property(e => e.StatusId)
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
+                    .ValueGeneratedNever()
                     .HasColumnName("statusID");
 
                 entity.Property(e => e.StatusName)
+                    .IsRequired()
                     .HasMaxLength(50)
+                    .IsUnicode(false)
                     .HasColumnName("statusName");
             });
 
-            modelBuilder.Entity<TblSubject>(entity =>
+            modelBuilder.Entity<Subject>(entity =>
             {
-                entity.HasKey(e => e.SubjectId);
+                entity.ToTable("Subject");
 
-                entity.ToTable("tblSubject");
-
-                entity.Property(e => e.SubjectId)
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("subjectID");
+                entity.Property(e => e.SubjectId).HasColumnName("subjectID");
 
                 entity.Property(e => e.SubjectName)
-                    .HasMaxLength(100)
+                    .IsRequired()
+                    .HasMaxLength(50)
                     .HasColumnName("subjectName");
             });
 
-            modelBuilder.Entity<TblUser>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(e => e.UserId);
-
-                entity.ToTable("tblUsers");
-
                 entity.Property(e => e.UserId)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("userID");
 
@@ -279,38 +220,31 @@ namespace DataAccess.Models
                     .HasColumnName("password");
 
                 entity.Property(e => e.Phone)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("phone");
 
-                entity.Property(e => e.RoleId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("roleID");
+                entity.Property(e => e.RoleId).HasColumnName("roleID");
 
-                entity.Property(e => e.StatusId)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("statusID");
+                entity.Property(e => e.StatusId).HasColumnName("statusID");
 
                 entity.Property(e => e.UserName)
                     .IsRequired()
-                    .HasMaxLength(100)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
                     .HasColumnName("userName");
 
                 entity.HasOne(d => d.Role)
-                    .WithMany(p => p.TblUsers)
+                    .WithMany(p => p.Users)
                     .HasForeignKey(d => d.RoleId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblUsers_tblRoles");
+                    .HasConstraintName("FK_Users_Roles");
 
                 entity.HasOne(d => d.Status)
-                    .WithMany(p => p.TblUsers)
+                    .WithMany(p => p.Users)
                     .HasForeignKey(d => d.StatusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tblUsers_tblStatusUsers");
+                    .HasConstraintName("FK_Users_StatusUsers");
             });
 
             OnModelCreatingPartial(modelBuilder);

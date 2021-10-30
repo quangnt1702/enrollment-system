@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 namespace DataAccess.Models
 {
-    public partial class TblFeedback
+    public partial class Feedback
     {
         public int FeedbackId { get; set; }
-        public string CourseId { get; set; }
+        public int CourseId { get; set; }
         public string StudentId { get; set; }
         public string FeedbackContent { get; set; }
 
-        public virtual TblCourse Course { get; set; }
-        public virtual TblUser Student { get; set; }
+        public virtual Course Course { get; set; }
+        public virtual User Student { get; set; }
     }
 }

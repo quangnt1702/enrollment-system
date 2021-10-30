@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 namespace DataAccess.Models
 {
-    public partial class TblGrade
+    public partial class Grade
     {
-        public string GradeId { get; set; }
-        public string CourseId { get; set; }
+        public int GradeId { get; set; }
+        public int CourseId { get; set; }
         public string StudentId { get; set; }
         public double? ProgressTest { get; set; }
         public double? MidTermTest { get; set; }
-        public string PracticalTest { get; set; }
+        public double? PracticalTest { get; set; }
         public double? FinalTest { get; set; }
 
-        public virtual TblCourse Course { get; set; }
-        public virtual TblUser Student { get; set; }
+        public virtual Course Course { get; set; }
+        public virtual User Student { get; set; }
     }
 }

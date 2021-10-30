@@ -260,7 +260,6 @@ namespace EnrollmentSystemApp
             this.Name = "frmAdminCourses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdminCourses";
-            this.Load += new System.EventHandler(this.frmAdminCourses_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
