@@ -5844,19 +5844,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lakho\\.nuget\\packages\\": {}
+    "C:\\Users\\ACER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+      "projectUniqueName": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
       "projectName": "EnrollmentSystemApp",
-      "projectPath": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
-      "packagesPath": "C:\\Users\\lakho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\EnrollmentSystemApp\\obj\\",
+      "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lakho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5870,8 +5870,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\lakho\\source\\repos\\enrollment-system\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\DataAccess\\DataAccess.csproj"
+            "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\DataAccess.csproj"
             }
           }
         }
