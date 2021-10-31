@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
         "outputPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\DataAccess\\obj\\",
+=======
+    "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj": {}
+  },
+  "projects": {
+    "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\obj\\",
+>>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -70,6 +84,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -78,6 +93,16 @@
         "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
         "outputPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\obj\\",
+=======
+    "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+        "projectName": "EnrollmentSystemApp",
+        "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\obj\\",
+>>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -94,8 +119,13 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+<<<<<<< HEAD
               "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\DataAccess\\DataAccess.csproj"
+=======
+              "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\DataAccess\\DataAccess.csproj"
+>>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
               }
             }
           }
