@@ -51,10 +51,7 @@ namespace EnrollmentSystemApp
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCourseList = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
             this.label2 = new System.Windows.Forms.Label();
-=======
->>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
@@ -253,7 +250,6 @@ namespace EnrollmentSystemApp
             this.panel1.TabIndex = 19;
             // 
             // dgvCourseList
-<<<<<<< HEAD
             // 
             this.dgvCourseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -273,18 +269,6 @@ namespace EnrollmentSystemApp
             this.label2.Size = new System.Drawing.Size(25, 20);
             this.label2.TabIndex = 25;
             this.label2.Text = "To";
-=======
-            // 
-            this.dgvCourseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCourseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCourseList.Location = new System.Drawing.Point(3, 3);
-            this.dgvCourseList.Name = "dgvCourseList";
-            this.dgvCourseList.RowHeadersWidth = 51;
-            this.dgvCourseList.RowTemplate.Height = 29;
-            this.dgvCourseList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCourseList.Size = new System.Drawing.Size(1089, 533);
-            this.dgvCourseList.TabIndex = 0;
->>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
             // 
             // frmStudentCourses
             // 
@@ -330,10 +314,7 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvCourseList;
-<<<<<<< HEAD
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-=======
->>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
     }
 }
