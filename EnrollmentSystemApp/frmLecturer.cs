@@ -14,7 +14,7 @@ namespace EnrollmentSystemApp
 {
     public partial class frmLecturer : Form
     {
-        public User loginUser { get; set; }
+        public User LoginUser { get; set; }
         public frmLecturer()
         {
             InitializeComponent();

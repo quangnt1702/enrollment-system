@@ -15,6 +15,10 @@ namespace DataAccess.Repository
 
         public IEnumerable<Course> GetCourses() => CourseDAO.Instance.GetCourseList();
 
+        public IEnumerable<Course> GetCoursesByUserId(string userId) => CourseDAO.Instance.GetCourseListOfStudent(userId);
+
+        public int GetNumberStudent(int courseId) => CourseDAO.Instance.GetNumberStudent(courseId);
+        
         public void InsertCourse(Course course) => CourseDAO.Instance.AddNew(course);
 
         public void UpdateCourse(Course course) => CourseDAO.Instance.Update(course);

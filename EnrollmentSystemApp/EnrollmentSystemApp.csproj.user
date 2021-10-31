@@ -37,10 +37,7 @@
     <Compile Update="frmStudentCourses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmStudentFeedback.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmStudentGrades.cs">
+    <Compile Update="frmStudentEnrolledCourses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmStudentProfile.cs">

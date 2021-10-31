@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DataAccess.Models;
@@ -14,7 +7,7 @@ namespace EnrollmentSystemApp
 {
     public partial class frmStudent : Form
     {
-        public User loginUser { get; set; }
+        public User LoginUser { get; set; }
         public frmStudent()
         {
             InitializeComponent();
@@ -74,35 +67,22 @@ namespace EnrollmentSystemApp
             frmStudentProfile.Show();
         }
 
-        private void btnGrades_Click(object sender, EventArgs e)
+        private void btnEnrolledCourses_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnGrades.Height;
-            pnlNav.Top = btnGrades.Top;
-            pnlNav.Left = btnGrades.Left;
+            pnlNav.Height = btnEnrolledCourse.Height;
+            pnlNav.Top = btnEnrolledCourse.Top;
+            pnlNav.Left = btnEnrolledCourse.Left;
 
             this.pnlFormLoader.Controls.Clear();
-            frmStudentGrades frmStudentGrades = new frmStudentGrades() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmStudentEnrolledCourses frmStudentGrades = new frmStudentEnrolledCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmStudentGrades.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmStudentGrades);
             frmStudentGrades.Show();
         }
 
-        private void btnFeedbacks_Click(object sender, EventArgs e)
-        {
-            pnlNav.Height = btnFeedbacks.Height;
-            pnlNav.Top = btnFeedbacks.Top;
-            pnlNav.Left = btnFeedbacks.Left;
-
-            this.pnlFormLoader.Controls.Clear();
-            frmStudentFeedback frmStudentFeedback = new frmStudentFeedback() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmStudentFeedback.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(frmStudentFeedback);
-            frmStudentFeedback.Show();
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -122,9 +102,5 @@ namespace EnrollmentSystemApp
             WindowState = FormWindowState.Minimized;
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

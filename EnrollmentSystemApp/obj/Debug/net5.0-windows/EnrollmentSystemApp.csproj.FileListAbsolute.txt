@@ -205,8 +205,6 @@ F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmLogin.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudent.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentCourses.resources
-F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentFeedback.resources
-F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentGrades.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentProfile.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.Properties.Resources.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.csproj.GenerateResource.cache
@@ -219,3 +217,4 @@ F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\ref\EnrollmentSystemApp.dll
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.pdb
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.genruntimeconfig.cache
+F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmStudentEnrolledCourses.resources

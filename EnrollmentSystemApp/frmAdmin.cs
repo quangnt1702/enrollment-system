@@ -14,7 +14,7 @@ namespace EnrollmentSystemApp
 {
     public partial class frmAdmin : Form
     {
-        public User loginUser { get; set; }
+        public User LoginUser { get; set; }
         public frmAdmin()
         {
             InitializeComponent();

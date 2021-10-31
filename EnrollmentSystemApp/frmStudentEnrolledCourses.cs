@@ -1,26 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Globalization;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Models;
 using DataAccess.Repository;
 
 namespace EnrollmentSystemApp
 {
-    public partial class frmStudentCourses : Form
+    public partial class frmStudentEnrolledCourses : Form
     {
         ICourseRepository courseRepository = new CourseRepository();
         BindingSource source = null;
         public User LoginUser { get; set; }
-        public int AdminOrStudentOrLecturer { get; set; }//1:Admin;2:Student;3:Lecturer
-        public frmStudentCourses()
+        public frmStudentEnrolledCourses()
         {
             InitializeComponent();
         }
-        public void LoadCourseList()
+        public void LoadEnrolledCourseList()
         {
-            var courseList = courseRepository.GetCourses();
+            var courseList = courseRepository.GetCoursesByUserId("student1");
             try
             {
                 var list = (from c in courseList
@@ -41,10 +44,17 @@ namespace EnrollmentSystemApp
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
+
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -53,41 +63,17 @@ namespace EnrollmentSystemApp
             {
                 MessageBox.Show(ex.Message, "Load member list");
             }
-
-        }
-        
-        private void frmStudentCourses_Load(object sender, EventArgs e)
-        {
-            LoadCourseList();
         }
 
-        private void btnEnroll_Click(object sender, EventArgs e)
+        private void frmStudentEnrolledCourses_Load(object sender, EventArgs e)
         {
-            int numberStudent = courseRepository.GetNumberStudent(int.Parse(txtCourseId.Text));
-            if (numberStudent > int.Parse(txtQuantity.Text))
-            {
-                MessageBox.Show("The course was full!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (txtStatus.Text.Equals("Start"))
-            {
-                MessageBox.Show("The course was started!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (txtStatus.Text.Equals("End"))
-            {
-                MessageBox.Show("The course was ended!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                IGradeRepository gradeRepository = new GradeRepository();
-                gradeRepository.InsertGrade(new Grade { StudentId = "student1", CourseId = int.Parse(txtCourseId.Text) });
-                MessageBox.Show("Enroll successfully!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
+            LoadEnrolledCourseList();
+            txtCourseId.Hide();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            var listFilter = courseRepository.GetCourses().Where(c => c.StartDate >= dtpFrom.Value && c.EndDate <= dtpTo.Value).ToList();
+            var listFilter = courseRepository.GetCoursesByUserId("student1").Where(c => c.StartDate >= dtpFrom.Value && c.EndDate <= dtpTo.Value).ToList();
             try
             {
                 var list = (from c in listFilter
@@ -105,13 +91,20 @@ namespace EnrollmentSystemApp
                 source = new BindingSource();
                 source.DataSource = list;
 
+
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -124,7 +117,7 @@ namespace EnrollmentSystemApp
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            var listSearch = courseRepository.GetCourses().Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
+            var listSearch = courseRepository.GetCoursesByUserId("student1").Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             try
             {
                 var list = (from c in listSearch
@@ -146,10 +139,16 @@ namespace EnrollmentSystemApp
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -159,5 +158,41 @@ namespace EnrollmentSystemApp
                 MessageBox.Show(ex.Message, "Load member list");
             }
         }
+
+        private void btnViewGradeList_Click(object sender, EventArgs e)
+        {
+            if (btnViewGradeList.Text=="Back")
+            {
+                LoadEnrolledCourseList();
+                btnViewGradeList.Text = "View Grade List";
+            }
+            else
+            {
+                IGradeRepository gradeRepository = new GradeRepository();
+                var gradeList = gradeRepository.GetGradeOfStudent("student1", int.Parse(txtCourseId.Text));
+                try
+                {
+                    var list = (from g in gradeList
+                                select new
+                                {
+                                    CourseID = g.CourseId,
+                                    CourseName = g.Course.CourseName,
+                                    ProgressTest = g.ProgressTest,
+                                    MidTermTest = g.MidTermTest,
+                                    PracticeTest = g.MidTermTest,
+                                    FinalTest = g.FinalTest,
+                                    CourseStatus=g.Course.Status.StatusName
+                                }).ToList();
+                    dgvCourseList.DataSource = null;
+                    dgvCourseList.DataSource = list;
+                    btnViewGradeList.Text = "Back";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Load grade list");
+                }
+            }
+        }
+
     }
 }
