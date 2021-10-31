@@ -28,7 +28,7 @@ namespace EnrollmentSystemApp
         );
 
         IEnumerable<User> listUser = new UserRepository().GetUserList();
-        private User loginUser;
+        private User LoginUser;
 
         public frmLogin()
         {
@@ -43,18 +43,18 @@ namespace EnrollmentSystemApp
 
             if (checkLogin(Email, Password))
             {
-                if (loginUser.RoleId == 1)
+                if (LoginUser.RoleId == 1)
                 {
                     frmAdmin frmAdmin = new frmAdmin();
-                    frmAdmin.LoginUser = loginUser;
+                    frmAdmin.LoginUser = LoginUser;
                     this.Hide();
                     frmAdmin.ShowDialog();
                     this.Show();
                 }
-                else if (loginUser.RoleId == 2)
+                else if (LoginUser.RoleId == 2)
                 {
                     frmLecturer frmLecturer = new frmLecturer();
-                    frmLecturer.LoginUser = loginUser;
+                    frmLecturer.LoginUser = LoginUser;
                     this.Hide();
                     frmLecturer.ShowDialog();
                     this.Show();
@@ -62,7 +62,7 @@ namespace EnrollmentSystemApp
                 else
                 {
                     frmStudent frmStudent = new frmStudent();
-                    frmStudent.LoginUser = loginUser;
+                    frmStudent.LoginUser = LoginUser;
                     this.Hide();
                     frmStudent.ShowDialog();
                     this.Show();
@@ -80,7 +80,7 @@ namespace EnrollmentSystemApp
             {
                 if (Email == user.Email && Password == user.Password)
                 {
-                    loginUser = user;
+                    LoginUser = user;
                     return true;
                 }
             }
