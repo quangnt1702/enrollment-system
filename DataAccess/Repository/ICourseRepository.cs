@@ -16,5 +16,7 @@ namespace DataAccess.Repository
         void InsertCourse(Course course);
         void UpdateCourse(Course course);
         int GetNumberStudent(int courseId);
+        IEnumerable<Course> GetCourseByStatus(int statusID);
+        IEnumerable<Course> GetCourseBySubject(int subjectID);
     }
 }

@@ -160,8 +160,8 @@ namespace EnrollmentSystemApp
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.CustomFormat = "yyyy/MM/dd";
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.CustomFormat = "";
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStartDate.Location = new System.Drawing.Point(280, 320);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(250, 27);
@@ -169,8 +169,8 @@ namespace EnrollmentSystemApp
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.CustomFormat = "yyyy/MM/dd";
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndDate.CustomFormat = "";
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEndDate.Location = new System.Drawing.Point(280, 365);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(250, 27);

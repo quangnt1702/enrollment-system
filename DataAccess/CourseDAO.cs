@@ -170,5 +170,47 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+        public IEnumerable<Course> GetCourseByStatus(int statusID)
+        {
+            var courseList = new List<Course>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                courseList = context.Courses.Where(c => c.StatusId == statusID).ToList();
+                foreach (var course in courseList)
+                {
+                    course.Subject = context.Subjects.SingleOrDefault(s => s.SubjectId == course.SubjectId);
+                    course.Status = context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
+                    course.Lecturer = context.Users.SingleOrDefault(s => s.UserId == course.LecturerId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return courseList;
+        }
+
+        public IEnumerable<Course> GetCourseBySubject(int subjectID)
+        {
+            var courseList = new List<Course>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                courseList = context.Courses.Where(c => c.SubjectId == subjectID).ToList();
+                foreach (var course in courseList)
+                {
+                    course.Subject = context.Subjects.SingleOrDefault(s => s.SubjectId == course.SubjectId);
+                    course.Status = context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
+                    course.Lecturer = context.Users.SingleOrDefault(s => s.UserId == course.LecturerId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return courseList;
+        }
     }
 }

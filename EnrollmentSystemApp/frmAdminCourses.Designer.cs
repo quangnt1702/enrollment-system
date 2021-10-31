@@ -30,6 +30,8 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEnding = new System.Windows.Forms.Button();
+            this.btnReady = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -39,14 +41,13 @@ namespace EnrollmentSystemApp
             this.txtCourseID = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnStarting = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnEnding = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.cbbSubject = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
-            this.btnReady = new System.Windows.Forms.Button();
-            this.cbSubject = new System.Windows.Forms.CheckBox();
+            this.lbTo = new System.Windows.Forms.Label();
+            this.lbFrom = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
@@ -55,7 +56,8 @@ namespace EnrollmentSystemApp
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.Controls.Add(this.cbSubject);
+            this.panel2.Controls.Add(this.lbTo);
+            this.panel2.Controls.Add(this.lbFrom);
             this.panel2.Controls.Add(this.btnEnding);
             this.panel2.Controls.Add(this.btnReady);
             this.panel2.Controls.Add(this.btnDelete);
@@ -67,13 +69,35 @@ namespace EnrollmentSystemApp
             this.panel2.Controls.Add(this.txtCourseID);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.btnStarting);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.dtpFrom);
+            this.panel2.Controls.Add(this.dtpTo);
+            this.panel2.Controls.Add(this.cbbSubject);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 205);
             this.panel2.TabIndex = 17;
+            // 
+            // btnEnding
+            // 
+            this.btnEnding.Location = new System.Drawing.Point(1028, 173);
+            this.btnEnding.Name = "btnEnding";
+            this.btnEnding.Size = new System.Drawing.Size(64, 29);
+            this.btnEnding.TabIndex = 12;
+            this.btnEnding.Text = "Ending";
+            this.btnEnding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEnding.UseVisualStyleBackColor = true;
+            this.btnEnding.Click += new System.EventHandler(this.btnEnding_Click);
+            // 
+            // btnReady
+            // 
+            this.btnReady.Location = new System.Drawing.Point(905, 173);
+            this.btnReady.Name = "btnReady";
+            this.btnReady.Size = new System.Drawing.Size(60, 29);
+            this.btnReady.TabIndex = 29;
+            this.btnReady.Text = "Ready";
+            this.btnReady.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReady.UseVisualStyleBackColor = true;
+            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
             // btnDelete
             // 
@@ -118,12 +142,13 @@ namespace EnrollmentSystemApp
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(427, 99);
+            this.btnFilter.Location = new System.Drawing.Point(258, 87);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(94, 29);
             this.btnFilter.TabIndex = 15;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnAllCourses
             // 
@@ -134,6 +159,7 @@ namespace EnrollmentSystemApp
             this.btnAllCourses.Text = "All";
             this.btnAllCourses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAllCourses.UseVisualStyleBackColor = true;
+            this.btnAllCourses.Click += new System.EventHandler(this.btnAllCourses_Click);
             // 
             // txtCourseID
             // 
@@ -154,6 +180,7 @@ namespace EnrollmentSystemApp
             this.txtSearch.PlaceholderText = "Search course";
             this.txtSearch.Size = new System.Drawing.Size(422, 27);
             this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnStarting
             // 
@@ -163,38 +190,32 @@ namespace EnrollmentSystemApp
             this.btnStarting.TabIndex = 13;
             this.btnStarting.Text = "Starting";
             this.btnStarting.UseVisualStyleBackColor = true;
+            this.btnStarting.Click += new System.EventHandler(this.btnStarting_Click);
             // 
-            // dateTimePicker1
+            // dtpFrom
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 54);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(63, 54);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(129, 27);
+            this.dtpFrom.TabIndex = 8;
             // 
-            // btnEnding
+            // dtpTo
             // 
-            this.btnEnding.Location = new System.Drawing.Point(1028, 173);
-            this.btnEnding.Name = "btnEnding";
-            this.btnEnding.Size = new System.Drawing.Size(64, 29);
-            this.btnEnding.TabIndex = 12;
-            this.btnEnding.Text = "Ending";
-            this.btnEnding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEnding.UseVisualStyleBackColor = true;
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(229, 54);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(123, 27);
+            this.dtpTo.TabIndex = 9;
             // 
-            // dateTimePicker2
+            // cbbSubject
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(271, 54);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker2.TabIndex = 9;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(842, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 28);
-            this.comboBox1.TabIndex = 11;
+            this.cbbSubject.FormattingEnabled = true;
+            this.cbbSubject.Location = new System.Drawing.Point(842, 139);
+            this.cbbSubject.Name = "cbbSubject";
+            this.cbbSubject.Size = new System.Drawing.Size(250, 28);
+            this.cbbSubject.TabIndex = 11;
+            this.cbbSubject.SelectedIndexChanged += new System.EventHandler(this.cbbSubject_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -216,24 +237,23 @@ namespace EnrollmentSystemApp
             this.dgvCourses.Size = new System.Drawing.Size(1089, 533);
             this.dgvCourses.TabIndex = 0;
             // 
-            // btnReady
+            // lbTo
             // 
-            this.btnReady.Location = new System.Drawing.Point(905, 173);
-            this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(60, 29);
-            this.btnReady.TabIndex = 29;
-            this.btnReady.Text = "Ready";
-            this.btnReady.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReady.UseVisualStyleBackColor = true;
+            this.lbTo.AutoSize = true;
+            this.lbTo.Location = new System.Drawing.Point(198, 56);
+            this.lbTo.Name = "lbTo";
+            this.lbTo.Size = new System.Drawing.Size(25, 20);
+            this.lbTo.TabIndex = 33;
+            this.lbTo.Text = "To";
             // 
-            // cbSubject
+            // lbFrom
             // 
-            this.cbSubject.AutoSize = true;
-            this.cbSubject.Location = new System.Drawing.Point(818, 145);
-            this.cbSubject.Name = "cbSubject";
-            this.cbSubject.Size = new System.Drawing.Size(18, 17);
-            this.cbSubject.TabIndex = 30;
-            this.cbSubject.UseVisualStyleBackColor = true;
+            this.lbFrom.AutoSize = true;
+            this.lbFrom.Location = new System.Drawing.Point(14, 56);
+            this.lbFrom.Name = "lbFrom";
+            this.lbFrom.Size = new System.Drawing.Size(43, 20);
+            this.lbFrom.TabIndex = 32;
+            this.lbFrom.Text = "From";
             // 
             // frmAdminCourses
             // 
@@ -265,16 +285,17 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.TextBox txtCourseID;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnStarting;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Button btnEnding;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.ComboBox cbbSubject;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvCourses;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnReady;
-        private System.Windows.Forms.CheckBox cbSubject;
+        private System.Windows.Forms.Label lbTo;
+        private System.Windows.Forms.Label lbFrom;
     }
 }

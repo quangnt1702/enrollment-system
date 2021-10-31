@@ -22,5 +22,9 @@ namespace DataAccess.Repository
         public void InsertCourse(Course course) => CourseDAO.Instance.AddNew(course);
 
         public void UpdateCourse(Course course) => CourseDAO.Instance.Update(course);
+
+        public IEnumerable<Course> GetCourseByStatus(int statusID) => CourseDAO.Instance.GetCourseByStatus(statusID);
+
+        public IEnumerable<Course> GetCourseBySubject(int subjectID) => CourseDAO.Instance.GetCourseBySubject(subjectID);
     }
 }
