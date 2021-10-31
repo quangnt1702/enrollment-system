@@ -10,9 +10,11 @@ namespace DataAccess.Repository
     public interface ICourseRepository
     {
         IEnumerable<Course> GetCourses();
+        IEnumerable<Course> GetCoursesByUserId(string userId);
         Course GetCourseByID(int courseId);
         void DeleteCourse(int courseId);
         void InsertCourse(Course course);
         void UpdateCourse(Course course);
+        int GetNumberStudent(int courseId);
     }
 }

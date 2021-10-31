@@ -46,7 +46,7 @@ namespace EnrollmentSystemApp
                 if (loginUser.RoleId == 1)
                 {
                     frmAdmin frmAdmin = new frmAdmin();
-                    frmAdmin.loginUser = loginUser;
+                    frmAdmin.LoginUser = loginUser;
                     this.Hide();
                     frmAdmin.ShowDialog();
                     this.Show();
@@ -54,7 +54,7 @@ namespace EnrollmentSystemApp
                 else if (loginUser.RoleId == 2)
                 {
                     frmLecturer frmLecturer = new frmLecturer();
-                    frmLecturer.loginUser = loginUser;
+                    frmLecturer.LoginUser = loginUser;
                     this.Hide();
                     frmLecturer.ShowDialog();
                     this.Show();
@@ -62,7 +62,7 @@ namespace EnrollmentSystemApp
                 else
                 {
                     frmStudent frmStudent = new frmStudent();
-                    frmStudent.loginUser = loginUser;
+                    frmStudent.LoginUser = loginUser;
                     this.Hide();
                     frmStudent.ShowDialog();
                     this.Show();

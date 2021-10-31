@@ -47,7 +47,47 @@ namespace DataAccess
             }
             return courseList;
         }
-
+        public IEnumerable<Course> GetCourseListOfStudent(string studentId)
+        {
+            var courseList = new List<Course>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                courseList = (from c in context.Courses
+                              join g in context.Grades on c.CourseId equals g.CourseId
+                              where g.StudentId == studentId
+                              select c).ToList();
+                foreach (var course in courseList)
+                {
+                    course.Subject = context.Subjects.SingleOrDefault(s => s.SubjectId == course.SubjectId);
+                    course.Status = context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
+                    course.Lecturer = context.Users.SingleOrDefault(s => s.UserId == course.LecturerId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return courseList;
+        }
+        public int GetNumberStudent(int courseId)
+        {
+            var courseList = new List<Course>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                courseList = (from c in context.Courses
+                              join g in context.Grades on c.CourseId equals g.CourseId
+                              where c.CourseId == courseId
+                              select c).ToList();
+              
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return courseList.Count;
+        }
         public Course GetCourseByID(int courseId)
         {
             Course course = null;
