@@ -71,7 +71,6 @@ C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\bin\Debug\net5
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\bin\Debug\net5.0-windows\DataAccess.dll
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\bin\Debug\net5.0-windows\DataAccess.pdb
-C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.csproj.CopyComplete
 F:\Semester_2021\FA21\PRN211\enrollment-system - Copy\EnrollmentSystemApp\bin\Debug\net5.0-windows\EnrollmentSystemApp.exe
 F:\Semester_2021\FA21\PRN211\enrollment-system - Copy\EnrollmentSystemApp\bin\Debug\net5.0-windows\EnrollmentSystemApp.deps.json
 F:\Semester_2021\FA21\PRN211\enrollment-system - Copy\EnrollmentSystemApp\bin\Debug\net5.0-windows\EnrollmentSystemApp.runtimeconfig.json

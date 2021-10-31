@@ -52,6 +52,7 @@ namespace EnrollmentSystemApp
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnLogin
             // 
@@ -68,6 +69,7 @@ namespace EnrollmentSystemApp
             this.btnLogin.TabIndex = 14;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // cbShowPassword
             // 
@@ -81,6 +83,7 @@ namespace EnrollmentSystemApp
             this.cbShowPassword.TabIndex = 13;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // txtPassword
             // 
@@ -158,6 +161,7 @@ namespace EnrollmentSystemApp
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

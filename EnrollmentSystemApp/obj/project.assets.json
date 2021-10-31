@@ -5844,19 +5844,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
+    "C:\\Users\\lakho\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+      "projectUniqueName": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
       "projectName": "EnrollmentSystemApp",
-      "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\obj\\",
+      "projectPath": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+      "packagesPath": "C:\\Users\\lakho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\EnrollmentSystemApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lakho\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5870,8 +5870,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\lakho\\source\\repos\\enrollment-system\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\lakho\\source\\repos\\enrollment-system\\DataAccess\\DataAccess.csproj"
             }
           }
         }

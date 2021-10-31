@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using DataAccess.Models;
+using DataAccess.Repository;
 
 namespace EnrollmentSystemApp
 {
@@ -25,11 +27,90 @@ namespace EnrollmentSystemApp
             int nHeightEllipse
         );
 
+        IEnumerable<User> listUser = new UserRepository().GetUserList();
+        private User loginUser;
+
         public frmLogin()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string Email = txtEmail.Text;
+            string Password = txtPassword.Text;
+
+            if (checkLogin(Email, Password))
+            {
+                if (loginUser.RoleId == 1)
+                {
+                    frmAdmin frmAdmin = new frmAdmin();
+                    frmAdmin.loginUser = loginUser;
+                    this.Hide();
+                    frmAdmin.ShowDialog();
+                    this.Show();
+                }
+                else if (loginUser.RoleId == 2)
+                {
+                    frmLecturer frmLecturer = new frmLecturer();
+                    frmLecturer.loginUser = loginUser;
+                    this.Hide();
+                    frmLecturer.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    frmStudent frmStudent = new frmStudent();
+                    frmStudent.loginUser = loginUser;
+                    this.Hide();
+                    frmStudent.ShowDialog();
+                    this.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wrong Email or Password");
+            }
+        }
+
+        private bool checkLogin(string Email, string Password)
+        {
+            foreach (var user in listUser)
+            {
+                if (Email == user.Email && Password == user.Password)
+                {
+                    loginUser = user;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Exit program?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (d == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbShowPassword.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
