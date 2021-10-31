@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+<<<<<<< HEAD
+=======
 using System.Text;
 using System.Threading.Tasks;
+>>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
 using DataAccess.Models;
 
 namespace DataAccess
@@ -39,7 +42,11 @@ namespace DataAccess
                 foreach (var course in courseList)
                 {
                     course.Subject = context.Subjects.SingleOrDefault(s => s.SubjectId == course.SubjectId);
+<<<<<<< HEAD
+                    course.Status = context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
+=======
                     course.Status= context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
+>>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
                     course.Lecturer = context.Users.SingleOrDefault(s => s.UserId == course.LecturerId);
                 }
             }

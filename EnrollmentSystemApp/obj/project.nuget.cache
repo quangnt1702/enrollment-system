@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "3qEZYjeLUpH9xFxNd0YDcSTuM9aXb9n1neZsVET6KvUqbw68mMNp/ANugC9UdI9iU3SuxHRXwBKlZWTrXECZ4A==",
+  "success": true,
+  "projectFilePath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+=======
   "dgSpecHash": "5OPrHLlZWINK+hBo9p0LO2NV5h/Uw7ujSud0kAs3J2GAG7A2mGFILrBvljNgX7d0sBz0ZHPFPF3+Ufz78A/eOA==",
   "success": true,
   "projectFilePath": "F:\\Semester_2021\\FA21\\PRN211\\enrollment-system - Copy\\EnrollmentSystemApp\\EnrollmentSystemApp.csproj",
+>>>>>>> 94a9d563f39b7ed540aac503fef6edc91f0684a7
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\fontawesome.sharp\\5.15.3\\fontawesome.sharp.5.15.3.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
