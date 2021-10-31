@@ -14,7 +14,7 @@ namespace EnrollmentSystemApp
 {
     public partial class frmAdmin : Form
     {
-        public User loginUser { get; set; }
+        public User LoginUser { get; set; }
         public frmAdmin()
         {
             InitializeComponent();
@@ -44,6 +44,7 @@ namespace EnrollmentSystemApp
             frmAdminCourses frmAdminCourses = new frmAdminCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmAdminCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmAdminCourses);
+            frmAdminCourses.LoginUser = LoginUser;
             frmAdminCourses.Show();
         }
 

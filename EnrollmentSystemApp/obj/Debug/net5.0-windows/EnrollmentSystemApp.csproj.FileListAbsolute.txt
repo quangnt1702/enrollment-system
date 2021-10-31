@@ -219,3 +219,5 @@ F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\ref\EnrollmentSystemApp.dll
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.pdb
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.genruntimeconfig.cache
+C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminCourseDetails.resources
+C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.csproj.CopyComplete

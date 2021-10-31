@@ -9,6 +9,8 @@ namespace DataAccess.Repository
 {
     public class UserRepository : IUserRepository
     {
+        public User GetUserByID(string userId) => UserDAO.Instance.GetUserByID(userId);
+
         public IEnumerable<User> GetUserList() => UserDAO.Instance.GetUserList();
     }
 }
