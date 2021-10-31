@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using DataAccess.Models;
 
 namespace EnrollmentSystemApp
 {
     public partial class frmAdmin : Form
     {
+        public User loginUser { get; set; }
         public frmAdmin()
         {
             InitializeComponent();
@@ -100,7 +102,7 @@ namespace EnrollmentSystemApp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -118,6 +120,11 @@ namespace EnrollmentSystemApp
             {
                 WindowState = FormWindowState.Normal;
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

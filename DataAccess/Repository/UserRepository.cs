@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    class UserRepository
+    public class UserRepository : IUserRepository
     {
+        public IEnumerable<User> GetUserList() => UserDAO.Instance.GetUserList();
     }
 }
