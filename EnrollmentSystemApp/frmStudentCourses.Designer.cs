@@ -49,10 +49,10 @@ namespace EnrollmentSystemApp
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCourseList = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -165,6 +165,7 @@ namespace EnrollmentSystemApp
             this.btnAllCourses.Text = "All";
             this.btnAllCourses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAllCourses.UseVisualStyleBackColor = true;
+            this.btnAllCourses.Click += new System.EventHandler(this.btnAllCourses_Click);
             // 
             // textBox1
             // 
@@ -229,21 +230,23 @@ namespace EnrollmentSystemApp
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvCourseList);
             this.panel1.Location = new System.Drawing.Point(12, 223);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1095, 539);
             this.panel1.TabIndex = 19;
             // 
-            // dataGridView1
+            // dgvCourseList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1089, 533);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvCourseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCourseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCourseList.Location = new System.Drawing.Point(3, 3);
+            this.dgvCourseList.Name = "dgvCourseList";
+            this.dgvCourseList.RowHeadersWidth = 51;
+            this.dgvCourseList.RowTemplate.Height = 29;
+            this.dgvCourseList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCourseList.Size = new System.Drawing.Size(1089, 533);
+            this.dgvCourseList.TabIndex = 0;
             // 
             // frmStudentCourses
             // 
@@ -257,10 +260,11 @@ namespace EnrollmentSystemApp
             this.Name = "frmStudentCourses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStudentCourses";
+            this.Load += new System.EventHandler(this.frmStudentCourses_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,6 +291,6 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCourseList;
     }
 }
