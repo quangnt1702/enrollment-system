@@ -10,5 +10,6 @@ namespace DataAccess.Repository
     public interface IUserRepository
     {
         IEnumerable<User> GetUserList();
+        User GetUserByID(string userId);
     }
 }

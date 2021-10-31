@@ -44,6 +44,7 @@ namespace EnrollmentSystemApp
             frmAdminCourses frmAdminCourses = new frmAdminCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmAdminCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmAdminCourses);
+            frmAdminCourses.LoginUser = LoginUser;
             frmAdminCourses.Show();
         }
 
@@ -58,6 +59,7 @@ namespace EnrollmentSystemApp
             frmAdminCourses frmAdminCourses = new frmAdminCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmAdminCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmAdminCourses);
+            frmAdminCourses.LoginUser = LoginUser;
             frmAdminCourses.Show();
         }
 

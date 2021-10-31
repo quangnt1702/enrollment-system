@@ -40,5 +40,20 @@ namespace DataAccess
             }
             return userList;
         }
+
+        public User GetUserByID(string userId)
+        {
+            User user = null;
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                user = context.Users.SingleOrDefault(c => c.UserId == userId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return user;
+        }
     }
 }
