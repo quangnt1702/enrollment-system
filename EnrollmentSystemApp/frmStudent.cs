@@ -82,7 +82,7 @@ namespace EnrollmentSystemApp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -102,5 +102,9 @@ namespace EnrollmentSystemApp
             WindowState = FormWindowState.Minimized;
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

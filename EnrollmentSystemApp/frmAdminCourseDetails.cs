@@ -90,8 +90,8 @@ namespace EnrollmentSystemApp
                             SubjectId = (int)cbSubjectID.SelectedValue,
                             LecturerId = (string)cbLecturerID.SelectedValue,
                             StudentQuantity = int.Parse(txtStudentQuantity.Text),
-                            StartDate = dtpStartDate.Value,
-                            EndDate = dtpEndDate.Value,
+                            StartDate = dtpStartDate.Value.Date,
+                            EndDate = dtpEndDate.Value.Date,
                             StatusId = (int)cbStatusID.SelectedValue,
                         };
                         CourseRepository.InsertCourse(course);
@@ -105,8 +105,8 @@ namespace EnrollmentSystemApp
                             SubjectId = (int)cbSubjectID.SelectedValue,
                             LecturerId = (string)cbLecturerID.SelectedValue,
                             StudentQuantity = int.Parse(txtStudentQuantity.Text),
-                            StartDate = dtpStartDate.Value,
-                            EndDate = dtpEndDate.Value,
+                            StartDate = dtpStartDate.Value.Date,
+                            EndDate = dtpEndDate.Value.Date,
                             StatusId = (int)cbStatusID.SelectedValue,
                         };
                         CourseRepository.UpdateCourse(course);
