@@ -46,9 +46,9 @@ namespace EnrollmentSystemApp
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.BlueViolet;
-            this.btnCancel.Location = new System.Drawing.Point(4, 452);
+            this.btnCancel.Location = new System.Drawing.Point(13, 447);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(406, 39);
+            this.btnCancel.Size = new System.Drawing.Size(406, 47);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -63,9 +63,9 @@ namespace EnrollmentSystemApp
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(4, 375);
+            this.btnLogin.Location = new System.Drawing.Point(13, 378);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(406, 39);
+            this.btnLogin.Size = new System.Drawing.Size(406, 52);
             this.btnLogin.TabIndex = 14;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@ namespace EnrollmentSystemApp
             this.cbShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbShowPassword.ForeColor = System.Drawing.Color.Gray;
-            this.cbShowPassword.Location = new System.Drawing.Point(258, 300);
+            this.cbShowPassword.Location = new System.Drawing.Point(267, 309);
             this.cbShowPassword.Name = "cbShowPassword";
             this.cbShowPassword.Size = new System.Drawing.Size(151, 27);
             this.cbShowPassword.TabIndex = 13;
@@ -90,9 +90,10 @@ namespace EnrollmentSystemApp
             this.txtPassword.BackColor = System.Drawing.Color.LightGray;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(3, 267);
+            this.txtPassword.Location = new System.Drawing.Point(12, 259);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(406, 27);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(400, 27);
             this.txtPassword.TabIndex = 12;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -101,7 +102,7 @@ namespace EnrollmentSystemApp
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbPassword.ForeColor = System.Drawing.Color.Gray;
-            this.lbPassword.Location = new System.Drawing.Point(3, 236);
+            this.lbPassword.Location = new System.Drawing.Point(12, 228);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(100, 28);
             this.lbPassword.TabIndex = 11;
@@ -111,10 +112,11 @@ namespace EnrollmentSystemApp
             // 
             this.txtEmail.BackColor = System.Drawing.Color.LightGray;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(3, 168);
+            this.txtEmail.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(12, 171);
+            this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(406, 27);
+            this.txtEmail.Size = new System.Drawing.Size(400, 40);
             this.txtEmail.TabIndex = 10;
             // 
             // lbEmail
@@ -122,7 +124,7 @@ namespace EnrollmentSystemApp
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbEmail.ForeColor = System.Drawing.Color.Gray;
-            this.lbEmail.Location = new System.Drawing.Point(3, 137);
+            this.lbEmail.Location = new System.Drawing.Point(12, 140);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(64, 28);
             this.lbEmail.TabIndex = 9;
@@ -133,7 +135,7 @@ namespace EnrollmentSystemApp
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("MS UI Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lbTitle.Location = new System.Drawing.Point(3, 42);
+            this.lbTitle.Location = new System.Drawing.Point(12, 45);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(407, 37);
             this.lbTitle.TabIndex = 8;
@@ -145,7 +147,7 @@ namespace EnrollmentSystemApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(413, 609);
+            this.ClientSize = new System.Drawing.Size(439, 609);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cbShowPassword);
