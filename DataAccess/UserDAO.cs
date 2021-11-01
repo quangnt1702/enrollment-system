@@ -144,5 +144,25 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+        public IEnumerable<User> GetStudentList()
+        {
+            var studentList = new List<User>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                studentList = context.Users.Where(c => c.RoleId == 3).ToList();
+                foreach (var student in studentList)
+                {
+                    student.Role = context.Roles.SingleOrDefault(s => s.RoleId == student.RoleId);
+                    student.Status = context.StatusUsers.SingleOrDefault(s => s.StatusId == student.StatusId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return studentList;
+        }
     }
 }

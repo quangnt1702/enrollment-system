@@ -18,5 +18,6 @@ namespace DataAccess.Repository
         public void UpdateUser(User user) => UserDAO.Instance.UpdateUser(user);
 
         public void RemoveUser(string userID) => UserDAO.Instance.RemoveUser(userID);
+        public IEnumerable<User> GetStudentList() => UserDAO.Instance.GetStudentList();
     }
 }

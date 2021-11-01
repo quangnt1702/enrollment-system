@@ -73,6 +73,7 @@ namespace EnrollmentSystemApp
             frmAdminStudents frmAdminStudents = new frmAdminStudents() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmAdminStudents.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmAdminStudents);
+            frmAdminStudents.LoginUser = LoginUser;
             frmAdminStudents.Show();
         }
 
