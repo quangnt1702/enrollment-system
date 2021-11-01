@@ -135,8 +135,8 @@ namespace EnrollmentSystemApp
                                 Subject = c.Subject.SubjectName,
                                 Lecturer = c.Lecturer.UserName,
                                 Quantity = c.StudentQuantity,
-                                StartDate = c.StartDate,
-                                EndDate = c.EndDate,
+                                StartDate = c.StartDate.Date,
+                                EndDate = c.EndDate.Date,
                                 Status = c.Status.StatusName
                             }).ToList();
                 source = new BindingSource();

@@ -55,5 +55,94 @@ namespace DataAccess
             }
             return user;
         }
+
+        public IEnumerable<User> GetLecturerList()
+        {
+            var lecturerList = new List<User>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                lecturerList = context.Users.Where(c => c.RoleId == 2).ToList();
+                foreach (var lecturer in lecturerList)
+                {
+                    lecturer.Role = context.Roles.SingleOrDefault(s => s.RoleId == lecturer.RoleId);
+                    lecturer.Status = context.StatusUsers.SingleOrDefault(s => s.StatusId == lecturer.StatusId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return lecturerList;
+        }
+
+        public void AddUser(User user)
+        {
+            try
+            {
+                var existUser = GetUserByID(user.UserId);
+                if (existUser == null)
+                {
+                    using var context = new EnrollmentSystemContext();
+                    context.Users.Add(user);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("The user is already exist");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateUser(User user)
+        {
+            try
+            {
+                var userExist = GetUserByID(user.UserId);
+                if (userExist != null)
+                {
+                    using var context = new EnrollmentSystemContext();
+                    context.Users.Update(user);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("The user does not already exist");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void RemoveUser(string userID)
+        {
+            try
+            {
+                var userExist = GetUserByID(userID);
+                if (userExist != null)
+                {
+                    using var context = new EnrollmentSystemContext();
+                    context.Users.Remove(userExist);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("The user does not already exist");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

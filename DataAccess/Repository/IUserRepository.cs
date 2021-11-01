@@ -11,5 +11,9 @@ namespace DataAccess.Repository
     {
         IEnumerable<User> GetUserList();
         User GetUserByID(string userId);
+        IEnumerable<User> GetLecturerList();
+        void AddUser(User user);
+        void UpdateUser(User user);
+        void RemoveUser(string userID);
     }
 }
