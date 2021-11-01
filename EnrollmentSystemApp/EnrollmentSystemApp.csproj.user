@@ -13,6 +13,9 @@
     <Compile Update="frmAdminFeedbacks.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmAdminLecturerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmAdminLecturers.cs">
       <SubType>Form</SubType>
     </Compile>
