@@ -181,7 +181,7 @@ namespace EnrollmentSystemApp
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(241, 493);
+            this.btnSave.Location = new System.Drawing.Point(237, 501);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(208, 60);
             this.btnSave.TabIndex = 15;
@@ -200,6 +200,7 @@ namespace EnrollmentSystemApp
             this.Name = "frmStudentProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStudentProfile";
+            this.Load += new System.EventHandler(this.frmStudentProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
