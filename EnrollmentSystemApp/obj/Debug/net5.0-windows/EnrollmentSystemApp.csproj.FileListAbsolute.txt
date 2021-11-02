@@ -221,3 +221,6 @@ C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminLecturerDetails.resources
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminStudentDetails.resources
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.csproj.CopyComplete
+F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminCourseDetails.resources
+F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminLecturerDetails.resources
+F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminStudentDetails.resources

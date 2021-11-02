@@ -87,7 +87,7 @@ namespace EnrollmentSystemApp
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            var listFilter = courseRepository.GetCourses().Where(c => c.StartDate >= dtpFrom.Value && c.EndDate <= dtpTo.Value).ToList();
+            var listFilter = courseRepository.GetCourses().Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
             try
             {
                 var list = (from c in listFilter
