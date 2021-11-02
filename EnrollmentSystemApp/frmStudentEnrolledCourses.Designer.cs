@@ -30,6 +30,10 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtLecturer = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtCourseName = new System.Windows.Forms.TextBox();
@@ -60,6 +64,10 @@ namespace EnrollmentSystemApp
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cboStatus);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtLecturer);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.txtCourseName);
@@ -85,6 +93,42 @@ namespace EnrollmentSystemApp
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 205);
             this.panel2.TabIndex = 18;
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(140, 164);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(112, 28);
+            this.cboStatus.TabIndex = 43;
+            this.cboStatus.SelectionChangeCommitted += new System.EventHandler(this.cboStatus_SelectionChangeCommitted);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 167);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 20);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Filter By Status";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 20);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Filter By Subject";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 20);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "Search By Name";
             // 
             // txtLecturer
             // 
@@ -195,7 +239,7 @@ namespace EnrollmentSystemApp
             this.btnViewGradeList.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnViewGradeList.IconColor = System.Drawing.Color.Black;
             this.btnViewGradeList.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnViewGradeList.Location = new System.Drawing.Point(115, 158);
+            this.btnViewGradeList.Location = new System.Drawing.Point(258, 158);
             this.btnViewGradeList.Name = "btnViewGradeList";
             this.btnViewGradeList.Size = new System.Drawing.Size(182, 42);
             this.btnViewGradeList.TabIndex = 27;
@@ -248,11 +292,11 @@ namespace EnrollmentSystemApp
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.Location = new System.Drawing.Point(16, 91);
+            this.txtSearch.Location = new System.Drawing.Point(140, 91);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = " Search course";
-            this.txtSearch.Size = new System.Drawing.Size(399, 27);
+            this.txtSearch.Size = new System.Drawing.Size(275, 27);
             this.txtSearch.TabIndex = 5;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -287,9 +331,9 @@ namespace EnrollmentSystemApp
             "Semester 1",
             "Semester 1",
             "Semester 1"});
-            this.cboSubject.Location = new System.Drawing.Point(16, 124);
+            this.cboSubject.Location = new System.Drawing.Point(140, 124);
             this.cboSubject.Name = "cboSubject";
-            this.cboSubject.Size = new System.Drawing.Size(401, 28);
+            this.cboSubject.Size = new System.Drawing.Size(277, 28);
             this.cboSubject.TabIndex = 11;
             this.cboSubject.SelectionChangeCommitted += new System.EventHandler(this.cboSubject_SelectedIndexChanged);
             // 
@@ -360,5 +404,9 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.TextBox txtCourseName;
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboStatus;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
