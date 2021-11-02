@@ -41,7 +41,7 @@ namespace EnrollmentSystemApp
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboSubject = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCourseList = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
@@ -62,7 +62,7 @@ namespace EnrollmentSystemApp
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.dtpFrom);
             this.panel2.Controls.Add(this.dtpTo);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cboSubject);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1090, 205);
@@ -170,13 +170,14 @@ namespace EnrollmentSystemApp
             this.dtpTo.Size = new System.Drawing.Size(103, 27);
             this.dtpTo.TabIndex = 9;
             // 
-            // comboBox1
+            // cboSubject
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(28, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(297, 28);
-            this.comboBox1.TabIndex = 11;
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Location = new System.Drawing.Point(28, 123);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.Size = new System.Drawing.Size(297, 28);
+            this.cboSubject.TabIndex = 11;
+            this.cboSubject.SelectionChangeCommitted += new System.EventHandler(this.cboSubject_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -228,7 +229,7 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboSubject;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvCourseList;
         private System.Windows.Forms.Label label1;
