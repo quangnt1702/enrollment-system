@@ -26,7 +26,7 @@ namespace EnrollmentSystemApp
             int nWidthEllipse,
             int nHeightEllipse
         );
-
+        ICourseRepository courseRepository = new CourseRepository();
         private User LoginUser;
 
         public frmLogin()
@@ -37,6 +37,7 @@ namespace EnrollmentSystemApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            courseRepository.CheckStatusCourse();
             string Email = txtEmail.Text;
             string Password = txtPassword.Text;
 

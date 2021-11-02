@@ -127,6 +127,7 @@ namespace EnrollmentSystemApp
             this.cbCourse.Name = "cbCourse";
             this.cbCourse.Size = new System.Drawing.Size(250, 28);
             this.cbCourse.TabIndex = 11;
+            this.cbCourse.SelectedIndexChanged += new System.EventHandler(this.cbCourse_SelectedIndexChanged);
             // 
             // panel1
             // 

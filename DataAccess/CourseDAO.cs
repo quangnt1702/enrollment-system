@@ -212,5 +212,59 @@ namespace DataAccess
             }
             return courseList;
         }
+
+        public void CheckStatusCourse()
+        {
+            DateTime now = DateTime.Now;
+            var listCourse = GetCourseList();
+            foreach (var c in listCourse)
+            {
+                if (c.StartDate <= now.Date && c.EndDate >= now.Date)
+                {
+                    var course = new Course
+                    {
+                        CourseId = c.CourseId,
+                        CourseName = c.CourseName,
+                        SubjectId = c.SubjectId,
+                        LecturerId = c.LecturerId,
+                        StudentQuantity = c.StudentQuantity,
+                        StartDate = c.StartDate,
+                        EndDate = c.EndDate,
+                        StatusId = 1
+                    };
+                    Update(course);
+                }
+                else if (c.StartDate > now.Date)
+                {
+                    var course = new Course
+                    {
+                        CourseId = c.CourseId,
+                        CourseName = c.CourseName,
+                        SubjectId = c.SubjectId,
+                        LecturerId = c.LecturerId,
+                        StudentQuantity = c.StudentQuantity,
+                        StartDate = c.StartDate,
+                        EndDate = c.EndDate,
+                        StatusId = 3
+                    };
+                    Update(course);
+                }
+                else if (c.EndDate < now.Date)
+                {
+                    var course = new Course
+                    {
+                        CourseId = c.CourseId,
+                        CourseName = c.CourseName,
+                        SubjectId = c.SubjectId,
+                        LecturerId = c.LecturerId,
+                        StudentQuantity = c.StudentQuantity,
+                        StartDate = c.StartDate,
+                        EndDate = c.EndDate,
+                        StatusId = 2
+                    };
+                    Update(course);
+                }
+            }
+        }
     }
 }

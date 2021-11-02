@@ -53,6 +53,7 @@ namespace EnrollmentSystemApp
 
         public bool CheckData()
         {
+            DateTime now = DateTime.Now;
             var dateStart = dtpStartDate.Value;
             var dateEnd = dtpEndDate.Value;
             if (string.IsNullOrWhiteSpace(txtCourseName.Text))
@@ -67,9 +68,15 @@ namespace EnrollmentSystemApp
                 txtStudentQuantity.Focus();
                 return false;
             }
-            if(dateEnd < dateStart)
+            if (dateEnd < dateStart)
             {
-                MessageBox.Show("Start date can not bigger than end date.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Start date can not be greater than end date", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpStartDate.Focus();
+
+            }
+            if (dateStart < now || dateEnd < now)
+            {
+                MessageBox.Show("Start date can not be less than current", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpStartDate.Focus();
                 return false;
             }
@@ -78,10 +85,11 @@ namespace EnrollmentSystemApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (CheckData())
             {
-                if (CheckData())
+                try
                 {
+
                     if (InsertOrUpdate == false)
                     {
                         var course = new Course
@@ -111,14 +119,14 @@ namespace EnrollmentSystemApp
                         };
                         CourseRepository.UpdateCourse(course);
                     }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add new course" : "Update course");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add new course" : "Update course");
-            }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();

@@ -25,6 +25,11 @@ namespace EnrollmentSystemApp
 
         private void frmAdminStudents_Load(object sender, EventArgs e)
         {
+            var context = new EnrollmentSystemContext();
+            var course = context.Courses.ToList();
+            cbCourse.DisplayMember = "CourseName";
+            cbCourse.ValueMember = "CourseId";
+            cbCourse.DataSource = course;
             LoadStudentList();
         }
 
@@ -150,6 +155,45 @@ namespace EnrollmentSystemApp
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message, "Load student list");
+            }
+        }
+
+        private void cbCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int courseID = (int)cbCourse.SelectedValue;
+            LoadStudentByCourse(courseID);
+        }
+
+        public void LoadStudentByCourse(int courseID)
+        {
+            var students = userRepository.GetStudentByCourse(courseID);
+            var list = (from c in students
+                        select new
+                        {
+                            UserID = c.UserId,
+                            UserName = c.UserName,
+                            Password = c.Password,
+                            Phone = c.Phone,
+                            Email = c.Email,
+                            RoleID = c.Role.RoleName,
+                            StatusID = c.Status.StatusName
+                        }).ToList();
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = list;
+
+                txtUserID.DataBindings.Clear();
+
+                txtUserID.DataBindings.Add("Text", source, "UserID");
+
+                dgvStudents.DataSource = null;
+                dgvStudents.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message, "Load student list");
             }
         }
