@@ -27,7 +27,6 @@ namespace EnrollmentSystemApp
             int nHeightEllipse
         );
 
-        IEnumerable<User> listUser = new UserRepository().GetUserList();
         private User LoginUser;
 
         public frmLogin()
@@ -76,6 +75,7 @@ namespace EnrollmentSystemApp
 
         private bool checkLogin(string Email, string Password)
         {
+            IEnumerable<User> listUser = new UserRepository().GetUserList();
             foreach (var user in listUser)
             {
                 if (Email == user.Email && Password == user.Password)

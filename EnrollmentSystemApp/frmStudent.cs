@@ -37,6 +37,7 @@ namespace EnrollmentSystemApp
             frmStudentCourses frmStudentCourses = new frmStudentCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmStudentCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmStudentCourses);
+            frmStudentCourses.LoginUser = LoginUser;
             frmStudentCourses.Show();
         }
 
@@ -51,6 +52,7 @@ namespace EnrollmentSystemApp
             frmStudentCourses frmStudentCourses = new frmStudentCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmStudentCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmStudentCourses);
+            frmStudentCourses.LoginUser = LoginUser;
             frmStudentCourses.Show();
         }
 
@@ -64,6 +66,7 @@ namespace EnrollmentSystemApp
             frmStudentProfile frmStudentProfile = new frmStudentProfile() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmStudentProfile.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmStudentProfile);
+            frmStudentProfile.LoginUser = LoginUser;
             frmStudentProfile.Show();
         }
 
@@ -74,10 +77,11 @@ namespace EnrollmentSystemApp
             pnlNav.Left = btnEnrolledCourse.Left;
 
             this.pnlFormLoader.Controls.Clear();
-            frmStudentEnrolledCourses frmStudentGrades = new frmStudentEnrolledCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmStudentGrades.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(frmStudentGrades);
-            frmStudentGrades.Show();
+            frmStudentEnrolledCourses frmStudentEnrolledCourses = new frmStudentEnrolledCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmStudentEnrolledCourses.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmStudentEnrolledCourses);
+            frmStudentEnrolledCourses.LoginUser = LoginUser;
+            frmStudentEnrolledCourses.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

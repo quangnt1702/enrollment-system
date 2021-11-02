@@ -25,7 +25,7 @@ namespace EnrollmentSystemApp
         }
         public void LoadEnrolledCourseList()
         {
-            var courseList = courseRepository.GetCoursesByUserId("student1");
+            var courseList = courseRepository.GetCoursesByUserId(LoginUser.UserId);
             try
             {
                 var list = (from c in courseList
@@ -93,7 +93,7 @@ namespace EnrollmentSystemApp
             cboStatus.SelectedIndex = 0;
             cboSubject.SelectedIndex = 0;
             txtSearch.Text = "";
-            var listFilter = courseRepository.GetCoursesByUserId("student1").Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
+            var listFilter = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
             try
             {
                 var list = (from c in listFilter
@@ -141,7 +141,7 @@ namespace EnrollmentSystemApp
             dtpTo.Value = DateTime.Now;
             cboStatus.SelectedIndex = 0;
             cboSubject.SelectedIndex = 0;
-            var listSearch = courseRepository.GetCoursesByUserId("student1").Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
+            var listSearch = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             try
             {
                 var list = (from c in listSearch
@@ -193,7 +193,7 @@ namespace EnrollmentSystemApp
             else
             {
                 IGradeRepository gradeRepository = new GradeRepository();
-                var gradeList = gradeRepository.GetGradeOfStudent("student1", int.Parse(txtCourseId.Text));
+                var gradeList = gradeRepository.GetGradeOfStudent(LoginUser.UserId, int.Parse(txtCourseId.Text));
                 try
                 {
                     var list = (from g in gradeList
@@ -226,7 +226,7 @@ namespace EnrollmentSystemApp
             try
             {
                 var subjectId = cboSubject.SelectedValue.ToString();
-                var listSearch = courseRepository.GetCoursesByUserId("student1").Where(c => c.SubjectId == int.Parse(subjectId));
+                var listSearch = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.SubjectId == int.Parse(subjectId));
                 var list = (from c in listSearch
                             select new
                             {
@@ -269,7 +269,7 @@ namespace EnrollmentSystemApp
                 cboSubject.SelectedIndex = 0;
                 txtSearch.Text = "";
                 var statusId = cboStatus.SelectedValue.ToString();
-                var listSearch = courseRepository.GetCoursesByUserId("student1").Where(c => c.StatusId == int.Parse(statusId));
+                var listSearch = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.StatusId == int.Parse(statusId));
                 var list = (from c in listSearch
                             select new
                             {
