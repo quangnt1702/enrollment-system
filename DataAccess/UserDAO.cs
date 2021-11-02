@@ -164,5 +164,28 @@ namespace DataAccess
             }
             return studentList;
         }
+
+        public IEnumerable<User> GetStudentByCourse(int courseId)
+        {
+            var studentList = new List<User>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                studentList = (from s in context.Users
+                               join g in context.Grades on s.UserId equals g.StudentId
+                               where g.CourseId == courseId
+                               select s).ToList();
+                foreach (var student in studentList)
+                {
+                    student.Role = context.Roles.SingleOrDefault(c => c.RoleId == student.StatusId);
+                    student.Status = context.StatusUsers.SingleOrDefault(c => c.StatusId == student.StatusId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return studentList;
+        }
     }
 }

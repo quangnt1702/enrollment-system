@@ -39,10 +39,8 @@ namespace EnrollmentSystemApp
                         select new
                         {
                             FeedbackID = c.FeedbackId,
-                            //CourseId = c.Course.CourseName,
-                            CourseID = c.CourseId,
-                            //StudentId = c.Student.UserName,
-                            StudentID = c.StudentId,
+                            CourseId = c.Course.CourseName,
+                            StudentId = c.Student.UserName,
                             FeedbackContent = c.FeedbackContent
                         }).ToList();
             try

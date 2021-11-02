@@ -18,5 +18,6 @@ namespace DataAccess.Repository
         int GetNumberStudent(int courseId);
         IEnumerable<Course> GetCourseByStatus(int statusID);
         IEnumerable<Course> GetCourseBySubject(int subjectID);
+        void CheckStatusCourse();
     }
 }

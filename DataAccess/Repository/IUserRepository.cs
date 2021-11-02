@@ -16,5 +16,6 @@ namespace DataAccess.Repository
         void UpdateUser(User user);
         void RemoveUser(string userID);
         IEnumerable<User> GetStudentList();
+        IEnumerable<User> GetStudentByCourse(int courseId);
     }
 }
