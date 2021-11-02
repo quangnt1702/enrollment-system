@@ -15,6 +15,8 @@ namespace EnrollmentSystemApp
     public partial class frmStudentEnrolledCourses : Form
     {
         ICourseRepository courseRepository = new CourseRepository();
+        ISubjectRepository subjectRepository = new SubjectRepository();
+
         BindingSource source = null;
         public User LoginUser { get; set; }
         public frmStudentEnrolledCourses()
@@ -64,10 +66,17 @@ namespace EnrollmentSystemApp
                 MessageBox.Show(ex.Message, "Load member list");
             }
         }
-
+        public void LoadSubjectList()
+        {
+            var subjectList = subjectRepository.GetSubjects();
+            cboSubject.DataSource = subjectList;
+            cboSubject.DisplayMember = "SubjectName";
+            cboSubject.ValueMember = "SubjectId";
+        }
         private void frmStudentEnrolledCourses_Load(object sender, EventArgs e)
         {
             LoadEnrolledCourseList();
+            LoadSubjectList();
             txtCourseId.Hide();
         }
 
@@ -193,6 +202,43 @@ namespace EnrollmentSystemApp
                 }
             }
         }
+        private void cboSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var subjectId = cboSubject.SelectedValue.ToString();
+                var listSearch = courseRepository.GetCoursesByUserId("student1").Where(c => c.SubjectId == int.Parse(subjectId));
+                var list = (from c in listSearch
+                            select new
+                            {
+                                ID = c.CourseId,
+                                Name = c.CourseName,
+                                Subject = c.Subject.SubjectName,
+                                Lecturer = c.Lecturer.UserName,
+                                Quantity = c.StudentQuantity,
+                                StartDate = c.StartDate.Date,
+                                EndDate = c.EndDate.Date,
+                                Status = c.Status.StatusName
+                            }).ToList();
+                source = new BindingSource();
+                source.DataSource = list;
 
+
+                txtCourseId.DataBindings.Clear();
+                txtStatus.DataBindings.Clear();
+                txtQuantity.DataBindings.Clear();
+
+                txtCourseId.DataBindings.Add("Text", source, "ID");
+                txtStatus.DataBindings.Add("Text", source, "Status");
+                txtQuantity.DataBindings.Add("Text", source, "Quantity");
+
+                dgvCourseList.DataSource = null;
+                dgvCourseList.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Filter course list");
+            }
+        }
     }
 }
