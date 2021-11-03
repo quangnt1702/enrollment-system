@@ -43,5 +43,34 @@ namespace DataAccess
             }
             return subjectList;
         }
+
+        public int GetNumberCourseBySubject(int subjectId)
+        {
+            int count = 0;
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                count = context.Courses.Where(c => c.SubjectId == subjectId).ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return count;
+        }
+
+        public void AddSubject(Subject subject)
+        {
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                context.Subjects.Add(subject);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

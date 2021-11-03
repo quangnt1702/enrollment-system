@@ -16,6 +16,7 @@ namespace EnrollmentSystemApp
     {
         public User LoginUser { get; set; }
         IFeedbackRepository feedbackRepository = new FeedbackRepository();
+        ICourseRepository courseRepository = new CourseRepository();
         BindingSource source;
         public frmAdminFeedbacks()
         {
@@ -24,33 +25,32 @@ namespace EnrollmentSystemApp
 
         private void frmAdminFeedbacks_Load(object sender, EventArgs e)
         {
-            var context = new EnrollmentSystemContext();
-            var course = context.Courses.ToList();
-            cbCourse.DisplayMember = "CourseName";
-            cbCourse.ValueMember = "CourseId";
-            cbCourse.DataSource = course;
-            LoadFeedbackList();
+            LoadCourseList();
         }
 
-        public void LoadFeedbackList()
+        public void LoadCourseList()
         {
-            var feedbacks = feedbackRepository.GetAllFeedback();
-            var list = (from c in feedbacks
+            var courses = courseRepository.GetCourses();
+            var list = (from c in courses
                         select new
                         {
-                            FeedbackID = c.FeedbackId,
-                            CourseId = c.Course.CourseName,
-                            StudentId = c.Student.UserName,
-                            FeedbackContent = c.FeedbackContent
+                            ID = c.CourseId,
+                            CourseName = c.CourseName,
+                            Subject = c.Subject.SubjectName,
+                            Lecturer = c.Lecturer.UserName,
+                            StudentQuantity = c.StudentQuantity,
+                            StartDate = c.StartDate,
+                            EndDate = c.EndDate,
+                            Status = c.Status.StatusName
                         }).ToList();
             try
             {
                 source = new BindingSource();
                 source.DataSource = list;
 
-                txtUserID.DataBindings.Clear();
+                txtCourseID.DataBindings.Clear();
 
-                txtUserID.DataBindings.Add("Text", source, "FeedbackID");
+                txtCourseID.DataBindings.Add("Text", source, "ID");
 
                 dgvFeedbacks.DataSource = null;
                 dgvFeedbacks.DataSource = source;
@@ -58,62 +58,99 @@ namespace EnrollmentSystemApp
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, "Load feedback list");
+                MessageBox.Show(ex.Message, "Load course list");
             }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int feedbackID = int.Parse(txtUserID.Text);
-                if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    feedbackRepository.RemoveFeedback(feedbackID);
-                    LoadFeedbackList();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Delete Student");
-            }
-        }
-
-        private void cbCourse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int course = (int)cbCourse.SelectedValue;
-            LoadFeedbackByCourse(course);
         }
 
         public void LoadFeedbackByCourse(int courseID)
         {
-            var feedbacks = feedbackRepository.GetFeedbachByCourse(courseID);
-            var list = (from c in feedbacks
-                        select new
-                        {
-                            FeedbackID = c.FeedbackId,
-                            //CourseId = c.Course.CourseName,
-                            CourseID = c.CourseId,
-                            //StudentId = c.Student.UserName,
-                            StudentID = c.StudentId,
-                            FeedbackContent = c.FeedbackContent
-                        }).ToList();
             try
             {
-                source = new BindingSource();
-                source.DataSource = list;
+                var feedbacks = feedbackRepository.GetFeedbachByCourse(courseID);
+                if(feedbacks != null)
+                {
+                    var list = (from c in feedbacks
+                                select new
+                                {
+                                    FeedbackID = c.FeedbackId,
+                                    CourseId = c.Course.CourseName,
+                                    StudentId = c.Student.UserName,
+                                    FeedbackContent = c.FeedbackContent
+                                }).ToList();
+                    source = new BindingSource();
+                    source.DataSource = list;
 
-                txtUserID.DataBindings.Clear();
+                    txtCourseID.DataBindings.Clear();
 
-                txtUserID.DataBindings.Add("Text", source, "FeedbackID");
+                    txtCourseID.DataBindings.Add("Text", source, "FeedbackID");
 
-                dgvFeedbacks.DataSource = null;
-                dgvFeedbacks.DataSource = source;
+                    dgvFeedbacks.DataSource = null;
+                    dgvFeedbacks.DataSource = source;
+                }
+                else
+                {
+                    MessageBox.Show("This course has no feedback", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadCourseList();
+                }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Load feedback list");
+            }
+        }
+
+        private void btnViewFeedback_Click(object sender, EventArgs e)
+        {
+            if (btnViewFeedback.Text == "Back")
+            {
+                LoadCourseList();
+                btnViewFeedback.Text = "View Feedbacks";
+                lbCourse.Text = "Courses";
+            }
+            else
+            {
+                int course = int.Parse(txtCourseID.Text);
+                LoadFeedbackByCourse(course);
+                btnViewFeedback.Text = "Back";
+                lbCourse.Text = "Feedbacks";
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (btnViewFeedback.Text == "View Feedbacks")
+            {
+                var listSearch = courseRepository.GetCourses().Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
+                try
+                {
+                    var list = (from c in listSearch
+                                select new
+                                {
+                                    ID = c.CourseId,
+                                    CourseName = c.CourseName,
+                                    Subject = c.Subject.SubjectName,
+                                    Lecturer = c.Lecturer.UserName,
+                                    StudentQuantity = c.StudentQuantity,
+                                    StartDate = c.StartDate,
+                                    EndDate = c.EndDate,
+                                    Status = c.Status.StatusName
+                                }).ToList();
+                    source = new BindingSource();
+                    source.DataSource = list;
+
+
+                    txtCourseID.DataBindings.Clear();
+
+                    txtCourseID.DataBindings.Add("Text", source, "ID");
+
+                    dgvFeedbacks.DataSource = null;
+                    dgvFeedbacks.DataSource = source;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Load course list");
+                }
             }
         }
     }

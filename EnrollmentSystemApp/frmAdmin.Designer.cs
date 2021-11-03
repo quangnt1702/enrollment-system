@@ -43,6 +43,7 @@ namespace EnrollmentSystemApp
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.btnSubject = new FontAwesome.Sharp.IconButton();
             this.pnMenu.SuspendLayout();
             this.pnLogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,6 +53,7 @@ namespace EnrollmentSystemApp
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.pnMenu.Controls.Add(this.pnlNav);
+            this.pnMenu.Controls.Add(this.btnSubject);
             this.pnMenu.Controls.Add(this.btnLogout);
             this.pnMenu.Controls.Add(this.btnFeedbacks);
             this.pnMenu.Controls.Add(this.btnLecturers);
@@ -69,7 +71,7 @@ namespace EnrollmentSystemApp
             this.pnlNav.BackColor = System.Drawing.Color.SteelBlue;
             this.pnlNav.Location = new System.Drawing.Point(3, 188);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(10, 290);
+            this.pnlNav.Size = new System.Drawing.Size(10, 364);
             this.pnlNav.TabIndex = 6;
             // 
             // btnLogout
@@ -268,6 +270,28 @@ namespace EnrollmentSystemApp
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnSubject
+            // 
+            this.btnSubject.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubject.FlatAppearance.BorderSize = 0;
+            this.btnSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubject.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSubject.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSubject.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.btnSubject.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnSubject.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSubject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubject.Location = new System.Drawing.Point(0, 478);
+            this.btnSubject.Name = "btnSubject";
+            this.btnSubject.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnSubject.Size = new System.Drawing.Size(196, 74);
+            this.btnSubject.TabIndex = 7;
+            this.btnSubject.Text = "Subjects";
+            this.btnSubject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSubject.UseVisualStyleBackColor = true;
+            this.btnSubject.Click += new System.EventHandler(this.btnSubject_Click);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -305,5 +329,6 @@ namespace EnrollmentSystemApp
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnSubject;
     }
 }

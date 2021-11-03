@@ -10,5 +10,7 @@ namespace DataAccess.Repository
     public interface ISubjectRepository
     {
         IEnumerable<Subject> GetSubjects();
+        int GetNumberCourseBySubject(int subjectId);
+        void AddSubject(Subject subject);
     }
 }
