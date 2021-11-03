@@ -64,7 +64,7 @@ namespace EnrollmentSystemApp
                         MessageBox.Show("Password and confirm password are not matched", "Change password");
                     }
                 }
-                
+
 
             }
             catch (Exception ex)
@@ -79,6 +79,8 @@ namespace EnrollmentSystemApp
             txtUserName.Text = LoginUser.UserName;
             txtEmail.Text = LoginUser.Email;
             txtPhone.Text = LoginUser.Phone;
+            txtNewPassword.Text = "";
+            txtConfirmPassword.Text = "";
         }
         private void frmStudentProfile_Load(object sender, EventArgs e)
         {

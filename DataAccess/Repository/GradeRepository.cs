@@ -12,5 +12,7 @@ namespace DataAccess.Repository
         public IEnumerable<Grade> GetGradeOfStudent(string studentId, int courseId) => GradeDAO.Instance.GetGradeOfStudent(studentId, courseId);
 
         public void InsertGrade(Grade grade) => GradeDAO.Instance.AddNew(grade);
+        public IEnumerable<Grade> GetGradesList() => GradeDAO.Instance.GetGradesList();
+
     }
 }

@@ -20,7 +20,7 @@ namespace DataAccess
             {
                 lock (instanceLock)
                 {
-                    if (instance==null)
+                    if (instance == null)
                     {
                         instance = new GradeDAO();
                     }
@@ -41,7 +41,7 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
-        public IEnumerable<Grade> GetGradeOfStudent(string studentId,int courseId)
+        public IEnumerable<Grade> GetGradeOfStudent(string studentId, int courseId)
         {
             var grade = new List<Grade>();
             try
@@ -61,6 +61,19 @@ namespace DataAccess
             }
             return grade;
         }
-
+        public IEnumerable<Grade> GetGradesList()
+        {
+            var grade = new List<Grade>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                grade = context.Grades.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return grade;
+        }
     }
 }

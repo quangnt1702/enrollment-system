@@ -30,6 +30,15 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSubject = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtLecturer = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCourseName = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cboStatus = new System.Windows.Forms.ComboBox();
@@ -55,6 +64,15 @@ namespace EnrollmentSystemApp
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.txtSubject);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.txtLecturer);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.txtCourseName);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cboStatus);
@@ -75,6 +93,85 @@ namespace EnrollmentSystemApp
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1090, 205);
             this.panel2.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(852, 148);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "Quantity";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(664, 152);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Status";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(655, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 20);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "Subject";
+            // 
+            // txtSubject
+            // 
+            this.txtSubject.Enabled = false;
+            this.txtSubject.Location = new System.Drawing.Point(759, 100);
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Size = new System.Drawing.Size(263, 27);
+            this.txtSubject.TabIndex = 53;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(655, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 20);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Lecturer";
+            // 
+            // txtLecturer
+            // 
+            this.txtLecturer.Enabled = false;
+            this.txtLecturer.Location = new System.Drawing.Point(759, 56);
+            this.txtLecturer.Name = "txtLecturer";
+            this.txtLecturer.Size = new System.Drawing.Size(263, 27);
+            this.txtLecturer.TabIndex = 51;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(655, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 20);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Course Name";
+            // 
+            // txtCourseName
+            // 
+            this.txtCourseName.Enabled = false;
+            this.txtCourseName.Location = new System.Drawing.Point(759, 18);
+            this.txtCourseName.Name = "txtCourseName";
+            this.txtCourseName.Size = new System.Drawing.Size(263, 27);
+            this.txtCourseName.TabIndex = 49;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(270, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 29);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "View all courses\r\n";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -105,9 +202,10 @@ namespace EnrollmentSystemApp
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(942, 9);
+            this.txtQuantity.Enabled = false;
+            this.txtQuantity.Location = new System.Drawing.Point(923, 145);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(81, 27);
+            this.txtQuantity.Size = new System.Drawing.Size(99, 27);
             this.txtQuantity.TabIndex = 28;
             // 
             // label9
@@ -121,7 +219,8 @@ namespace EnrollmentSystemApp
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(849, 9);
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Location = new System.Drawing.Point(759, 145);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(87, 27);
             this.txtStatus.TabIndex = 27;
@@ -177,7 +276,7 @@ namespace EnrollmentSystemApp
             // 
             // txtCourseId
             // 
-            this.txtCourseId.Location = new System.Drawing.Point(746, 9);
+            this.txtCourseId.Location = new System.Drawing.Point(174, 18);
             this.txtCourseId.Name = "txtCourseId";
             this.txtCourseId.Size = new System.Drawing.Size(97, 27);
             this.txtCourseId.TabIndex = 14;
@@ -192,7 +291,7 @@ namespace EnrollmentSystemApp
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "  Search course";
-            this.txtSearch.Size = new System.Drawing.Size(173, 28);
+            this.txtSearch.Size = new System.Drawing.Size(273, 28);
             this.txtSearch.TabIndex = 5;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -219,7 +318,7 @@ namespace EnrollmentSystemApp
             this.cboSubject.FormattingEnabled = true;
             this.cboSubject.Location = new System.Drawing.Point(152, 128);
             this.cboSubject.Name = "cboSubject";
-            this.cboSubject.Size = new System.Drawing.Size(173, 28);
+            this.cboSubject.Size = new System.Drawing.Size(273, 28);
             this.cboSubject.TabIndex = 11;
             this.cboSubject.SelectionChangeCommitted += new System.EventHandler(this.cboSubject_SelectedIndexChanged);
             // 
@@ -285,5 +384,14 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtCourseName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSubject;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtLecturer;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
     }
 }

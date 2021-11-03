@@ -42,7 +42,6 @@ namespace EnrollmentSystemApp
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtCourseId = new System.Windows.Forms.TextBox();
             this.btnGiveFeedback = new FontAwesome.Sharp.IconButton();
@@ -76,7 +75,6 @@ namespace EnrollmentSystemApp
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtQuantity);
             this.panel2.Controls.Add(this.txtStatus);
             this.panel2.Controls.Add(this.txtCourseId);
             this.panel2.Controls.Add(this.btnGiveFeedback);
@@ -198,14 +196,6 @@ namespace EnrollmentSystemApp
             this.label3.Size = new System.Drawing.Size(98, 20);
             this.label3.TabIndex = 32;
             this.label3.Text = "Course Name";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(374, 9);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(50, 27);
-            this.txtQuantity.TabIndex = 31;
-            this.txtQuantity.Visible = false;
             // 
             // txtStatus
             // 
@@ -393,7 +383,6 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnViewGradeList;
         private FontAwesome.Sharp.IconButton btnGiveFeedback;
-        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtCourseId;
         private System.Windows.Forms.Label label5;

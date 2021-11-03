@@ -10,6 +10,7 @@ namespace DataAccess.Repository
     public interface IGradeRepository
     {
         void InsertGrade(Grade grade);
+        IEnumerable<Grade> GetGradesList();
         IEnumerable<Grade> GetGradeOfStudent(string studentId, int courseId);
     }
 }
