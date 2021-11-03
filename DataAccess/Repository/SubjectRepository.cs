@@ -9,9 +9,10 @@ namespace DataAccess.Repository
 {
     public class SubjectRepository : ISubjectRepository
     {
-        public IEnumerable<Subject> GetSubjects()
-        {
-            return SubjectDAO.Instance.GetSubjectList();
-        }
+        public void AddSubject(Subject subject) => SubjectDAO.Instance.AddSubject(subject);
+
+        public int GetNumberCourseBySubject(int subjectId) => SubjectDAO.Instance.GetNumberCourseBySubject(subjectId);
+
+        public IEnumerable<Subject> GetSubjects() => SubjectDAO.Instance.GetSubjectList();
     }
 }

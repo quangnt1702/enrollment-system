@@ -30,13 +30,13 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnViewFeedback = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.txtUserID = new System.Windows.Forms.TextBox();
+            this.txtCourseID = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cbCourse = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvFeedbacks = new System.Windows.Forms.DataGridView();
+            this.lbCourse = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeedbacks)).BeginInit();
@@ -44,25 +44,25 @@ namespace EnrollmentSystemApp
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.lbCourse);
+            this.panel2.Controls.Add(this.btnViewFeedback);
             this.panel2.Controls.Add(this.lbTitle);
-            this.panel2.Controls.Add(this.txtUserID);
+            this.panel2.Controls.Add(this.txtCourseID);
             this.panel2.Controls.Add(this.txtSearch);
-            this.panel2.Controls.Add(this.cbCourse);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 205);
             this.panel2.TabIndex = 18;
             // 
-            // btnDelete
+            // btnViewFeedback
             // 
-            this.btnDelete.Location = new System.Drawing.Point(948, 173);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(144, 29);
-            this.btnDelete.TabIndex = 37;
-            this.btnDelete.Text = "Delete Feedback";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnViewFeedback.Location = new System.Drawing.Point(948, 173);
+            this.btnViewFeedback.Name = "btnViewFeedback";
+            this.btnViewFeedback.Size = new System.Drawing.Size(144, 29);
+            this.btnViewFeedback.TabIndex = 38;
+            this.btnViewFeedback.Text = "View Feedbacks";
+            this.btnViewFeedback.UseVisualStyleBackColor = true;
+            this.btnViewFeedback.Click += new System.EventHandler(this.btnViewFeedback_Click);
             // 
             // lbTitle
             // 
@@ -75,12 +75,12 @@ namespace EnrollmentSystemApp
             this.lbTitle.TabIndex = 4;
             this.lbTitle.Text = "Feedbacks";
             // 
-            // txtUserID
+            // txtCourseID
             // 
-            this.txtUserID.Location = new System.Drawing.Point(551, 101);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(24, 27);
-            this.txtUserID.TabIndex = 14;
+            this.txtCourseID.Location = new System.Drawing.Point(610, 54);
+            this.txtCourseID.Name = "txtCourseID";
+            this.txtCourseID.Size = new System.Drawing.Size(24, 27);
+            this.txtCourseID.TabIndex = 14;
             // 
             // txtSearch
             // 
@@ -94,15 +94,7 @@ namespace EnrollmentSystemApp
             this.txtSearch.PlaceholderText = "Search course";
             this.txtSearch.Size = new System.Drawing.Size(422, 27);
             this.txtSearch.TabIndex = 5;
-            // 
-            // cbCourse
-            // 
-            this.cbCourse.FormattingEnabled = true;
-            this.cbCourse.Location = new System.Drawing.Point(3, 145);
-            this.cbCourse.Name = "cbCourse";
-            this.cbCourse.Size = new System.Drawing.Size(250, 28);
-            this.cbCourse.TabIndex = 11;
-            this.cbCourse.SelectedIndexChanged += new System.EventHandler(this.cbCourse_SelectedIndexChanged);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // panel1
             // 
@@ -122,6 +114,15 @@ namespace EnrollmentSystemApp
             this.dgvFeedbacks.RowTemplate.Height = 29;
             this.dgvFeedbacks.Size = new System.Drawing.Size(1089, 533);
             this.dgvFeedbacks.TabIndex = 0;
+            // 
+            // lbCourse
+            // 
+            this.lbCourse.AutoSize = true;
+            this.lbCourse.Location = new System.Drawing.Point(13, 177);
+            this.lbCourse.Name = "lbCourse";
+            this.lbCourse.Size = new System.Drawing.Size(60, 20);
+            this.lbCourse.TabIndex = 39;
+            this.lbCourse.Text = "Courses";
             // 
             // frmAdminFeedbacks
             // 
@@ -148,11 +149,11 @@ namespace EnrollmentSystemApp
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.TextBox txtCourseID;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ComboBox cbCourse;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvFeedbacks;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnViewFeedback;
+        private System.Windows.Forms.Label lbCourse;
     }
 }

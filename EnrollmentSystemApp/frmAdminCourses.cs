@@ -17,6 +17,7 @@ namespace EnrollmentSystemApp
     {
         public User LoginUser { get; set; }
         ICourseRepository courseRepository = new CourseRepository();
+        ISubjectRepository subjectRepository = new SubjectRepository();
         BindingSource source;
         public frmAdminCourses()
         {
@@ -25,12 +26,18 @@ namespace EnrollmentSystemApp
 
         private void frmAdminCourses_Load(object sender, EventArgs e)
         {
-            var context = new EnrollmentSystemContext();
-            var subject = context.Subjects.ToList();
+            LoadSubjectList();
+            LoadCourseList();
+        }
+
+        public void LoadSubjectList()
+        {
+            var subjectList = subjectRepository.GetSubjects();
             cbbSubject.DisplayMember = "SubjectName";
             cbbSubject.ValueMember = "SubjectId";
-            cbbSubject.DataSource = subject;
-            LoadCourseList();
+            cbbSubject.DataSource = subjectList;
+            cbbSubject.SelectedItem = null;
+            cbbSubject.SelectedText = "---Subject---";
         }
 
         public void LoadCourseList()
@@ -69,6 +76,7 @@ namespace EnrollmentSystemApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            LoadSubjectList();
             frmAdminCourseDetails frmAdminCourseDetails = new frmAdminCourseDetails
             {
                 Text = "Create New Course",
@@ -84,6 +92,9 @@ namespace EnrollmentSystemApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            LoadSubjectList();
             int courseID = int.Parse(txtCourseID.Text);
             Course couse = courseRepository.GetCourseByID(courseID);
             if (LoginUser.RoleId == 1)
@@ -112,6 +123,9 @@ namespace EnrollmentSystemApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            LoadSubjectList();
             try
             {
                 int courseID = int.Parse(txtCourseID.Text);
@@ -129,21 +143,33 @@ namespace EnrollmentSystemApp
 
         private void btnAllCourses_Click(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            LoadSubjectList();
             LoadCourseList();
         }
 
         private void btnReady_Click(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            LoadSubjectList();
             LoadCourseByID(3);
         }
 
         private void btnStarting_Click(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            LoadSubjectList();
             LoadCourseByID(1);
         }
 
         private void btnEnding_Click(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            LoadSubjectList();
             LoadCourseByID(2);
         }
 
@@ -184,20 +210,21 @@ namespace EnrollmentSystemApp
         public void LoadCourseBySubject(int subjectID)
         {
             var courses = courseRepository.GetCourseBySubject(subjectID);
-            var list = (from c in courses
-                        select new
-                        {
-                            CourseID = c.CourseId,
-                            CourseName = c.CourseName,
-                            SubjectID = c.Subject.SubjectName,
-                            LecturerID = c.Lecturer.UserName,
-                            StudentQuantity = c.StudentQuantity,
-                            StartDate = c.StartDate,
-                            EndDate = c.EndDate,
-                            StatusID = c.Status.StatusName
-                        }).ToList();
             try
             {
+                var list = (from c in courses
+                            select new
+                            {
+                                CourseID = c.CourseId,
+                                CourseName = c.CourseName,
+                                SubjectID = c.Subject.SubjectName,
+                                LecturerID = c.Lecturer.UserName,
+                                StudentQuantity = c.StudentQuantity,
+                                StartDate = c.StartDate,
+                                EndDate = c.EndDate,
+                                StatusID = c.Status.StatusName
+                            }).ToList();
+
                 source = new BindingSource();
                 source.DataSource = list;
 
@@ -217,12 +244,20 @@ namespace EnrollmentSystemApp
 
         private void cbbSubject_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int subject = (int)cbbSubject.SelectedValue;
-            LoadCourseBySubject(subject);
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            if (cbbSubject.SelectedValue != null)
+            {
+                int subject = (int)cbbSubject.SelectedValue;
+                LoadCourseBySubject(subject);
+            }
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            
+            cbbSubject.Text = "---Subject---";
+            txtSearch.Text = "";
             var listFilter = courseRepository.GetCourses().Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
             try
             {
@@ -256,6 +291,9 @@ namespace EnrollmentSystemApp
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+            LoadSubjectList();
             var listSearch = courseRepository.GetCourses().Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             try
             {

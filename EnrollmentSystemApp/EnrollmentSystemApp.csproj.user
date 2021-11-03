@@ -25,6 +25,9 @@
     <Compile Update="frmAdminStudents.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmAdminSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmLecturer.cs">
       <SubType>Form</SubType>
     </Compile>

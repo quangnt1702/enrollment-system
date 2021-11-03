@@ -130,5 +130,18 @@ namespace EnrollmentSystemApp
         {
             Close();
         }
+
+        private void btnSubject_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnFeedbacks.Height;
+            pnlNav.Top = btnFeedbacks.Top;
+            pnlNav.Left = btnFeedbacks.Left;
+
+            this.pnlFormLoader.Controls.Clear();
+            frmAdminSubject frmAdminSubject = new frmAdminSubject() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmAdminSubject.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmAdminSubject);
+            frmAdminSubject.Show();
+        }
     }
 }

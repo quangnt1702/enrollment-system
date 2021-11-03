@@ -40,6 +40,16 @@ namespace EnrollmentSystemApp
 
         public bool CheckData()
         {
+            var lecturerList = UserRepository.GetUserList();
+            foreach (var l in lecturerList)
+            {
+                if(txtEmail.Text == l.Email)
+                {
+                    MessageBox.Show("Email is already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEmail.Focus();
+                    return false;
+                }
+            }
             if (string.IsNullOrWhiteSpace(txtLecturerID.Text))
             {
                 MessageBox.Show("Lecturer ID is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
