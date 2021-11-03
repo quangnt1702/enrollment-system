@@ -42,6 +42,7 @@ namespace EnrollmentSystemApp
 
             this.pnlFormLoader.Controls.Clear();
             frmLecturerCourses frmLecturerCourses = new frmLecturerCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmLecturerCourses.LoginUser = LoginUser;
             frmLecturerCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmLecturerCourses);
             frmLecturerCourses.Show();
@@ -56,6 +57,7 @@ namespace EnrollmentSystemApp
 
             this.pnlFormLoader.Controls.Clear();
             frmLecturerCourses frmLecturerCourses = new frmLecturerCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmLecturerCourses.LoginUser = LoginUser;
             frmLecturerCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmLecturerCourses);
             frmLecturerCourses.Show();
@@ -70,6 +72,7 @@ namespace EnrollmentSystemApp
 
             this.pnlFormLoader.Controls.Clear();
             frmLecturerProfile frmLecturerProfile = new frmLecturerProfile() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmLecturerProfile.LoginUser = LoginUser;            
             frmLecturerProfile.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmLecturerProfile);
             frmLecturerProfile.Show();
