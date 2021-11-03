@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess.Models;
+using DataAccess.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,16 @@ namespace EnrollmentSystemApp
 {
     public partial class frmLecturerGrades : Form
     {
+        
         public frmLecturerGrades()
         {
             InitializeComponent();
         }
+        BindingSource source;
+        IUserRepository userRepository = new UserRepository();
+        ICourseRepository courseRepository = new CourseRepository();
+        public User UserInfo { get; set; }
+
+        
     }
 }
