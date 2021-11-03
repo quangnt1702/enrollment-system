@@ -20,14 +20,6 @@ namespace EnrollmentSystemApp
         {
             InitializeComponent();
         }
-        public void ClearSearch()
-        {
-            dtpFrom.Value = DateTime.Now;
-            dtpTo.Value = DateTime.Now;
-            cboStatus.SelectedIndex = 0;
-            cboSubject.SelectedIndex = 0;
-            txtSearch.Text = "";
-        }
         public void LoadCourseList()
         {
             var courseList = courseRepository.GetCourses();
@@ -43,7 +35,7 @@ namespace EnrollmentSystemApp
                                 Quantity = c.StudentQuantity,
                                 StartDate = c.StartDate,
                                 EndDate = c.EndDate,
-                                Status = c.Status.StatusName
+                                Status = c.Status.StatusName,
                             }).ToList();
                 source = new BindingSource();
                 source.DataSource = list;
@@ -51,10 +43,16 @@ namespace EnrollmentSystemApp
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -71,6 +69,8 @@ namespace EnrollmentSystemApp
             cboSubject.DataSource = subjectList;
             cboSubject.DisplayMember = "SubjectName";
             cboSubject.ValueMember = "SubjectId";
+            cboSubject.SelectedItem = null;
+            cboSubject.SelectedText = "---Subject---";
         }
         public void LoadStatusCourseList()
         {
@@ -78,12 +78,15 @@ namespace EnrollmentSystemApp
             cboStatus.DataSource = statusCourseList;
             cboStatus.DisplayMember = "StatusName";
             cboStatus.ValueMember = "StatusId";
+            cboStatus.SelectedItem = null;
+            cboStatus.SelectedText = "---Status---";
         }
         private void frmStudentCourses_Load(object sender, EventArgs e)
         {
             LoadCourseList();
             LoadSubjectList();
             LoadStatusCourseList();
+            txtCourseId.Hide();
         }
 
         private void btnEnroll_Click(object sender, EventArgs e)
@@ -101,19 +104,41 @@ namespace EnrollmentSystemApp
             {
                 MessageBox.Show("The course was ended!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (!checkEnroll())
+            {
+                MessageBox.Show("You have enrolled into this course!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 IGradeRepository gradeRepository = new GradeRepository();
-                gradeRepository.InsertGrade(new Grade { StudentId = "student1", CourseId = int.Parse(txtCourseId.Text) });
+                gradeRepository.InsertGrade(new Grade { StudentId = LoginUser.UserId, CourseId = int.Parse(txtCourseId.Text) });
                 MessageBox.Show("Enroll successfully!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
-
+        public bool checkEnroll()
+        {
+            bool check = false;
+            string userID = LoginUser.UserId;
+            string courseName = txtCourseName.Text;
+            IGradeRepository gradeRepository = new GradeRepository();
+            var gradeList = gradeRepository.GetGradesList();
+            var courseList = courseRepository.GetCourses();
+            var listEnrolled = (from g in gradeList
+                                join c in courseList on g.CourseId equals c.CourseId
+                                where c.CourseName == courseName && g.StudentId == userID && (c.StatusId == 1 || c.StatusId == 3)
+                                select g
+                              ).ToList();
+            if (listEnrolled.Count == 0)
+            {
+                return true;
+            }
+            return check;
+        }
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            cboStatus.SelectedIndex = 0;
-            cboSubject.SelectedIndex = 0;
+            cboStatus.Text = "---Status---";
+            cboSubject.Text = "---Subject---";
             txtSearch.Text = "";
             var listFilter = courseRepository.GetCourses().Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
             try
@@ -136,10 +161,17 @@ namespace EnrollmentSystemApp
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
+
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -154,8 +186,8 @@ namespace EnrollmentSystemApp
         {
             dtpFrom.Value = DateTime.Now;
             dtpTo.Value = DateTime.Now;
-            cboStatus.SelectedIndex = 0;
-            cboSubject.SelectedIndex = 0;
+            cboStatus.Text = "---Status---";
+            cboSubject.Text = "---Subject---";
             var listSearch = courseRepository.GetCourses().Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             try
             {
@@ -178,10 +210,17 @@ namespace EnrollmentSystemApp
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
+
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -196,7 +235,7 @@ namespace EnrollmentSystemApp
         {
             dtpFrom.Value = DateTime.Now;
             dtpTo.Value = DateTime.Now;
-            cboStatus.SelectedIndex = 0;
+            cboStatus.Text = "---Status---";
             txtSearch.Text = "";
             try
             {
@@ -221,10 +260,17 @@ namespace EnrollmentSystemApp
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
+
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -239,7 +285,7 @@ namespace EnrollmentSystemApp
         {
             dtpFrom.Value = DateTime.Now;
             dtpTo.Value = DateTime.Now;
-            cboSubject.SelectedIndex = 0;
+            cboSubject.Text = "---Subject---";
             txtSearch.Text = "";
             try
             {
@@ -260,14 +306,20 @@ namespace EnrollmentSystemApp
                 source = new BindingSource();
                 source.DataSource = list;
 
-
                 txtCourseId.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
                 txtQuantity.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
+
 
                 txtCourseId.DataBindings.Add("Text", source, "ID");
                 txtStatus.DataBindings.Add("Text", source, "Status");
                 txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
 
                 dgvCourseList.DataSource = null;
                 dgvCourseList.DataSource = source;
@@ -277,5 +329,13 @@ namespace EnrollmentSystemApp
                 MessageBox.Show(ex.Message, "Filter course by status");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadCourseList();
+            LoadSubjectList();
+            LoadStatusCourseList();
+        }
+
     }
 }
