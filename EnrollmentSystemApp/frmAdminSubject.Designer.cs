@@ -52,6 +52,7 @@ namespace EnrollmentSystemApp
             // 
             // dgvSubject
             // 
+            this.dgvSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSubject.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgvSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubject.Location = new System.Drawing.Point(3, 3);
@@ -75,20 +76,26 @@ namespace EnrollmentSystemApp
             // 
             // txtSubjectName
             // 
+            this.txtSubjectName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSubjectName.Location = new System.Drawing.Point(456, 85);
             this.txtSubjectName.Name = "txtSubjectName";
             this.txtSubjectName.PlaceholderText = "Create  subject";
-            this.txtSubjectName.Size = new System.Drawing.Size(173, 27);
+            this.txtSubjectName.Size = new System.Drawing.Size(173, 34);
             this.txtSubjectName.TabIndex = 27;
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.LightGray;
+            this.btnAdd.FlatAppearance.BorderSize = 2;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnAdd.Location = new System.Drawing.Point(432, 134);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(222, 68);
             this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "Create New Subject";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbTitle

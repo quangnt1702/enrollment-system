@@ -25,6 +25,7 @@ namespace EnrollmentSystemApp
         private void frmAdminLecturers_Load(object sender, EventArgs e)
         {
             LoadLecturerList();
+            txtUserID.Hide();
         }
 
         public void LoadLecturerList()

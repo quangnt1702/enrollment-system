@@ -97,34 +97,38 @@ namespace EnrollmentSystemApp
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(852, 148);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(860, 141);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.Size = new System.Drawing.Size(88, 28);
             this.label10.TabIndex = 57;
             this.label10.Text = "Quantity";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(664, 152);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(655, 141);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.Size = new System.Drawing.Size(65, 28);
             this.label6.TabIndex = 56;
             this.label6.Text = "Status";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(655, 103);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(655, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 20);
+            this.label5.Size = new System.Drawing.Size(77, 28);
             this.label5.TabIndex = 54;
             this.label5.Text = "Subject";
             // 
             // txtSubject
             // 
             this.txtSubject.Enabled = false;
-            this.txtSubject.Location = new System.Drawing.Point(759, 100);
+            this.txtSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtSubject.Location = new System.Drawing.Point(790, 100);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(263, 27);
             this.txtSubject.TabIndex = 53;
@@ -132,16 +136,18 @@ namespace EnrollmentSystemApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(655, 59);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(655, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 20);
+            this.label4.Size = new System.Drawing.Size(82, 28);
             this.label4.TabIndex = 52;
             this.label4.Text = "Lecturer";
             // 
             // txtLecturer
             // 
             this.txtLecturer.Enabled = false;
-            this.txtLecturer.Location = new System.Drawing.Point(759, 56);
+            this.txtLecturer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtLecturer.Location = new System.Drawing.Point(790, 59);
             this.txtLecturer.Name = "txtLecturer";
             this.txtLecturer.Size = new System.Drawing.Size(263, 27);
             this.txtLecturer.TabIndex = 51;
@@ -149,52 +155,61 @@ namespace EnrollmentSystemApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(655, 21);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(655, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 20);
+            this.label3.Size = new System.Drawing.Size(129, 28);
             this.label3.TabIndex = 50;
             this.label3.Text = "Course Name";
             // 
             // txtCourseName
             // 
             this.txtCourseName.Enabled = false;
-            this.txtCourseName.Location = new System.Drawing.Point(759, 18);
+            this.txtCourseName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtCourseName.Location = new System.Drawing.Point(790, 18);
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(263, 27);
             this.txtCourseName.TabIndex = 49;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(270, 164);
+            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.button1.Location = new System.Drawing.Point(290, 161);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 29);
+            this.button1.Size = new System.Drawing.Size(155, 40);
             this.button1.TabIndex = 48;
             this.button1.Text = "View all courses\r\n";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 130);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(13, 130);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 20);
+            this.label8.Size = new System.Drawing.Size(152, 28);
             this.label8.TabIndex = 47;
             this.label8.Text = "Filter By Subject";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 91);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(13, 89);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 20);
+            this.label7.Size = new System.Drawing.Size(153, 28);
             this.label7.TabIndex = 46;
             this.label7.Text = "Search By Name";
             // 
             // cboStatus
             // 
             this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(152, 164);
+            this.cboStatus.Location = new System.Drawing.Point(172, 164);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(112, 28);
             this.cboStatus.TabIndex = 45;
@@ -203,7 +218,8 @@ namespace EnrollmentSystemApp
             // txtQuantity
             // 
             this.txtQuantity.Enabled = false;
-            this.txtQuantity.Location = new System.Drawing.Point(923, 145);
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtQuantity.Location = new System.Drawing.Point(954, 145);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(99, 27);
             this.txtQuantity.TabIndex = 28;
@@ -211,45 +227,54 @@ namespace EnrollmentSystemApp
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 167);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(13, 164);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 20);
+            this.label9.Size = new System.Drawing.Size(140, 28);
             this.label9.TabIndex = 44;
             this.label9.Text = "Filter By Status";
             // 
             // txtStatus
             // 
             this.txtStatus.Enabled = false;
-            this.txtStatus.Location = new System.Drawing.Point(759, 145);
+            this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtStatus.Location = new System.Drawing.Point(790, 145);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(87, 27);
+            this.txtStatus.Size = new System.Drawing.Size(64, 27);
             this.txtStatus.TabIndex = 27;
             // 
             // btnEnroll
             // 
-            this.btnEnroll.Location = new System.Drawing.Point(466, 153);
+            this.btnEnroll.BackColor = System.Drawing.Color.LightGray;
+            this.btnEnroll.FlatAppearance.BorderSize = 2;
+            this.btnEnroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnroll.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEnroll.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnEnroll.Location = new System.Drawing.Point(462, 78);
             this.btnEnroll.Name = "btnEnroll";
-            this.btnEnroll.Size = new System.Drawing.Size(177, 49);
+            this.btnEnroll.Size = new System.Drawing.Size(177, 94);
             this.btnEnroll.TabIndex = 26;
             this.btnEnroll.Text = "Enroll";
-            this.btnEnroll.UseVisualStyleBackColor = true;
+            this.btnEnroll.UseVisualStyleBackColor = false;
             this.btnEnroll.Click += new System.EventHandler(this.btnEnroll_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(191, 56);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(191, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 20);
+            this.label2.Size = new System.Drawing.Size(32, 28);
             this.label2.TabIndex = 25;
             this.label2.Text = "To";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 56);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(13, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.Size = new System.Drawing.Size(58, 28);
             this.label1.TabIndex = 24;
             this.label1.Text = "From";
             // 
@@ -266,12 +291,17 @@ namespace EnrollmentSystemApp
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(331, 51);
+            this.btnFilter.BackColor = System.Drawing.Color.LightGray;
+            this.btnFilter.FlatAppearance.BorderSize = 2;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnFilter.Location = new System.Drawing.Point(338, 48);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(94, 27);
+            this.btnFilter.Size = new System.Drawing.Size(107, 31);
             this.btnFilter.TabIndex = 15;
             this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // txtCourseId
@@ -287,7 +317,7 @@ namespace EnrollmentSystemApp
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.Location = new System.Drawing.Point(152, 89);
+            this.txtSearch.Location = new System.Drawing.Point(172, 89);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "  Search course";
@@ -308,7 +338,7 @@ namespace EnrollmentSystemApp
             // 
             this.dtpTo.CustomFormat = "MM/dd/yyyy";
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(222, 51);
+            this.dtpTo.Location = new System.Drawing.Point(229, 52);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(103, 27);
             this.dtpTo.TabIndex = 9;
@@ -316,7 +346,7 @@ namespace EnrollmentSystemApp
             // cboSubject
             // 
             this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Location = new System.Drawing.Point(152, 128);
+            this.cboSubject.Location = new System.Drawing.Point(172, 130);
             this.cboSubject.Name = "cboSubject";
             this.cboSubject.Size = new System.Drawing.Size(273, 28);
             this.cboSubject.TabIndex = 11;

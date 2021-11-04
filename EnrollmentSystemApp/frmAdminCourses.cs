@@ -28,6 +28,7 @@ namespace EnrollmentSystemApp
         {
             LoadSubjectList();
             LoadCourseList();
+            txtCourseID.Hide();
         }
 
         public void LoadSubjectList()
@@ -38,6 +39,7 @@ namespace EnrollmentSystemApp
             cbbSubject.DataSource = subjectList;
             cbbSubject.SelectedItem = null;
             cbbSubject.SelectedText = "---Subject---";
+            LoadCourseList();
         }
 
         public void LoadCourseList()
@@ -94,8 +96,8 @@ namespace EnrollmentSystemApp
         {
             dtpFrom.Value = DateTime.Now;
             dtpTo.Value = DateTime.Now;
-            LoadSubjectList();
             int courseID = int.Parse(txtCourseID.Text);
+            LoadSubjectList();
             Course couse = courseRepository.GetCourseByID(courseID);
             if (LoginUser.RoleId == 1)
             {
@@ -125,14 +127,22 @@ namespace EnrollmentSystemApp
         {
             dtpFrom.Value = DateTime.Now;
             dtpTo.Value = DateTime.Now;
-            LoadSubjectList();
+            
             try
             {
-                int courseID = int.Parse(txtCourseID.Text);
-                if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (courseRepository.GetNumberStudent(int.Parse(txtCourseID.Text)) > 0)
                 {
-                    courseRepository.DeleteCourse(courseID);
-                    LoadCourseList();
+                    MessageBox.Show("The course exits students.");
+                }
+                else
+                {
+                    int courseID = int.Parse(txtCourseID.Text);
+                    if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        courseRepository.DeleteCourse(courseID);
+                        LoadSubjectList();
+                        LoadCourseList();
+                    }
                 }
             }
             catch (Exception ex)

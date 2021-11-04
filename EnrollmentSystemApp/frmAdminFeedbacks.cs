@@ -26,6 +26,7 @@ namespace EnrollmentSystemApp
         private void frmAdminFeedbacks_Load(object sender, EventArgs e)
         {
             LoadCourseList();
+            txtCourseID.Hide();
         }
 
         public void LoadCourseList()

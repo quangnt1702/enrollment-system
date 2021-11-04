@@ -30,13 +30,13 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbCourse = new System.Windows.Forms.Label();
             this.btnViewFeedback = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.txtCourseID = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvFeedbacks = new System.Windows.Forms.DataGridView();
-            this.lbCourse = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeedbacks)).BeginInit();
@@ -54,14 +54,28 @@ namespace EnrollmentSystemApp
             this.panel2.Size = new System.Drawing.Size(1095, 205);
             this.panel2.TabIndex = 18;
             // 
+            // lbCourse
+            // 
+            this.lbCourse.AutoSize = true;
+            this.lbCourse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbCourse.Location = new System.Drawing.Point(3, 174);
+            this.lbCourse.Name = "lbCourse";
+            this.lbCourse.Size = new System.Drawing.Size(80, 28);
+            this.lbCourse.TabIndex = 39;
+            this.lbCourse.Text = "Courses";
+            // 
             // btnViewFeedback
             // 
+            this.btnViewFeedback.BackColor = System.Drawing.Color.LightGray;
+            this.btnViewFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewFeedback.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewFeedback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnViewFeedback.Location = new System.Drawing.Point(948, 173);
             this.btnViewFeedback.Name = "btnViewFeedback";
             this.btnViewFeedback.Size = new System.Drawing.Size(144, 29);
             this.btnViewFeedback.TabIndex = 38;
             this.btnViewFeedback.Text = "View Feedbacks";
-            this.btnViewFeedback.UseVisualStyleBackColor = true;
+            this.btnViewFeedback.UseVisualStyleBackColor = false;
             this.btnViewFeedback.Click += new System.EventHandler(this.btnViewFeedback_Click);
             // 
             // lbTitle
@@ -114,15 +128,6 @@ namespace EnrollmentSystemApp
             this.dgvFeedbacks.RowTemplate.Height = 29;
             this.dgvFeedbacks.Size = new System.Drawing.Size(1089, 533);
             this.dgvFeedbacks.TabIndex = 0;
-            // 
-            // lbCourse
-            // 
-            this.lbCourse.AutoSize = true;
-            this.lbCourse.Location = new System.Drawing.Point(13, 177);
-            this.lbCourse.Name = "lbCourse";
-            this.lbCourse.Size = new System.Drawing.Size(60, 20);
-            this.lbCourse.TabIndex = 39;
-            this.lbCourse.Text = "Courses";
             // 
             // frmAdminFeedbacks
             // 

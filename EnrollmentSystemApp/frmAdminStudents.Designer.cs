@@ -60,32 +60,47 @@ namespace EnrollmentSystemApp
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(948, 173);
+            this.btnDelete.BackColor = System.Drawing.Color.LightGray;
+            this.btnDelete.FlatAppearance.BorderSize = 2;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnDelete.Location = new System.Drawing.Point(644, 134);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(144, 29);
+            this.btnDelete.Size = new System.Drawing.Size(164, 68);
             this.btnDelete.TabIndex = 34;
             this.btnDelete.Text = "Delete Student";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(798, 173);
+            this.btnUpdate.BackColor = System.Drawing.Color.LightGray;
+            this.btnUpdate.FlatAppearance.BorderSize = 2;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnUpdate.Location = new System.Drawing.Point(474, 134);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(144, 29);
+            this.btnUpdate.Size = new System.Drawing.Size(164, 68);
             this.btnUpdate.TabIndex = 33;
             this.btnUpdate.Text = "Update Student";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(670, 173);
+            this.btnAdd.BackColor = System.Drawing.Color.LightGray;
+            this.btnAdd.FlatAppearance.BorderSize = 2;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnAdd.Location = new System.Drawing.Point(304, 134);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(121, 29);
+            this.btnAdd.Size = new System.Drawing.Size(164, 68);
             this.btnAdd.TabIndex = 32;
             this.btnAdd.Text = "Create Student";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbTitle
@@ -101,7 +116,7 @@ namespace EnrollmentSystemApp
             // 
             // txtUserID
             // 
-            this.txtUserID.Location = new System.Drawing.Point(551, 101);
+            this.txtUserID.Location = new System.Drawing.Point(259, 165);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(24, 27);
             this.txtUserID.TabIndex = 14;
@@ -123,7 +138,7 @@ namespace EnrollmentSystemApp
             // cbCourse
             // 
             this.cbCourse.FormattingEnabled = true;
-            this.cbCourse.Location = new System.Drawing.Point(0, 173);
+            this.cbCourse.Location = new System.Drawing.Point(3, 164);
             this.cbCourse.Name = "cbCourse";
             this.cbCourse.Size = new System.Drawing.Size(250, 28);
             this.cbCourse.TabIndex = 11;

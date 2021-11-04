@@ -47,30 +47,43 @@ namespace EnrollmentSystemApp
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(35, 349);
+            this.btnSave.BackColor = System.Drawing.Color.LightGray;
+            this.btnSave.FlatAppearance.BorderSize = 2;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnSave.Location = new System.Drawing.Point(40, 411);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(101, 54);
+            this.btnSave.Size = new System.Drawing.Size(115, 64);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save Grades";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(201, 349);
+            this.btnCancel.BackColor = System.Drawing.Color.LightGray;
+            this.btnCancel.FlatAppearance.BorderSize = 2;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnCancel.Location = new System.Drawing.Point(230, 411);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(96, 54);
+            this.btnCancel.Size = new System.Drawing.Size(110, 64);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(14, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(121, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Student ID";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -78,95 +91,113 @@ namespace EnrollmentSystemApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 65);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(14, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(112, 31);
             this.label2.TabIndex = 3;
             this.label2.Text = "Course ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 103);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(14, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 17);
+            this.label3.Size = new System.Drawing.Size(148, 31);
             this.label3.TabIndex = 4;
             this.label3.Text = "Progress Test";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 156);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(14, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.Size = new System.Drawing.Size(151, 31);
             this.label4.TabIndex = 5;
             this.label4.Text = "MidTerm Test";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 213);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(14, 248);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 17);
+            this.label5.Size = new System.Drawing.Size(137, 31);
             this.label5.TabIndex = 6;
             this.label5.Text = "Pratical Text";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 260);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(14, 305);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 17);
+            this.label6.Size = new System.Drawing.Size(108, 31);
             this.label6.TabIndex = 7;
             this.label6.Text = "Final Test";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(109, 12);
+            this.txtID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtID.Location = new System.Drawing.Point(168, 13);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(203, 25);
+            this.txtID.Size = new System.Drawing.Size(204, 38);
             this.txtID.TabIndex = 8;
             // 
             // txtCourseID
             // 
-            this.txtCourseID.Location = new System.Drawing.Point(109, 62);
+            this.txtCourseID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCourseID.Location = new System.Drawing.Point(168, 76);
+            this.txtCourseID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCourseID.Name = "txtCourseID";
-            this.txtCourseID.Size = new System.Drawing.Size(203, 25);
+            this.txtCourseID.Size = new System.Drawing.Size(204, 38);
             this.txtCourseID.TabIndex = 9;
             // 
             // txtProgress
             // 
-            this.txtProgress.Location = new System.Drawing.Point(169, 103);
+            this.txtProgress.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtProgress.Location = new System.Drawing.Point(168, 121);
+            this.txtProgress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProgress.Name = "txtProgress";
-            this.txtProgress.Size = new System.Drawing.Size(63, 25);
+            this.txtProgress.Size = new System.Drawing.Size(204, 38);
             this.txtProgress.TabIndex = 10;
             // 
             // txtMidterm
             // 
-            this.txtMidterm.Location = new System.Drawing.Point(169, 153);
+            this.txtMidterm.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMidterm.Location = new System.Drawing.Point(171, 180);
+            this.txtMidterm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMidterm.Name = "txtMidterm";
-            this.txtMidterm.Size = new System.Drawing.Size(63, 25);
+            this.txtMidterm.Size = new System.Drawing.Size(201, 38);
             this.txtMidterm.TabIndex = 11;
             // 
             // txtFinal
             // 
-            this.txtFinal.Location = new System.Drawing.Point(169, 257);
+            this.txtFinal.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFinal.Location = new System.Drawing.Point(171, 302);
+            this.txtFinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(63, 25);
+            this.txtFinal.Size = new System.Drawing.Size(201, 38);
             this.txtFinal.TabIndex = 12;
             // 
             // txtPratical
             // 
-            this.txtPratical.Location = new System.Drawing.Point(169, 205);
+            this.txtPratical.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPratical.Location = new System.Drawing.Point(171, 241);
+            this.txtPratical.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPratical.Name = "txtPratical";
-            this.txtPratical.Size = new System.Drawing.Size(63, 25);
+            this.txtPratical.Size = new System.Drawing.Size(201, 38);
             this.txtPratical.TabIndex = 13;
             // 
             // frmLecturerGradesDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 450);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(411, 529);
             this.Controls.Add(this.txtPratical);
             this.Controls.Add(this.txtFinal);
             this.Controls.Add(this.txtMidterm);
@@ -181,6 +212,8 @@ namespace EnrollmentSystemApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLecturerGradesDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LecturerGradesDetails";
