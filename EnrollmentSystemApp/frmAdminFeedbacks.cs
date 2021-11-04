@@ -66,7 +66,7 @@ namespace EnrollmentSystemApp
         {
             try
             {
-                var feedbacks = feedbackRepository.GetFeedbachByCourse(courseID);
+                var feedbacks = feedbackRepository.GetFeedbackByCourse(courseID);
                 if(feedbacks != null)
                 {
                     var list = (from c in feedbacks

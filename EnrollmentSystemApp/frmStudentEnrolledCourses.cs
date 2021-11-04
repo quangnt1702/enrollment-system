@@ -17,54 +17,63 @@ namespace EnrollmentSystemApp
         ICourseRepository courseRepository = new CourseRepository();
         ISubjectRepository subjectRepository = new SubjectRepository();
         IStatusCourseRepository statusCourseRepository = new StatusCourseRepository();
+        IFeedbackRepository feedbackRepository = new FeedbackRepository();
         BindingSource source = null;
         public User LoginUser { get; set; }
         public frmStudentEnrolledCourses()
         {
             InitializeComponent();
         }
+        public void BindingData(List<Course> courseList)
+        {
+            var list = (from c in courseList
+                        select new
+                        {
+                            ID = c.CourseId,
+                            Name = c.CourseName,
+                            Subject = c.Subject.SubjectName,
+                            Lecturer = c.Lecturer.UserName,
+                            Quantity = c.StudentQuantity,
+                            StartDate = c.StartDate,
+                            EndDate = c.EndDate,
+                            Status = c.Status.StatusName,
+                            Feedback = c.Feedbacks.SingleOrDefault(f => f.StudentId == LoginUser.UserId).FeedbackContent
+                        }).ToList();
+            source = new BindingSource();
+            source.DataSource = list;
+            if (courseList.Count > 0)
+            {
+                txtCourseId.DataBindings.Clear();
+                txtStatus.DataBindings.Clear();
+                txtCourseName.DataBindings.Clear();
+                txtLecturer.DataBindings.Clear();
+                txtSubject.DataBindings.Clear();
+                txtFeedback.DataBindings.Clear();
+
+                txtCourseId.DataBindings.Add("Text", source, "ID");
+                txtStatus.DataBindings.Add("Text", source, "Status");
+                txtSubject.DataBindings.Add("Text", source, "Subject");
+                txtLecturer.DataBindings.Add("Text", source, "Lecturer");
+                txtCourseName.DataBindings.Add("Text", source, "Name");
+                txtFeedback.DataBindings.Add("Text", source, "Feedback");
+
+                btnViewGradeList.Enabled = true;
+            }
+            else
+            {
+                btnViewGradeList.Enabled = false;
+                ClearText();
+            }
+
+            dgvCourseList.DataSource = null;
+            dgvCourseList.DataSource = source;
+        }
         public void LoadEnrolledCourseList()
         {
             var courseList = courseRepository.GetCoursesByUserId(LoginUser.UserId).ToList();
             try
             {
-                var list = (from c in courseList
-                            select new
-                            {
-                                ID = c.CourseId,
-                                Name = c.CourseName,
-                                Subject = c.Subject.SubjectName,
-                                Lecturer = c.Lecturer.UserName,
-                                Quantity = c.StudentQuantity,
-                                StartDate = c.StartDate,
-                                EndDate = c.EndDate,
-                                Status = c.Status.StatusName
-                            }).ToList();
-                source = new BindingSource();
-                source.DataSource = list;
-                if (courseList.Count > 0)
-                {
-                    txtCourseId.DataBindings.Clear();
-                    txtStatus.DataBindings.Clear();
-                    txtCourseName.DataBindings.Clear();
-                    txtLecturer.DataBindings.Clear();
-                    txtSubject.DataBindings.Clear();
-
-                    txtCourseId.DataBindings.Add("Text", source, "ID");
-                    txtStatus.DataBindings.Add("Text", source, "Status");
-                    txtSubject.DataBindings.Add("Text", source, "Subject");
-                    txtLecturer.DataBindings.Add("Text", source, "Lecturer");
-                    txtCourseName.DataBindings.Add("Text", source, "Name");
-                    btnViewGradeList.Enabled = true;
-                }
-                else
-                {
-                    btnViewGradeList.Enabled = false;
-                    ClearText();
-                }
-
-                dgvCourseList.DataSource = null;
-                dgvCourseList.DataSource = source;
+                BindingData(courseList);
             }
             catch (Exception ex)
             {
@@ -105,44 +114,7 @@ namespace EnrollmentSystemApp
             var listFilter = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
             try
             {
-                var list = (from c in listFilter
-                            select new
-                            {
-                                ID = c.CourseId,
-                                Name = c.CourseName,
-                                Subject = c.Subject.SubjectName,
-                                Lecturer = c.Lecturer.UserName,
-                                Quantity = c.StudentQuantity,
-                                StartDate = c.StartDate,
-                                EndDate = c.EndDate,
-                                Status = c.Status.StatusName
-                            }).ToList();
-                source = new BindingSource();
-                source.DataSource = list;
-
-                if (listFilter.Count > 0)
-                {
-                    txtCourseId.DataBindings.Clear();
-                    txtStatus.DataBindings.Clear();
-                    txtCourseName.DataBindings.Clear();
-                    txtLecturer.DataBindings.Clear();
-                    txtSubject.DataBindings.Clear();
-
-                    txtCourseId.DataBindings.Add("Text", source, "ID");
-                    txtStatus.DataBindings.Add("Text", source, "Status");
-                    txtSubject.DataBindings.Add("Text", source, "Subject");
-                    txtLecturer.DataBindings.Add("Text", source, "Lecturer");
-                    txtCourseName.DataBindings.Add("Text", source, "Name");
-                    btnViewGradeList.Enabled = true;
-                }
-                else
-                {
-                    btnViewGradeList.Enabled = false;
-                    ClearText();
-                }
-
-                dgvCourseList.DataSource = null;
-                dgvCourseList.DataSource = source;
+                BindingData(listFilter);
             }
             catch (Exception ex)
             {
@@ -159,44 +131,7 @@ namespace EnrollmentSystemApp
             var listSearch = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             try
             {
-
-                var list = (from c in listSearch
-                            select new
-                            {
-                                ID = c.CourseId,
-                                Name = c.CourseName,
-                                Subject = c.Subject.SubjectName,
-                                Lecturer = c.Lecturer.UserName,
-                                Quantity = c.StudentQuantity,
-                                StartDate = c.StartDate,
-                                EndDate = c.EndDate,
-                                Status = c.Status.StatusName
-                            }).ToList();
-                source = new BindingSource();
-                source.DataSource = list;
-
-                if (listSearch.Count > 0)
-                {
-                    txtCourseId.DataBindings.Clear();
-                    txtStatus.DataBindings.Clear();
-                    txtCourseName.DataBindings.Clear();
-                    txtLecturer.DataBindings.Clear();
-                    txtSubject.DataBindings.Clear();
-
-                    txtCourseId.DataBindings.Add("Text", source, "ID");
-                    txtStatus.DataBindings.Add("Text", source, "Status");
-                    txtSubject.DataBindings.Add("Text", source, "Subject");
-                    txtLecturer.DataBindings.Add("Text", source, "Lecturer");
-                    txtCourseName.DataBindings.Add("Text", source, "Name");
-                    btnViewGradeList.Enabled = true;
-                }
-                else
-                {
-                    ClearText();
-                    btnViewGradeList.Enabled = false;
-                }
-                dgvCourseList.DataSource = null;
-                dgvCourseList.DataSource = source;
+                BindingData(listSearch);
             }
             catch (Exception ex)
             {
@@ -258,38 +193,7 @@ namespace EnrollmentSystemApp
             {
                 var subjectId = cboSubject.SelectedValue.ToString();
                 var listSearch = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.SubjectId == int.Parse(subjectId)).ToList();
-
-                var list = (from c in listSearch
-                            select new
-                            {
-                                ID = c.CourseId,
-                                Name = c.CourseName,
-                                Subject = c.Subject.SubjectName,
-                                Lecturer = c.Lecturer.UserName,
-                                Quantity = c.StudentQuantity,
-                                StartDate = c.StartDate.Date,
-                                EndDate = c.EndDate.Date,
-                                Status = c.Status.StatusName
-                            }).ToList();
-                source = new BindingSource();
-                source.DataSource = list;
-                if (listSearch.Count > 0)
-                {
-                    txtCourseId.DataBindings.Clear();
-                    txtStatus.DataBindings.Clear();
-
-                    txtCourseId.DataBindings.Add("Text", source, "ID");
-                    txtStatus.DataBindings.Add("Text", source, "Status");
-
-                    btnViewGradeList.Enabled = true;
-                }
-                else
-                {
-                    btnViewGradeList.Enabled = false;
-                    ClearText();
-                }
-                dgvCourseList.DataSource = null;
-                dgvCourseList.DataSource = source;
+                BindingData(listSearch);
             }
             catch (Exception ex)
             {
@@ -307,39 +211,7 @@ namespace EnrollmentSystemApp
                 txtSearch.Text = "";
                 var statusId = cboStatus.SelectedValue.ToString();
                 var listSearch = courseRepository.GetCoursesByUserId(LoginUser.UserId).Where(c => c.StatusId == int.Parse(statusId)).ToList();
-                var list = (from c in listSearch
-                            select new
-                            {
-                                ID = c.CourseId,
-                                Name = c.CourseName,
-                                Subject = c.Subject.SubjectName,
-                                Lecturer = c.Lecturer.UserName,
-                                Quantity = c.StudentQuantity,
-                                StartDate = c.StartDate.Date,
-                                EndDate = c.EndDate.Date,
-                                Status = c.Status.StatusName
-                            }).ToList();
-                source = new BindingSource();
-                source.DataSource = list;
-
-                if (listSearch.Count > 0)
-                {
-                    txtCourseId.DataBindings.Clear();
-                    txtStatus.DataBindings.Clear();
-
-                    txtCourseId.DataBindings.Add("Text", source, "ID");
-                    txtStatus.DataBindings.Add("Text", source, "Status");
-                    btnViewGradeList.Enabled = true;
-                }
-                else
-                {
-                    btnViewGradeList.Enabled = false;
-                    ClearText();
-                }
-
-
-                dgvCourseList.DataSource = null;
-                dgvCourseList.DataSource = source;
+                BindingData(listSearch);
             }
             catch (Exception ex)
             {
@@ -354,5 +226,39 @@ namespace EnrollmentSystemApp
             txtSubject.Text = "";
             txtStatus.Text = "";
         }
+
+        private void btnGiveFeedback_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string feedBackContent = txtFeedback.Text;
+                if (feedBackContent != "")
+                {
+                    if (txtStatus.Text=="Waiting")
+                    {
+                        MessageBox.Show("The course is not started! You can't give feedback", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadEnrolledCourseList();
+                    }
+                    else
+                    {
+                        Feedback feedBack = feedbackRepository.GetFeedbackByStudentAndCourse(LoginUser.UserId, int.Parse(txtCourseId.Text));
+                        feedBack.FeedbackContent = feedBackContent;
+                        feedbackRepository.UpdateFeedback(feedBack);
+                        MessageBox.Show("Give feedback success!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadEnrolledCourseList();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please input your feedback !", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Give feedback");
+            }
+        }
+
     }
 }

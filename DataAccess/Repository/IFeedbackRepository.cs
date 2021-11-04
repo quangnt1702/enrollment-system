@@ -12,8 +12,9 @@ namespace DataAccess.Repository
         IEnumerable<Feedback> GetAllFeedback();
         Feedback GetFeedbackById(int feedbackID);
         void AddFeedback(Feedback feedback);
-        void UpdateFeedbach(Feedback feedback);
+        void UpdateFeedback(Feedback feedback);
         void RemoveFeedback(int feedbackID);
-        IEnumerable<Feedback> GetFeedbachByCourse(int courseID);
+        IEnumerable<Feedback> GetFeedbackByCourse(int courseID);
+        Feedback GetFeedbackByStudentAndCourse(string studentId, int courseID);
     }
 }

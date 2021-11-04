@@ -86,7 +86,7 @@ namespace DataAccess
             }
         }
 
-        public void UpdateFeedbach(Feedback feedback)
+        public void UpdateFeedback(Feedback feedback)
         {
             try
             {
@@ -132,7 +132,7 @@ namespace DataAccess
             }
         }
 
-        public IEnumerable<Feedback> GetFeedbachByCourse(int courseID)
+        public IEnumerable<Feedback> GetFeedbackByCourse(int courseID)
         {
             var feedbackList = new List<Feedback>();
             try
@@ -150,6 +150,22 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
             return feedbackList;
+        }
+
+        public Feedback GetFeedbackByStudentAndCourse(string studentId, int courseID)
+        {
+            Feedback feedback = null;
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                feedback = context.Feedbacks.SingleOrDefault(c => c.StudentId == studentId && c.CourseId == courseID);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            return feedback;
         }
     }
 }

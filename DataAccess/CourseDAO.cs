@@ -62,6 +62,7 @@ namespace DataAccess
                     course.Subject = context.Subjects.SingleOrDefault(s => s.SubjectId == course.SubjectId);
                     course.Status = context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
                     course.Lecturer = context.Users.SingleOrDefault(s => s.UserId == course.LecturerId);
+                    course.Feedbacks = context.Feedbacks.Where(f => f.CourseId == course.CourseId).ToList();
                 }
             }
             catch (Exception ex)

@@ -13,12 +13,17 @@ namespace DataAccess.Repository
 
         public IEnumerable<Feedback> GetAllFeedback() => FeedbackDAO.Instance.GetAllFeedback();
 
-        public IEnumerable<Feedback> GetFeedbachByCourse(int courseID) => FeedbackDAO.Instance.GetFeedbachByCourse(courseID);
+        public IEnumerable<Feedback> GetFeedbackByCourse(int courseID) => FeedbackDAO.Instance.GetFeedbackByCourse(courseID);
 
         public Feedback GetFeedbackById(int feedbackID) => FeedbackDAO.Instance.GetFeedbackById(feedbackID);
 
+        public Feedback GetFeedbackByStudentAndCourse(string studentId, int courseID)
+        {
+            return FeedbackDAO.Instance.GetFeedbackByStudentAndCourse(studentId, courseID);
+        }
+
         public void RemoveFeedback(int feedbackID) => FeedbackDAO.Instance.RemoveFeedback(feedbackID);
 
-        public void UpdateFeedbach(Feedback feedback) => FeedbackDAO.Instance.UpdateFeedbach(feedback);
+        public void UpdateFeedback(Feedback feedback) => FeedbackDAO.Instance.UpdateFeedback(feedback);
     }
 }
