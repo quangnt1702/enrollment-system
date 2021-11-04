@@ -30,12 +30,13 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtLecturer = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFeedback = new System.Windows.Forms.TextBox();
             this.txtCourseName = new System.Windows.Forms.TextBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,12 +64,13 @@ namespace EnrollmentSystemApp
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.cboStatus);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtLecturer);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtFeedback);
             this.panel2.Controls.Add(this.txtCourseName);
             this.panel2.Controls.Add(this.txtSubject);
             this.panel2.Controls.Add(this.label6);
@@ -91,6 +93,15 @@ namespace EnrollmentSystemApp
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 205);
             this.panel2.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(448, 91);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(105, 20);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Your Feedback";
             // 
             // cboStatus
             // 
@@ -136,14 +147,14 @@ namespace EnrollmentSystemApp
             this.txtLecturer.Size = new System.Drawing.Size(238, 27);
             this.txtLecturer.TabIndex = 39;
             // 
-            // textBox2
+            // txtFeedback
             // 
-            this.textBox2.Location = new System.Drawing.Point(483, 88);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = " Write feedback here ...";
-            this.textBox2.Size = new System.Drawing.Size(592, 68);
-            this.textBox2.TabIndex = 38;
+            this.txtFeedback.Location = new System.Drawing.Point(562, 88);
+            this.txtFeedback.Multiline = true;
+            this.txtFeedback.Name = "txtFeedback";
+            this.txtFeedback.PlaceholderText = " Write feedback here ...";
+            this.txtFeedback.Size = new System.Drawing.Size(530, 68);
+            this.txtFeedback.TabIndex = 38;
             // 
             // txtCourseName
             // 
@@ -173,7 +184,7 @@ namespace EnrollmentSystemApp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(458, 52);
+            this.label5.Location = new System.Drawing.Point(448, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 34;
@@ -191,7 +202,7 @@ namespace EnrollmentSystemApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(458, 22);
+            this.label3.Location = new System.Drawing.Point(448, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 20);
             this.label3.TabIndex = 32;
@@ -217,12 +228,13 @@ namespace EnrollmentSystemApp
             this.btnGiveFeedback.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGiveFeedback.IconColor = System.Drawing.Color.Black;
             this.btnGiveFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGiveFeedback.Location = new System.Drawing.Point(727, 158);
+            this.btnGiveFeedback.Location = new System.Drawing.Point(767, 160);
             this.btnGiveFeedback.Name = "btnGiveFeedback";
             this.btnGiveFeedback.Size = new System.Drawing.Size(141, 38);
             this.btnGiveFeedback.TabIndex = 28;
             this.btnGiveFeedback.Text = "Give Feedback";
             this.btnGiveFeedback.UseVisualStyleBackColor = true;
+            this.btnGiveFeedback.Click += new System.EventHandler(this.btnGiveFeedback_Click);
             // 
             // btnViewGradeList
             // 
@@ -389,7 +401,7 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLecturer;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFeedback;
         private System.Windows.Forms.TextBox txtCourseName;
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label label6;
@@ -397,5 +409,6 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
     }
 }

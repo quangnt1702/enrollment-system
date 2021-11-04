@@ -13,6 +13,7 @@ namespace EnrollmentSystemApp
         ICourseRepository courseRepository = new CourseRepository();
         ISubjectRepository subjectRepository = new SubjectRepository();
         IStatusCourseRepository statusCourseRepository = new StatusCourseRepository();
+        IFeedbackRepository feedbackRepository = new FeedbackRepository();
         BindingSource source = null;
         public User LoginUser { get; set; }
         public int AdminOrStudentOrLecturer { get; set; }//1:Admin;2:Student;3:Lecturer
@@ -92,7 +93,7 @@ namespace EnrollmentSystemApp
         private void btnEnroll_Click(object sender, EventArgs e)
         {
             int numberStudent = courseRepository.GetNumberStudent(int.Parse(txtCourseId.Text));
-            if (numberStudent > int.Parse(txtQuantity.Text))
+            if (numberStudent >= int.Parse(txtQuantity.Text))
             {
                 MessageBox.Show("The course was full!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -112,6 +113,7 @@ namespace EnrollmentSystemApp
             {
                 IGradeRepository gradeRepository = new GradeRepository();
                 gradeRepository.InsertGrade(new Grade { StudentId = LoginUser.UserId, CourseId = int.Parse(txtCourseId.Text) });
+                feedbackRepository.AddFeedback(new Feedback { CourseId = int.Parse(txtCourseId.Text), StudentId = LoginUser.UserId });
                 MessageBox.Show("Enroll successfully!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
