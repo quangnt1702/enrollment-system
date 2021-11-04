@@ -30,15 +30,10 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.btnAllCourses = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnNotYet = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnEnrolled = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.cbbCourse = new System.Windows.Forms.ComboBox();
+            this.cbCourse = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
@@ -48,49 +43,32 @@ namespace EnrollmentSystemApp
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtStudentID);
             this.panel2.Controls.Add(this.lbTitle);
-            this.panel2.Controls.Add(this.btnFilter);
-            this.panel2.Controls.Add(this.btnAllCourses);
             this.panel2.Controls.Add(this.txtSearch);
-            this.panel2.Controls.Add(this.btnNotYet);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.btnEnrolled);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.cbbCourse);
+            this.panel2.Controls.Add(this.cbCourse);
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(958, 174);
+            this.panel2.Size = new System.Drawing.Size(958, 73);
             this.panel2.TabIndex = 19;
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.Location = new System.Drawing.Point(431, 24);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.Size = new System.Drawing.Size(87, 25);
+            this.txtStudentID.TabIndex = 13;
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbTitle.Location = new System.Drawing.Point(3, 8);
+            this.lbTitle.Location = new System.Drawing.Point(18, 13);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(118, 36);
             this.lbTitle.TabIndex = 4;
             this.lbTitle.Text = "Grades";
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Location = new System.Drawing.Point(275, 123);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(82, 25);
-            this.btnFilter.TabIndex = 15;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            // 
-            // btnAllCourses
-            // 
-            this.btnAllCourses.Location = new System.Drawing.Point(801, 147);
-            this.btnAllCourses.Name = "btnAllCourses";
-            this.btnAllCourses.Size = new System.Drawing.Size(34, 25);
-            this.btnAllCourses.TabIndex = 10;
-            this.btnAllCourses.Text = "All";
-            this.btnAllCourses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAllCourses.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -98,71 +76,41 @@ namespace EnrollmentSystemApp
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.Location = new System.Drawing.Point(586, 46);
+            this.txtSearch.Location = new System.Drawing.Point(563, 24);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "Search Student";
             this.txtSearch.Size = new System.Drawing.Size(369, 23);
             this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // btnNotYet
+            // cbCourse
             // 
-            this.btnNotYet.Location = new System.Drawing.Point(830, 147);
-            this.btnNotYet.Name = "btnNotYet";
-            this.btnNotYet.Size = new System.Drawing.Size(66, 25);
-            this.btnNotYet.TabIndex = 13;
-            this.btnNotYet.Text = "Not Yet";
-            this.btnNotYet.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 46);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(219, 25);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // btnEnrolled
-            // 
-            this.btnEnrolled.Location = new System.Drawing.Point(891, 147);
-            this.btnEnrolled.Name = "btnEnrolled";
-            this.btnEnrolled.Size = new System.Drawing.Size(65, 25);
-            this.btnEnrolled.TabIndex = 12;
-            this.btnEnrolled.Text = "Enrolled";
-            this.btnEnrolled.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEnrolled.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(237, 46);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(219, 25);
-            this.dateTimePicker2.TabIndex = 9;
-            // 
-            // cbbCourse
-            // 
-            this.cbbCourse.FormattingEnabled = true;
-            this.cbbCourse.Location = new System.Drawing.Point(3, 123);
-            this.cbbCourse.Name = "cbbCourse";
-            this.cbbCourse.Size = new System.Drawing.Size(219, 25);
-            this.cbbCourse.TabIndex = 11;
+            this.cbCourse.FormattingEnabled = true;
+            this.cbCourse.Location = new System.Drawing.Point(179, 24);
+            this.cbCourse.Name = "cbCourse";
+            this.cbCourse.Size = new System.Drawing.Size(219, 25);
+            this.cbCourse.TabIndex = 11;
+            this.cbCourse.SelectedIndexChanged += new System.EventHandler(this.cbCourse_SelectedIndexChanged);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvStudent);
-            this.panel1.Location = new System.Drawing.Point(10, 190);
+            this.panel1.Location = new System.Drawing.Point(10, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(958, 458);
+            this.panel1.Size = new System.Drawing.Size(958, 543);
             this.panel1.TabIndex = 20;
             // 
             // dgvStudent
             // 
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.Location = new System.Drawing.Point(3, 3);
+            this.dgvStudent.Location = new System.Drawing.Point(18, 0);
             this.dgvStudent.Name = "dgvStudent";
             this.dgvStudent.RowHeadersWidth = 51;
             this.dgvStudent.RowTemplate.Height = 29;
-            this.dgvStudent.Size = new System.Drawing.Size(953, 453);
+            this.dgvStudent.Size = new System.Drawing.Size(928, 501);
             this.dgvStudent.TabIndex = 0;
+            this.dgvStudent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudent_CellDoubleClick);
             // 
             // frmLecturerGrades
             // 
@@ -176,6 +124,7 @@ namespace EnrollmentSystemApp
             this.Name = "frmLecturerGrades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLecturerGrades";
+            this.Load += new System.EventHandler(this.frmLecturerGrades_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -188,15 +137,11 @@ namespace EnrollmentSystemApp
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.Button btnAllCourses;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnNotYet;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button btnEnrolled;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox cbbCourse;
+        private System.Windows.Forms.ComboBox cbCourse;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvStudent;
+        private System.Windows.Forms.TextBox txtStudentID;
+        private System.Windows.Forms.TextBox txtCourseID;
     }
 }

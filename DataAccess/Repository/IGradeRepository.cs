@@ -12,5 +12,7 @@ namespace DataAccess.Repository
         void InsertGrade(Grade grade);
         IEnumerable<Grade> GetGradesList();
         IEnumerable<Grade> GetGradeOfStudent(string studentId, int courseId);
+        Grade GetGradeByID(string studentId, int courseId);
+        void UpdateGrade(Grade grade);
     }
 }

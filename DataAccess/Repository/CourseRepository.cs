@@ -28,5 +28,7 @@ namespace DataAccess.Repository
         public IEnumerable<Course> GetCourseBySubject(int subjectID) => CourseDAO.Instance.GetCourseBySubject(subjectID);
 
         public void CheckStatusCourse() => CourseDAO.Instance.CheckStatusCourse();
+        public IEnumerable<Course> GetCourseListOfLecturer(string lecturerID) => CourseDAO.Instance.GetCourseListOfLecturer(lecturerID);
+        public IEnumerable<Course> GetCourseByStatusAndID(int statusID, string UserID) => CourseDAO.Instance.GetCourseByStatusAndID(statusID, UserID);
     }
 }

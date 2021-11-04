@@ -71,6 +71,26 @@ namespace DataAccess
             }
             return courseList;
         }
+        public IEnumerable<Course> GetCourseListOfLecturer(string LecturerID)
+        {
+            var courseList = new List<Course>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                courseList = context.Courses.Where(c => c.LecturerId == LecturerID).ToList();
+                foreach (var course in courseList)
+                {
+                    course.Subject = context.Subjects.SingleOrDefault(s => s.SubjectId == course.SubjectId);
+                    course.Status = context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
+                    course.Lecturer = context.Users.SingleOrDefault(s => s.UserId == course.LecturerId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return courseList;
+        }
         public int GetNumberStudent(int courseId)
         {
             var courseList = new List<Course>();
@@ -266,6 +286,26 @@ namespace DataAccess
                     Update(course);
                 }
             }
+        }
+        public IEnumerable<Course> GetCourseByStatusAndID(int statusID, string UserID)
+        {
+            var courseList = new List<Course>();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                courseList = context.Courses.Where(c => c.StatusId == statusID && c.LecturerId == UserID).ToList();
+                foreach (var course in courseList)
+                {
+                    course.Subject = context.Subjects.SingleOrDefault(s => s.SubjectId == course.SubjectId);
+                    course.Status = context.StatusCourses.SingleOrDefault(s => s.StatusId == course.StatusId);
+                    course.Lecturer = context.Users.SingleOrDefault(s => s.UserId == course.LecturerId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return courseList;
         }
     }
 }
