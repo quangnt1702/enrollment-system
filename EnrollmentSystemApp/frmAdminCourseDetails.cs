@@ -15,7 +15,7 @@ namespace EnrollmentSystemApp
     public partial class frmAdminCourseDetails : Form
     {
         public ICourseRepository CourseRepository { get; set; }
-        public bool InsertOrUpdate { get; set; }
+        public bool InsertOrUpdate { get; set; } // true: update, false : add
         public Course courseInfo { get; set; }
         public frmAdminCourseDetails()
         {
@@ -33,10 +33,20 @@ namespace EnrollmentSystemApp
             cbLecturerID.DisplayMember = "UserName";
             cbLecturerID.ValueMember = "UserId";
             cbLecturerID.DataSource = lecturer;
-            var status = context.StatusCourses.ToList();
+            var status = context.StatusCourses.Where(c => c.StatusId == 3).ToList();
+            var statusUpdate = context.StatusCourses.ToList();
             cbStatusID.DisplayMember = "StatusName";
             cbStatusID.ValueMember = "StatusID";
-            cbStatusID.DataSource = status;
+            if(InsertOrUpdate == false)
+            {
+                cbStatusID.DataSource = null;
+                cbStatusID.DataSource = status;
+            }
+            else
+            {
+                cbStatusID.DataSource = null;
+                cbStatusID.DataSource = statusUpdate;
+            }
             txtCourseID.Enabled = false;
             if (InsertOrUpdate == true)
             {
@@ -68,17 +78,20 @@ namespace EnrollmentSystemApp
                 txtStudentQuantity.Focus();
                 return false;
             }
-            if (dateEnd < dateStart)
+            if(InsertOrUpdate == false)
             {
-                MessageBox.Show("Start date can not be greater than end date", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpStartDate.Focus();
+                if (dateEnd < dateStart)
+                {
+                    MessageBox.Show("Start date can not be greater than end date", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dtpStartDate.Focus();
 
-            }
-            if (dateStart < now || dateEnd < now)
-            {
-                MessageBox.Show("Start date can not be less than current", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpStartDate.Focus();
-                return false;
+                }
+                if (dateStart < now || dateEnd < now)
+                {
+                    MessageBox.Show("Start date can not be less than current", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dtpStartDate.Focus();
+                    return false;
+                }
             }
             return true;
         }
@@ -100,7 +113,7 @@ namespace EnrollmentSystemApp
                             StudentQuantity = int.Parse(txtStudentQuantity.Text),
                             StartDate = dtpStartDate.Value.Date,
                             EndDate = dtpEndDate.Value.Date,
-                            StatusId = (int)cbStatusID.SelectedValue,
+                            StatusId = 3,
                         };
                         CourseRepository.InsertCourse(course);
                     }

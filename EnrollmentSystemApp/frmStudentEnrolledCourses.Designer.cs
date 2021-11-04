@@ -142,6 +142,7 @@ namespace EnrollmentSystemApp
             // txtLecturer
             // 
             this.txtLecturer.Enabled = false;
+            this.txtLecturer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtLecturer.Location = new System.Drawing.Point(852, 20);
             this.txtLecturer.Name = "txtLecturer";
             this.txtLecturer.Size = new System.Drawing.Size(238, 27);
@@ -153,12 +154,13 @@ namespace EnrollmentSystemApp
             this.txtFeedback.Multiline = true;
             this.txtFeedback.Name = "txtFeedback";
             this.txtFeedback.PlaceholderText = " Write feedback here ...";
-            this.txtFeedback.Size = new System.Drawing.Size(530, 68);
+            this.txtFeedback.Size = new System.Drawing.Size(377, 112);
             this.txtFeedback.TabIndex = 38;
             // 
             // txtCourseName
             // 
             this.txtCourseName.Enabled = false;
+            this.txtCourseName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCourseName.Location = new System.Drawing.Point(562, 19);
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(203, 27);
@@ -167,6 +169,7 @@ namespace EnrollmentSystemApp
             // txtSubject
             // 
             this.txtSubject.Enabled = false;
+            this.txtSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSubject.Location = new System.Drawing.Point(852, 53);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(238, 27);
@@ -211,6 +214,7 @@ namespace EnrollmentSystemApp
             // txtStatus
             // 
             this.txtStatus.Enabled = false;
+            this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtStatus.Location = new System.Drawing.Point(562, 49);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(203, 27);
@@ -225,28 +229,38 @@ namespace EnrollmentSystemApp
             // 
             // btnGiveFeedback
             // 
+            this.btnGiveFeedback.BackColor = System.Drawing.Color.LightGray;
+            this.btnGiveFeedback.FlatAppearance.BorderSize = 2;
+            this.btnGiveFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGiveFeedback.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGiveFeedback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnGiveFeedback.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGiveFeedback.IconColor = System.Drawing.Color.Black;
             this.btnGiveFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGiveFeedback.Location = new System.Drawing.Point(767, 160);
+            this.btnGiveFeedback.Location = new System.Drawing.Point(975, 101);
             this.btnGiveFeedback.Name = "btnGiveFeedback";
-            this.btnGiveFeedback.Size = new System.Drawing.Size(141, 38);
+            this.btnGiveFeedback.Size = new System.Drawing.Size(91, 73);
             this.btnGiveFeedback.TabIndex = 28;
-            this.btnGiveFeedback.Text = "Give Feedback";
-            this.btnGiveFeedback.UseVisualStyleBackColor = true;
+            this.btnGiveFeedback.Text = "Send";
+            this.btnGiveFeedback.UseVisualStyleBackColor = false;
             this.btnGiveFeedback.Click += new System.EventHandler(this.btnGiveFeedback_Click);
             // 
             // btnViewGradeList
             // 
+            this.btnViewGradeList.BackColor = System.Drawing.Color.LightGray;
+            this.btnViewGradeList.FlatAppearance.BorderSize = 2;
+            this.btnViewGradeList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewGradeList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewGradeList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnViewGradeList.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnViewGradeList.IconColor = System.Drawing.Color.Black;
             this.btnViewGradeList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnViewGradeList.Location = new System.Drawing.Point(258, 158);
             this.btnViewGradeList.Name = "btnViewGradeList";
-            this.btnViewGradeList.Size = new System.Drawing.Size(182, 42);
+            this.btnViewGradeList.Size = new System.Drawing.Size(159, 42);
             this.btnViewGradeList.TabIndex = 27;
             this.btnViewGradeList.Text = "View Grade List";
-            this.btnViewGradeList.UseVisualStyleBackColor = true;
+            this.btnViewGradeList.UseVisualStyleBackColor = false;
             this.btnViewGradeList.Click += new System.EventHandler(this.btnViewGradeList_Click);
             // 
             // label2
@@ -280,12 +294,17 @@ namespace EnrollmentSystemApp
             // 
             // btnFilter
             // 
+            this.btnFilter.BackColor = System.Drawing.Color.LightGray;
+            this.btnFilter.FlatAppearance.BorderSize = 2;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnFilter.Location = new System.Drawing.Point(323, 56);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(94, 29);
             this.btnFilter.TabIndex = 15;
             this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // txtSearch

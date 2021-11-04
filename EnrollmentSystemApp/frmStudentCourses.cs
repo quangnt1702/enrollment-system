@@ -338,6 +338,5 @@ namespace EnrollmentSystemApp
             LoadSubjectList();
             LoadStatusCourseList();
         }
-
     }
 }

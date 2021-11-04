@@ -420,5 +420,14 @@ namespace EnrollmentSystemApp
                 MessageBox.Show(ex.Message, "Load courses list");
             }
         }
+
+        private void btnStarting_Click_1(object sender, EventArgs e)
+        {
+            txtSearch.Enabled = true;
+            txtSearchStudent.Enabled = false;
+            btnShowGrades.Enabled = false;
+            btnViewListStudent.Enabled = true;
+            LoadCourseByStatusID(1);
+        }
     }
 }

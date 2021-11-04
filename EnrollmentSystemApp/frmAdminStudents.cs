@@ -31,6 +31,7 @@ namespace EnrollmentSystemApp
             cbCourse.ValueMember = "CourseId";
             cbCourse.DataSource = course;
             LoadStudentList();
+            txtUserID.Hide();
         }
 
         public void LoadStudentList()

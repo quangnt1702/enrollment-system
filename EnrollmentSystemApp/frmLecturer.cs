@@ -78,21 +78,6 @@ namespace EnrollmentSystemApp
             frmLecturerProfile.Show();
         }
 
-        private void btnGrades_Click(object sender, EventArgs e)
-        {
-            pnlNav.Height = btnGrades.Height;
-            pnlNav.Top = btnGrades.Top;
-            pnlNav.Left = btnGrades.Left;
-
-
-            this.pnlFormLoader.Controls.Clear();
-            frmLecturerGrades frmLecturerGrades = new frmLecturerGrades() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmLecturerGrades.LoginUser = LoginUser;
-            frmLecturerGrades.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(frmLecturerGrades);
-            frmLecturerGrades.Show();
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();

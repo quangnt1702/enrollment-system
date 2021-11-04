@@ -133,9 +133,9 @@ namespace EnrollmentSystemApp
 
         private void btnSubject_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnFeedbacks.Height;
-            pnlNav.Top = btnFeedbacks.Top;
-            pnlNav.Left = btnFeedbacks.Left;
+            pnlNav.Height = btnSubject.Height;
+            pnlNav.Top = btnSubject.Top;
+            pnlNav.Left = btnSubject.Left;
 
             this.pnlFormLoader.Controls.Clear();
             frmAdminSubject frmAdminSubject = new frmAdminSubject() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };

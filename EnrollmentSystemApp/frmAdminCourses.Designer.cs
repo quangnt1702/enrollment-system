@@ -30,6 +30,8 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTo = new System.Windows.Forms.Label();
+            this.lbFrom = new System.Windows.Forms.Label();
             this.btnEnding = new System.Windows.Forms.Button();
             this.btnReady = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -46,8 +48,6 @@ namespace EnrollmentSystemApp
             this.cbbSubject = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
-            this.lbTo = new System.Windows.Forms.Label();
-            this.lbFrom = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
@@ -77,56 +77,99 @@ namespace EnrollmentSystemApp
             this.panel2.Size = new System.Drawing.Size(1095, 205);
             this.panel2.TabIndex = 17;
             // 
+            // lbTo
+            // 
+            this.lbTo.AutoSize = true;
+            this.lbTo.Location = new System.Drawing.Point(198, 56);
+            this.lbTo.Name = "lbTo";
+            this.lbTo.Size = new System.Drawing.Size(25, 20);
+            this.lbTo.TabIndex = 33;
+            this.lbTo.Text = "To";
+            // 
+            // lbFrom
+            // 
+            this.lbFrom.AutoSize = true;
+            this.lbFrom.Location = new System.Drawing.Point(14, 56);
+            this.lbFrom.Name = "lbFrom";
+            this.lbFrom.Size = new System.Drawing.Size(43, 20);
+            this.lbFrom.TabIndex = 32;
+            this.lbFrom.Text = "From";
+            // 
             // btnEnding
             // 
-            this.btnEnding.Location = new System.Drawing.Point(1028, 173);
+            this.btnEnding.BackColor = System.Drawing.Color.LightGray;
+            this.btnEnding.FlatAppearance.BorderSize = 2;
+            this.btnEnding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnding.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEnding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnEnding.Location = new System.Drawing.Point(180, 167);
             this.btnEnding.Name = "btnEnding";
-            this.btnEnding.Size = new System.Drawing.Size(64, 29);
+            this.btnEnding.Size = new System.Drawing.Size(64, 35);
             this.btnEnding.TabIndex = 12;
-            this.btnEnding.Text = "Ending";
+            this.btnEnding.Text = "Ended";
             this.btnEnding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEnding.UseVisualStyleBackColor = true;
+            this.btnEnding.UseVisualStyleBackColor = false;
             this.btnEnding.Click += new System.EventHandler(this.btnEnding_Click);
             // 
             // btnReady
             // 
-            this.btnReady.Location = new System.Drawing.Point(905, 173);
+            this.btnReady.BackColor = System.Drawing.Color.LightGray;
+            this.btnReady.FlatAppearance.BorderSize = 2;
+            this.btnReady.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReady.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReady.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnReady.Location = new System.Drawing.Point(38, 167);
             this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(60, 29);
+            this.btnReady.Size = new System.Drawing.Size(79, 35);
             this.btnReady.TabIndex = 29;
-            this.btnReady.Text = "Ready";
+            this.btnReady.Text = "Waiting";
             this.btnReady.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReady.UseVisualStyleBackColor = true;
+            this.btnReady.UseVisualStyleBackColor = false;
             this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(644, 173);
+            this.btnDelete.BackColor = System.Drawing.Color.LightGray;
+            this.btnDelete.FlatAppearance.BorderSize = 2;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnDelete.Location = new System.Drawing.Point(644, 167);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(144, 29);
+            this.btnDelete.Size = new System.Drawing.Size(144, 35);
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Delete Course";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(495, 173);
+            this.btnUpdate.BackColor = System.Drawing.Color.LightGray;
+            this.btnUpdate.FlatAppearance.BorderSize = 2;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnUpdate.Location = new System.Drawing.Point(495, 167);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(144, 29);
+            this.btnUpdate.Size = new System.Drawing.Size(144, 35);
             this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Update Course";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(336, 173);
+            this.btnAdd.BackColor = System.Drawing.Color.LightGray;
+            this.btnAdd.FlatAppearance.BorderSize = 2;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnAdd.Location = new System.Drawing.Point(331, 167);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(144, 29);
+            this.btnAdd.Size = new System.Drawing.Size(149, 35);
             this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "Create New Course";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbTitle
@@ -142,28 +185,38 @@ namespace EnrollmentSystemApp
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(258, 87);
+            this.btnFilter.BackColor = System.Drawing.Color.LightGray;
+            this.btnFilter.FlatAppearance.BorderSize = 2;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnFilter.Location = new System.Drawing.Point(229, 87);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(94, 29);
+            this.btnFilter.Size = new System.Drawing.Size(123, 41);
             this.btnFilter.TabIndex = 15;
             this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnAllCourses
             // 
-            this.btnAllCourses.Location = new System.Drawing.Point(871, 173);
+            this.btnAllCourses.BackColor = System.Drawing.Color.LightGray;
+            this.btnAllCourses.FlatAppearance.BorderSize = 2;
+            this.btnAllCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllCourses.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAllCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnAllCourses.Location = new System.Drawing.Point(3, 167);
             this.btnAllCourses.Name = "btnAllCourses";
-            this.btnAllCourses.Size = new System.Drawing.Size(39, 29);
+            this.btnAllCourses.Size = new System.Drawing.Size(44, 35);
             this.btnAllCourses.TabIndex = 10;
             this.btnAllCourses.Text = "All";
             this.btnAllCourses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAllCourses.UseVisualStyleBackColor = true;
+            this.btnAllCourses.UseVisualStyleBackColor = false;
             this.btnAllCourses.Click += new System.EventHandler(this.btnAllCourses_Click);
             // 
             // txtCourseID
             // 
-            this.txtCourseID.Location = new System.Drawing.Point(551, 101);
+            this.txtCourseID.Location = new System.Drawing.Point(180, 101);
             this.txtCourseID.Name = "txtCourseID";
             this.txtCourseID.Size = new System.Drawing.Size(24, 27);
             this.txtCourseID.TabIndex = 14;
@@ -184,12 +237,17 @@ namespace EnrollmentSystemApp
             // 
             // btnStarting
             // 
-            this.btnStarting.Location = new System.Drawing.Point(960, 173);
+            this.btnStarting.BackColor = System.Drawing.Color.LightGray;
+            this.btnStarting.FlatAppearance.BorderSize = 2;
+            this.btnStarting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStarting.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnStarting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnStarting.Location = new System.Drawing.Point(112, 167);
             this.btnStarting.Name = "btnStarting";
-            this.btnStarting.Size = new System.Drawing.Size(75, 29);
+            this.btnStarting.Size = new System.Drawing.Size(75, 35);
             this.btnStarting.TabIndex = 13;
-            this.btnStarting.Text = "Starting";
-            this.btnStarting.UseVisualStyleBackColor = true;
+            this.btnStarting.Text = "Started";
+            this.btnStarting.UseVisualStyleBackColor = false;
             this.btnStarting.Click += new System.EventHandler(this.btnStarting_Click);
             // 
             // dtpFrom
@@ -211,9 +269,9 @@ namespace EnrollmentSystemApp
             // cbbSubject
             // 
             this.cbbSubject.FormattingEnabled = true;
-            this.cbbSubject.Location = new System.Drawing.Point(842, 139);
+            this.cbbSubject.Location = new System.Drawing.Point(0, 133);
             this.cbbSubject.Name = "cbbSubject";
-            this.cbbSubject.Size = new System.Drawing.Size(250, 28);
+            this.cbbSubject.Size = new System.Drawing.Size(244, 28);
             this.cbbSubject.TabIndex = 11;
             this.cbbSubject.SelectedIndexChanged += new System.EventHandler(this.cbbSubject_SelectedIndexChanged);
             // 
@@ -228,7 +286,7 @@ namespace EnrollmentSystemApp
             // 
             // dgvCourses
             // 
-            this.dgvCourses.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dgvCourses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCourses.Location = new System.Drawing.Point(3, 3);
             this.dgvCourses.Name = "dgvCourses";
@@ -236,24 +294,6 @@ namespace EnrollmentSystemApp
             this.dgvCourses.RowTemplate.Height = 29;
             this.dgvCourses.Size = new System.Drawing.Size(1089, 533);
             this.dgvCourses.TabIndex = 0;
-            // 
-            // lbTo
-            // 
-            this.lbTo.AutoSize = true;
-            this.lbTo.Location = new System.Drawing.Point(198, 56);
-            this.lbTo.Name = "lbTo";
-            this.lbTo.Size = new System.Drawing.Size(25, 20);
-            this.lbTo.TabIndex = 33;
-            this.lbTo.Text = "To";
-            // 
-            // lbFrom
-            // 
-            this.lbFrom.AutoSize = true;
-            this.lbFrom.Location = new System.Drawing.Point(14, 56);
-            this.lbFrom.Name = "lbFrom";
-            this.lbFrom.Size = new System.Drawing.Size(43, 20);
-            this.lbFrom.TabIndex = 32;
-            this.lbFrom.Text = "From";
             // 
             // frmAdminCourses
             // 

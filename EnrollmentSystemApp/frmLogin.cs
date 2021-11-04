@@ -15,24 +15,12 @@ namespace EnrollmentSystemApp
 {
     public partial class frmLogin : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
         ICourseRepository courseRepository = new CourseRepository();
         private User LoginUser;
 
         public frmLogin()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

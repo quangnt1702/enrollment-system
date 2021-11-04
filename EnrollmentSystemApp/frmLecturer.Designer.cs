@@ -32,10 +32,10 @@ namespace EnrollmentSystemApp
             this.pnMenu = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
-            this.btnGrades = new FontAwesome.Sharp.IconButton();
             this.btnProfile = new FontAwesome.Sharp.IconButton();
             this.btnCourses = new FontAwesome.Sharp.IconButton();
             this.pnLogo = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,6 +44,7 @@ namespace EnrollmentSystemApp
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.pnMenu.SuspendLayout();
             this.pnLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,6 @@ namespace EnrollmentSystemApp
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.pnMenu.Controls.Add(this.pnlNav);
             this.pnMenu.Controls.Add(this.btnLogout);
-            this.pnMenu.Controls.Add(this.btnGrades);
             this.pnMenu.Controls.Add(this.btnProfile);
             this.pnMenu.Controls.Add(this.btnCourses);
             this.pnMenu.Controls.Add(this.pnLogo);
@@ -67,7 +67,7 @@ namespace EnrollmentSystemApp
             this.pnlNav.BackColor = System.Drawing.Color.SteelBlue;
             this.pnlNav.Location = new System.Drawing.Point(3, 188);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(10, 216);
+            this.pnlNav.Size = new System.Drawing.Size(10, 142);
             this.pnlNav.TabIndex = 6;
             // 
             // btnLogout
@@ -91,28 +91,6 @@ namespace EnrollmentSystemApp
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnGrades
-            // 
-            this.btnGrades.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGrades.FlatAppearance.BorderSize = 0;
-            this.btnGrades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrades.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGrades.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnGrades.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
-            this.btnGrades.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnGrades.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGrades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrades.Location = new System.Drawing.Point(0, 330);
-            this.btnGrades.Name = "btnGrades";
-            this.btnGrades.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnGrades.Size = new System.Drawing.Size(196, 74);
-            this.btnGrades.TabIndex = 3;
-            this.btnGrades.Text = "Grades";
-            this.btnGrades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGrades.UseVisualStyleBackColor = true;
-            this.btnGrades.Click += new System.EventHandler(this.btnGrades_Click);
             // 
             // btnProfile
             // 
@@ -160,6 +138,7 @@ namespace EnrollmentSystemApp
             // 
             // pnLogo
             // 
+            this.pnLogo.Controls.Add(this.iconPictureBox1);
             this.pnLogo.Controls.Add(this.lbTitle);
             this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnLogo.Location = new System.Drawing.Point(0, 0);
@@ -167,16 +146,31 @@ namespace EnrollmentSystemApp
             this.pnLogo.Size = new System.Drawing.Size(196, 182);
             this.pnLogo.TabIndex = 0;
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 85;
+            this.iconPictureBox1.Location = new System.Drawing.Point(56, 88);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(85, 94);
+            this.iconPictureBox1.TabIndex = 2;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbTitle.Location = new System.Drawing.Point(6, 64);
+            this.lbTitle.Location = new System.Drawing.Point(0, 37);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(184, 23);
+            this.lbTitle.Size = new System.Drawing.Size(203, 31);
             this.lbTitle.TabIndex = 0;
-            this.lbTitle.Text = "FPT Enrollment System";
+            this.lbTitle.Text = "Enrollment System";
             // 
             // pnlFormLoader
             // 
@@ -260,6 +254,7 @@ namespace EnrollmentSystemApp
             this.pnMenu.ResumeLayout(false);
             this.pnLogo.ResumeLayout(false);
             this.pnLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -270,7 +265,6 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Panel pnlNav;
         private FontAwesome.Sharp.IconButton btnLogout;
-        private FontAwesome.Sharp.IconButton btnGrades;
         private FontAwesome.Sharp.IconButton btnProfile;
         private FontAwesome.Sharp.IconButton btnCourses;
         private System.Windows.Forms.Panel pnLogo;
@@ -280,5 +274,6 @@ namespace EnrollmentSystemApp
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnExit;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
