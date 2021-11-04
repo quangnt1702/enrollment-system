@@ -19,5 +19,8 @@ namespace DataAccess.Repository
         IEnumerable<Course> GetCourseByStatus(int statusID);
         IEnumerable<Course> GetCourseBySubject(int subjectID);
         void CheckStatusCourse();
+        IEnumerable<Course> GetCourseListOfLecturer(string lecturerId);
+        IEnumerable<Course> GetCourseByStatusAndID(int statusID, string userID);
+
     }
 }

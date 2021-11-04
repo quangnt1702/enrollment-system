@@ -75,5 +75,41 @@ namespace DataAccess
             }
             return grade;
         }
+        public void Update(Grade grade)
+        {
+            try
+            {
+                var c = GetGrade(grade.StudentId, grade.CourseId);
+                if (c != null)
+                {
+                    using var context = new EnrollmentSystemContext();
+                    context.Grades.Update(grade);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("The grades does not already exist.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public Grade GetGrade(string studentId, int courseId)
+        {
+            var grade = new Grade();
+            try
+            {
+                using var context = new EnrollmentSystemContext();
+                grade = context.Grades.SingleOrDefault(g => g.CourseId == courseId && g.StudentId == studentId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return grade;
+        }
     }
 }

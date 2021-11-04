@@ -13,6 +13,7 @@ namespace DataAccess.Repository
 
         public void InsertGrade(Grade grade) => GradeDAO.Instance.AddNew(grade);
         public IEnumerable<Grade> GetGradesList() => GradeDAO.Instance.GetGradesList();
-
+        public Grade GetGradeByID(string userId, int courseId) => GradeDAO.Instance.GetGrade(userId, courseId);
+        public void UpdateGrade(Grade grade) => GradeDAO.Instance.Update(grade);
     }
 }

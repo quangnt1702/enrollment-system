@@ -42,7 +42,7 @@ namespace EnrollmentSystemApp
 
             this.pnlFormLoader.Controls.Clear();
             frmLecturerCourses frmLecturerCourses = new frmLecturerCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmLecturerCourses.UserInfo = LoginUser;
+            frmLecturerCourses.LoginUser = LoginUser;
             frmLecturerCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmLecturerCourses);
             frmLecturerCourses.Show();
@@ -57,7 +57,7 @@ namespace EnrollmentSystemApp
 
             this.pnlFormLoader.Controls.Clear();
             frmLecturerCourses frmLecturerCourses = new frmLecturerCourses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmLecturerCourses.UserInfo = LoginUser;
+            frmLecturerCourses.LoginUser = LoginUser;
             frmLecturerCourses.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmLecturerCourses);
             frmLecturerCourses.Show();
@@ -72,7 +72,7 @@ namespace EnrollmentSystemApp
 
             this.pnlFormLoader.Controls.Clear();
             frmLecturerProfile frmLecturerProfile = new frmLecturerProfile() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmLecturerProfile.UserInfo = LoginUser;            
+            frmLecturerProfile.LoginUser = LoginUser;            
             frmLecturerProfile.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmLecturerProfile);
             frmLecturerProfile.Show();
@@ -87,6 +87,7 @@ namespace EnrollmentSystemApp
 
             this.pnlFormLoader.Controls.Clear();
             frmLecturerGrades frmLecturerGrades = new frmLecturerGrades() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmLecturerGrades.LoginUser = LoginUser;
             frmLecturerGrades.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmLecturerGrades);
             frmLecturerGrades.Show();

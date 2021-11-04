@@ -1,7 +1,7 @@
 ﻿
 namespace EnrollmentSystemApp
 {
-    partial class LecturerGradesDetails
+    partial class frmLecturerGradesDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@ namespace EnrollmentSystemApp
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtCourseID = new System.Windows.Forms.TextBox();
             this.txtProgress = new System.Windows.Forms.TextBox();
             this.txtMidterm = new System.Windows.Forms.TextBox();
             this.txtFinal = new System.Windows.Forms.TextBox();
@@ -63,6 +63,7 @@ namespace EnrollmentSystemApp
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -72,15 +73,16 @@ namespace EnrollmentSystemApp
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Student ID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Student Name";
+            this.label2.Text = "Course ID";
             // 
             // label3
             // 
@@ -125,12 +127,12 @@ namespace EnrollmentSystemApp
             this.txtID.Size = new System.Drawing.Size(203, 25);
             this.txtID.TabIndex = 8;
             // 
-            // txtName
+            // txtCourseID
             // 
-            this.txtName.Location = new System.Drawing.Point(109, 62);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(203, 25);
-            this.txtName.TabIndex = 9;
+            this.txtCourseID.Location = new System.Drawing.Point(109, 62);
+            this.txtCourseID.Name = "txtCourseID";
+            this.txtCourseID.Size = new System.Drawing.Size(203, 25);
+            this.txtCourseID.TabIndex = 9;
             // 
             // txtProgress
             // 
@@ -160,7 +162,7 @@ namespace EnrollmentSystemApp
             this.txtPratical.Size = new System.Drawing.Size(63, 25);
             this.txtPratical.TabIndex = 13;
             // 
-            // LecturerGradesDetails
+            // frmLecturerGradesDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,7 +171,7 @@ namespace EnrollmentSystemApp
             this.Controls.Add(this.txtFinal);
             this.Controls.Add(this.txtMidterm);
             this.Controls.Add(this.txtProgress);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtCourseID);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -179,7 +181,8 @@ namespace EnrollmentSystemApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Name = "LecturerGradesDetails";
+            this.Name = "frmLecturerGradesDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LecturerGradesDetails";
             this.Load += new System.EventHandler(this.LecturerGradesDetails_Load);
             this.ResumeLayout(false);
@@ -198,7 +201,7 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtCourseID;
         private System.Windows.Forms.TextBox txtProgress;
         private System.Windows.Forms.TextBox txtMidterm;
         private System.Windows.Forms.TextBox txtFinal;
