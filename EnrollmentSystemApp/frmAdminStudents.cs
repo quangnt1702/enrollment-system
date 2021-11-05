@@ -17,6 +17,7 @@ namespace EnrollmentSystemApp
     {
         public User LoginUser { get; set; }
         IUserRepository userRepository = new UserRepository();
+        ICourseRepository courseRepository = new CourseRepository();
         BindingSource source;
         public frmAdminStudents()
         {
@@ -25,37 +26,47 @@ namespace EnrollmentSystemApp
 
         private void frmAdminStudents_Load(object sender, EventArgs e)
         {
-            var context = new EnrollmentSystemContext();
-            var course = context.Courses.ToList();
-            cbCourse.DisplayMember = "CourseName";
-            cbCourse.ValueMember = "CourseId";
-            cbCourse.DataSource = course;
-            LoadStudentList();
-            txtUserID.Hide();
+            LoadCourseList();
+            txtCourseID.Hide();
+            if (btnViewAllStudent.Text == "Back")
+            {
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;
+                txtSearch.Enabled = true;
+            }
+            else
+            {
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+                txtSearch.Enabled = false;
+            }
         }
 
-        public void LoadStudentList()
+        public void LoadCourseList()
         {
-            var students = userRepository.GetStudentList();
-            var list = (from c in students
+            var courses = courseRepository.GetCourses();
+            var list = (from c in courses
                         select new
                         {
-                            UserID = c.UserId,
-                            UserName = c.UserName,
-                            Password = c.Password,
-                            Phone = c.Phone,
-                            Email = c.Email,
-                            RoleId = c.Role.RoleName,
-                            StatusId = c.Status.StatusName
+                            ID = c.CourseId,
+                            CourseName = c.CourseName,
+                            Subject = c.Subject.SubjectName,
+                            Lecturer = c.Lecturer.UserName,
+                            StudentQuantity = c.StudentQuantity,
+                            StartDate = c.StartDate,
+                            EndDate = c.EndDate,
+                            Status = c.Status.StatusName
                         }).ToList();
             try
             {
                 source = new BindingSource();
                 source.DataSource = list;
 
-                txtUserID.DataBindings.Clear();
+                txtCourseID.DataBindings.Clear();
 
-                txtUserID.DataBindings.Add("Text", source, "UserId");
+                txtCourseID.DataBindings.Add("Text", source, "ID");
 
                 dgvStudents.DataSource = null;
                 dgvStudents.DataSource = source;
@@ -63,7 +74,81 @@ namespace EnrollmentSystemApp
             catch (Exception ex)
             {
 
+                MessageBox.Show(ex.Message, "Load course list");
+            }
+        }
+
+        public void LoadStudentListByCourse(int courseID)
+        {
+            var students = userRepository.GetStudentByCourse(courseID);
+            try
+            {
+                if (students != null)
+                {
+                    var list = (from c in students
+                                select new
+                                {
+                                    UserID = c.UserId,
+                                    UserName = c.UserName,
+                                    Password = c.Password,
+                                    Phone = c.Phone,
+                                    Email = c.Email,
+                                    RoleId = c.Role.RoleName,
+                                    StatusId = c.Status.StatusName
+                                }).ToList();
+                    source = new BindingSource();
+                    source.DataSource = list;
+
+                    txtCourseID.DataBindings.Clear();
+
+                    txtCourseID.DataBindings.Add("Text", source, "UserId");
+
+                    dgvStudents.DataSource = null;
+                    dgvStudents.DataSource = source;
+                }
+                else
+                {
+                    MessageBox.Show("This course have no students", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadCourseList();
+                }
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message, "Load lecturer list");
+            }
+        }
+
+        public void LoadStudentList()
+        {
+            var students = userRepository.GetStudentList();
+            try
+            {
+                var list = (from c in students
+                            select new
+                            {
+                                UserID = c.UserId,
+                                UserName = c.UserName,
+                                Password = c.Password,
+                                Phone = c.Phone,
+                                Email = c.Email,
+                                RoleId = c.Role.RoleName,
+                                StatusId = c.Status.StatusName
+                            }).ToList();
+                source = new BindingSource();
+                source.DataSource = list;
+
+                txtCourseID.DataBindings.Clear();
+
+                txtCourseID.DataBindings.Add("Text", source, "UserId");
+
+                dgvStudents.DataSource = null;
+                dgvStudents.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Load student list");
             }
         }
 
@@ -84,7 +169,7 @@ namespace EnrollmentSystemApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string studentID = txtUserID.Text;
+            string studentID = txtCourseID.Text;
             User student = userRepository.GetUserByID(studentID);
             if (LoginUser.RoleId == 1)
             {
@@ -114,12 +199,20 @@ namespace EnrollmentSystemApp
         {
             try
             {
-                string studentID = txtUserID.Text;
-                if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string studentID = txtCourseID.Text;
+                if( courseRepository.GetCoursesByUserId(studentID) == null)
                 {
-                    var user = userRepository.GetUserByID(studentID);
-                    user.StatusId = 2;
-                    userRepository.UpdateUser(user);
+                    if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        var user = userRepository.GetUserByID(studentID);
+                        user.StatusId = 2;
+                        userRepository.UpdateUser(user);
+                        LoadStudentList();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Students who are studying cannot delete");
                     LoadStudentList();
                 }
             }
@@ -149,9 +242,9 @@ namespace EnrollmentSystemApp
                 source.DataSource = list;
 
 
-                txtUserID.DataBindings.Clear();
+                txtCourseID.DataBindings.Clear();
 
-                txtUserID.DataBindings.Add("Text", source, "UserId");
+                txtCourseID.DataBindings.Add("Text", source, "UserId");
 
                 dgvStudents.DataSource = null;
                 dgvStudents.DataSource = source;
@@ -160,12 +253,6 @@ namespace EnrollmentSystemApp
             {
                 MessageBox.Show(ex.Message, "Load student list");
             }
-        }
-
-        private void cbCourse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int courseID = (int)cbCourse.SelectedValue;
-            LoadStudentByCourse(courseID);
         }
 
         public void LoadStudentByCourse(int courseID)
@@ -187,9 +274,9 @@ namespace EnrollmentSystemApp
                 source = new BindingSource();
                 source.DataSource = list;
 
-                txtUserID.DataBindings.Clear();
+                txtCourseID.DataBindings.Clear();
 
-                txtUserID.DataBindings.Add("Text", source, "UserID");
+                txtCourseID.DataBindings.Add("Text", source, "UserID");
 
                 dgvStudents.DataSource = null;
                 dgvStudents.DataSource = source;
@@ -198,6 +285,49 @@ namespace EnrollmentSystemApp
             {
 
                 MessageBox.Show(ex.Message, "Load student list");
+            }
+        }
+
+        private void btnViewStudents_Click(object sender, EventArgs e)
+        {
+            if (btnViewStudents.Text == "Back")
+            {
+                LoadCourseList();
+                btnViewAllStudent.Enabled = true;
+                btnViewStudents.Text = "View Students";
+                lbCourse.Text = "Courses";
+            }
+            else
+            {
+                int course = int.Parse(txtCourseID.Text);
+                LoadStudentByCourse(course);
+                btnViewAllStudent.Enabled = false;
+                btnViewStudents.Text = "Back";
+                lbCourse.Text = "Students";
+            }
+        }
+
+        private void btnViewAllStudent_Click(object sender, EventArgs e)
+        {
+            if(btnViewAllStudent.Text == "Back")
+            {
+                LoadCourseList();
+                btnViewStudents.Enabled = true;
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+                txtSearch.Enabled = false;
+                btnViewAllStudent.Text = "View All Students";
+            }
+            else
+            {
+                btnViewStudents.Enabled = false;
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;
+                txtSearch.Enabled = true;
+                LoadStudentList();
+                btnViewAllStudent.Text = "Back";
             }
         }
     }

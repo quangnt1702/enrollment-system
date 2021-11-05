@@ -25,7 +25,22 @@ namespace EnrollmentSystemApp
         private void frmAdminLecturerDetails_Load(object sender, EventArgs e)
         {
             txtRoleID.Enabled = false;
-            txtStatusID.Enabled = false;
+            var context = new EnrollmentSystemContext();
+            txtRoleID.Text = "Lecturer";
+            var statusList = context.StatusUsers.ToList();
+            var status = context.StatusUsers.Where(c => c.StatusId == 1).ToList();
+            cbStatusID.DisplayMember = "StatusName";
+            cbStatusID.ValueMember = "StatusID";
+            if (InsertOrUpdate == false)
+            {
+                cbStatusID.DataSource = null;
+                cbStatusID.DataSource = status;
+            }
+            else
+            {
+                cbStatusID.DataSource = null;
+                cbStatusID.DataSource = statusList;
+            }
             if (InsertOrUpdate == true)
             {
                 lbTitle.Text = "Update";
@@ -34,8 +49,8 @@ namespace EnrollmentSystemApp
                 txtPassword.Text = userInfo.Password;
                 txtPhone.Text = userInfo.Phone;
                 txtEmail.Text = userInfo.Email;
-                txtRoleID.Text = userInfo.RoleId.ToString();
-                txtStatusID.Text = userInfo.StatusId.ToString();
+                txtRoleID.Text = "Lecturer";
+                cbStatusID.SelectedValue = userInfo.StatusId;
             }
         }
 
@@ -116,7 +131,7 @@ namespace EnrollmentSystemApp
                         Phone = txtPhone.Text,
                         Email = txtEmail.Text,
                         RoleId = 2,
-                        StatusId = 1,
+                        StatusId = (int)cbStatusID.SelectedValue,
                     };
                     UserRepository.UpdateUser(lecturer);
                 }
