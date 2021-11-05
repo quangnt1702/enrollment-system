@@ -200,19 +200,11 @@ namespace EnrollmentSystemApp
             try
             {
                 string studentID = txtCourseID.Text;
-                if( courseRepository.GetCoursesByUserId(studentID) == null)
+                if (MessageBox.Show("Do you want to ban?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        var user = userRepository.GetUserByID(studentID);
-                        user.StatusId = 2;
-                        userRepository.UpdateUser(user);
-                        LoadStudentList();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Students who are studying cannot delete");
+                    var user = userRepository.GetUserByID(studentID);
+                    user.StatusId = 2;
+                    userRepository.UpdateUser(user);
                     LoadStudentList();
                 }
             }
@@ -309,7 +301,7 @@ namespace EnrollmentSystemApp
 
         private void btnViewAllStudent_Click(object sender, EventArgs e)
         {
-            if(btnViewAllStudent.Text == "Back")
+            if (btnViewAllStudent.Text == "Back")
             {
                 LoadCourseList();
                 btnViewStudents.Enabled = true;

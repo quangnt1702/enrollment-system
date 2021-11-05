@@ -56,24 +56,33 @@ namespace EnrollmentSystemApp
                     this.Show();
                 }
             }
-            else
-            {
-                MessageBox.Show("Wrong Email or Password");
-            }
         }
 
         private bool checkLogin(string Email, string Password)
         {
             IEnumerable<User> listUser = new UserRepository().GetUserList();
+            bool flag = false;
             foreach (var user in listUser)
             {
                 if (Email == user.Email && Password == user.Password)
                 {
-                    LoginUser = user;
-                    return true;
+                    if(user.StatusId == 1)
+                    {
+                        flag = true;
+                        LoginUser = user;
+                        return flag;
+                    }else if(user.StatusId == 2)
+                    {
+                        MessageBox.Show("You are banned");
+                        return false;
+                    }
                 }
             }
-            return false;
+            if(flag == false)
+            {
+                MessageBox.Show("Wrong Email or Password");
+            }
+            return flag;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
