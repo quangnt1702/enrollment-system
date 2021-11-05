@@ -47,13 +47,14 @@ namespace EnrollmentSystemApp
             this.cbStatusID = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbCourseID
             // 
             this.lbCourseID.AutoSize = true;
             this.lbCourseID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCourseID.Location = new System.Drawing.Point(77, 54);
+            this.lbCourseID.Location = new System.Drawing.Point(79, 97);
             this.lbCourseID.Name = "lbCourseID";
             this.lbCourseID.Size = new System.Drawing.Size(112, 31);
             this.lbCourseID.TabIndex = 0;
@@ -63,7 +64,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbCourseName.AutoSize = true;
             this.lbCourseName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCourseName.Location = new System.Drawing.Point(77, 110);
+            this.lbCourseName.Location = new System.Drawing.Point(79, 153);
             this.lbCourseName.Name = "lbCourseName";
             this.lbCourseName.Size = new System.Drawing.Size(151, 31);
             this.lbCourseName.TabIndex = 1;
@@ -73,7 +74,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbSubjectID.AutoSize = true;
             this.lbSubjectID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbSubjectID.Location = new System.Drawing.Point(77, 154);
+            this.lbSubjectID.Location = new System.Drawing.Point(79, 197);
             this.lbSubjectID.Name = "lbSubjectID";
             this.lbSubjectID.Size = new System.Drawing.Size(118, 31);
             this.lbSubjectID.TabIndex = 2;
@@ -83,7 +84,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbLecturerID.AutoSize = true;
             this.lbLecturerID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbLecturerID.Location = new System.Drawing.Point(81, 218);
+            this.lbLecturerID.Location = new System.Drawing.Point(83, 261);
             this.lbLecturerID.Name = "lbLecturerID";
             this.lbLecturerID.Size = new System.Drawing.Size(125, 31);
             this.lbLecturerID.TabIndex = 3;
@@ -93,7 +94,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbStudentQuantity.AutoSize = true;
             this.lbStudentQuantity.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbStudentQuantity.Location = new System.Drawing.Point(81, 272);
+            this.lbStudentQuantity.Location = new System.Drawing.Point(83, 315);
             this.lbStudentQuantity.Name = "lbStudentQuantity";
             this.lbStudentQuantity.Size = new System.Drawing.Size(187, 31);
             this.lbStudentQuantity.TabIndex = 4;
@@ -103,7 +104,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbStartDate.AutoSize = true;
             this.lbStartDate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbStartDate.Location = new System.Drawing.Point(81, 327);
+            this.lbStartDate.Location = new System.Drawing.Point(83, 370);
             this.lbStartDate.Name = "lbStartDate";
             this.lbStartDate.Size = new System.Drawing.Size(115, 31);
             this.lbStartDate.TabIndex = 5;
@@ -113,7 +114,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbEndDate.AutoSize = true;
             this.lbEndDate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEndDate.Location = new System.Drawing.Point(81, 372);
+            this.lbEndDate.Location = new System.Drawing.Point(83, 415);
             this.lbEndDate.Name = "lbEndDate";
             this.lbEndDate.Size = new System.Drawing.Size(107, 31);
             this.lbEndDate.TabIndex = 6;
@@ -123,7 +124,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbStatusID.AutoSize = true;
             this.lbStatusID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbStatusID.Location = new System.Drawing.Point(81, 411);
+            this.lbStatusID.Location = new System.Drawing.Point(83, 454);
             this.lbStatusID.Name = "lbStatusID";
             this.lbStatusID.Size = new System.Drawing.Size(104, 31);
             this.lbStatusID.TabIndex = 7;
@@ -132,7 +133,7 @@ namespace EnrollmentSystemApp
             // txtCourseID
             // 
             this.txtCourseID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCourseID.Location = new System.Drawing.Point(280, 51);
+            this.txtCourseID.Location = new System.Drawing.Point(282, 94);
             this.txtCourseID.Name = "txtCourseID";
             this.txtCourseID.Size = new System.Drawing.Size(250, 38);
             this.txtCourseID.TabIndex = 8;
@@ -140,7 +141,7 @@ namespace EnrollmentSystemApp
             // txtCourseName
             // 
             this.txtCourseName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCourseName.Location = new System.Drawing.Point(280, 110);
+            this.txtCourseName.Location = new System.Drawing.Point(282, 153);
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(250, 38);
             this.txtCourseName.TabIndex = 9;
@@ -149,7 +150,7 @@ namespace EnrollmentSystemApp
             // 
             this.cbSubjectID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbSubjectID.FormattingEnabled = true;
-            this.cbSubjectID.Location = new System.Drawing.Point(280, 154);
+            this.cbSubjectID.Location = new System.Drawing.Point(282, 197);
             this.cbSubjectID.Name = "cbSubjectID";
             this.cbSubjectID.Size = new System.Drawing.Size(250, 39);
             this.cbSubjectID.TabIndex = 10;
@@ -158,7 +159,7 @@ namespace EnrollmentSystemApp
             // 
             this.cbLecturerID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbLecturerID.FormattingEnabled = true;
-            this.cbLecturerID.Location = new System.Drawing.Point(280, 218);
+            this.cbLecturerID.Location = new System.Drawing.Point(282, 261);
             this.cbLecturerID.Name = "cbLecturerID";
             this.cbLecturerID.Size = new System.Drawing.Size(250, 39);
             this.cbLecturerID.TabIndex = 11;
@@ -166,7 +167,7 @@ namespace EnrollmentSystemApp
             // txtStudentQuantity
             // 
             this.txtStudentQuantity.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStudentQuantity.Location = new System.Drawing.Point(280, 265);
+            this.txtStudentQuantity.Location = new System.Drawing.Point(282, 308);
             this.txtStudentQuantity.Name = "txtStudentQuantity";
             this.txtStudentQuantity.Size = new System.Drawing.Size(250, 38);
             this.txtStudentQuantity.TabIndex = 12;
@@ -176,7 +177,7 @@ namespace EnrollmentSystemApp
             this.dtpStartDate.CustomFormat = "";
             this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(280, 320);
+            this.dtpStartDate.Location = new System.Drawing.Point(282, 363);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(250, 38);
             this.dtpStartDate.TabIndex = 13;
@@ -186,7 +187,7 @@ namespace EnrollmentSystemApp
             this.dtpEndDate.CustomFormat = "";
             this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(280, 365);
+            this.dtpEndDate.Location = new System.Drawing.Point(282, 408);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(250, 38);
             this.dtpEndDate.TabIndex = 14;
@@ -195,7 +196,7 @@ namespace EnrollmentSystemApp
             // 
             this.cbStatusID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbStatusID.FormattingEnabled = true;
-            this.cbStatusID.Location = new System.Drawing.Point(280, 411);
+            this.cbStatusID.Location = new System.Drawing.Point(282, 454);
             this.cbStatusID.Name = "cbStatusID";
             this.cbStatusID.Size = new System.Drawing.Size(250, 39);
             this.cbStatusID.TabIndex = 15;
@@ -206,7 +207,7 @@ namespace EnrollmentSystemApp
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnSave.Location = new System.Drawing.Point(158, 484);
+            this.btnSave.Location = new System.Drawing.Point(160, 527);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(145, 66);
             this.btnSave.TabIndex = 16;
@@ -220,7 +221,7 @@ namespace EnrollmentSystemApp
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnCancel.Location = new System.Drawing.Point(382, 484);
+            this.btnCancel.Location = new System.Drawing.Point(384, 527);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(148, 66);
             this.btnCancel.TabIndex = 17;
@@ -228,13 +229,24 @@ namespace EnrollmentSystemApp
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.Location = new System.Drawing.Point(249, 22);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(118, 46);
+            this.lbTitle.TabIndex = 18;
+            this.lbTitle.Text = "Create";
+            // 
             // frmAdminCourseDetails
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(649, 575);
+            this.ClientSize = new System.Drawing.Size(649, 621);
+            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cbStatusID);
@@ -283,5 +295,6 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.ComboBox cbStatusID;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lbTitle;
     }
 }
