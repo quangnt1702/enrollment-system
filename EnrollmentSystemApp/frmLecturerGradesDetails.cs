@@ -30,32 +30,46 @@ namespace EnrollmentSystemApp
             txtProgress.Text = grade.ProgressTest.ToString();
             txtMidterm.Text = grade.MidTermTest.ToString();
             txtPratical.Text = grade.PracticalTest.ToString();
-            txtFinal.Text = grade.FinalTest.ToString();            
+            txtFinal.Text = grade.FinalTest.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             Grade grade = gradeRepository.GetGradeByID(UserID, CourseID);
             try
-            { if(double.Parse(txtProgress.Text)>=0&& double.Parse(txtMidterm.Text) >=0&& double.Parse(txtPratical.Text) >=0&& double.Parse(txtFinal.Text) >=0)
+            {
+                var g = new Grade
                 {
-                    var g = new Grade
-                    {
-                        GradeId = grade.GradeId,
-                        CourseId = grade.CourseId,
-                        StudentId = grade.StudentId,
-                        ProgressTest = double.Parse(txtProgress.Text),
-                        MidTermTest = double.Parse(txtMidterm.Text),
-                        PracticalTest = double.Parse(txtPratical.Text),
-                        FinalTest = double.Parse(txtFinal.Text)
-                    };
+                    GradeId = grade.GradeId,
+                    CourseId = grade.CourseId,
+                    StudentId = grade.StudentId,
+                };
+                if (CheckNullAndMoreThanZero(txtProgress.Text))
+                {
+                    g.ProgressTest = Convert.ToDouble(txtProgress.Text);
                     gradeRepository.UpdateGrade(g);
-                    MessageBox.Show("Update Successfully");
-                } else
+                }
+                if (CheckNullAndMoreThanZero(txtPratical.Text))
                 {
-                    MessageBox.Show("Grades cannot be negative");
-                }              
-                                          
+                    g.PracticalTest = Convert.ToDouble(txtPratical.Text);
+                    gradeRepository.UpdateGrade(g);
+                }
+                if (CheckNullAndMoreThanZero(txtMidterm.Text))
+                {
+                    g.MidTermTest = Convert.ToDouble(txtMidterm.Text);
+                    gradeRepository.UpdateGrade(g);
+                }
+                if (CheckNullAndMoreThanZero(txtFinal.Text))
+                {
+                    g.FinalTest = Convert.ToDouble(txtFinal.Text);
+                    gradeRepository.UpdateGrade(g);
+                }
+                if (txtProgress.Text == "" && txtMidterm.Text == ""
+                    && txtPratical.Text == "" && txtFinal.Text == "")
+                {
+                    gradeRepository.UpdateGrade(g);
+                }
+                MessageBox.Show("Update success", "Update course");
             }
             catch (Exception ex)
             {
@@ -63,13 +77,24 @@ namespace EnrollmentSystemApp
             }
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        public bool CheckNullAndMoreThanZero(string text)
         {
-
+            bool check = false;
+            if (text != "")
+            {
+                if (Convert.ToDouble(text) >= 0 && Convert.ToDouble(text) <= 10)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Grades bettween [0;10]");
+                }
+            }
+            return check;
         }
 
         private void btnCancel_Click(object sender, EventArgs e) => Close();
-        
+
     }
 }

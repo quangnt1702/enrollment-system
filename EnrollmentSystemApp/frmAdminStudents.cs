@@ -117,7 +117,9 @@ namespace EnrollmentSystemApp
                 string studentID = txtUserID.Text;
                 if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    userRepository.RemoveUser(studentID);
+                    var user = userRepository.GetUserByID(studentID);
+                    user.StatusId = 2;
+                    userRepository.UpdateUser(user);
                     LoadStudentList();
                 }
             }

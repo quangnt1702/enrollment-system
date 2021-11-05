@@ -44,7 +44,7 @@ namespace EnrollmentSystemApp
             var lecturerList = UserRepository.GetUserList();
             foreach (var l in lecturerList)
             {
-                if(txtEmail.Text == l.Email)
+                if (txtEmail.Text == l.Email)
                 {
                     MessageBox.Show("Email is already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtEmail.Focus();
@@ -88,9 +88,10 @@ namespace EnrollmentSystemApp
         {
             try
             {
-                if (CheckData())
+
+                if (InsertOrUpdate == false)
                 {
-                    if (InsertOrUpdate == false)
+                    if (CheckData())
                     {
                         var lecturer = new User
                         {
@@ -104,20 +105,20 @@ namespace EnrollmentSystemApp
                         };
                         UserRepository.AddUser(lecturer);
                     }
-                    else
+                }
+                else
+                {
+                    var lecturer = new User
                     {
-                        var lecturer = new User
-                        {
-                            UserId = txtLecturerID.Text,
-                            UserName = txtLecturerName.Text,
-                            Password = txtPassword.Text,
-                            Phone = txtPhone.Text,
-                            Email = txtEmail.Text,
-                            RoleId = 2,
-                            StatusId = 1,
-                        };
-                        UserRepository.UpdateUser(lecturer);
-                    }
+                        UserId = txtLecturerID.Text,
+                        UserName = txtLecturerName.Text,
+                        Password = txtPassword.Text,
+                        Phone = txtPhone.Text,
+                        Email = txtEmail.Text,
+                        RoleId = 2,
+                        StatusId = 1,
+                    };
+                    UserRepository.UpdateUser(lecturer);
                 }
             }
             catch (Exception ex)

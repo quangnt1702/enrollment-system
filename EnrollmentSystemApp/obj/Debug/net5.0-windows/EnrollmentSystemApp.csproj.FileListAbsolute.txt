@@ -223,7 +223,7 @@ C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminCourseDetails.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminLecturerDetails.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminStudentDetails.resources
-F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.LecturerGradesDetails.resources
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminSubject.resources
 F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmAdminSubject.resources
 C:\Users\lakho\source\repos\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmLecturerGradesDetails.resources
+F:\Semester_2021\FA21\PRN211\enrollment-system\EnrollmentSystemApp\obj\Debug\net5.0-windows\EnrollmentSystemApp.frmLecturerGradesDetails.resources

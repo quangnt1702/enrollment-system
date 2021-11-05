@@ -25,6 +25,8 @@ namespace EnrollmentSystemApp
 
         private void frmLecturerCourses_Load(object sender, EventArgs e)
         {
+            txtCourseID.Hide();
+            txtStudentID.Hide();
             var context = new EnrollmentSystemContext();
             var subject = context.Subjects.ToList();
             cbbSubject.DisplayMember = "SubjectName";
@@ -429,5 +431,6 @@ namespace EnrollmentSystemApp
             btnViewListStudent.Enabled = true;
             LoadCourseByStatusID(1);
         }
+
     }
 }

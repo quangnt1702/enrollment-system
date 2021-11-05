@@ -87,7 +87,6 @@ namespace EnrollmentSystemApp
             this.label1.Size = new System.Drawing.Size(121, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Student ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -103,7 +102,7 @@ namespace EnrollmentSystemApp
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(25, 171);
+            this.label3.Location = new System.Drawing.Point(25, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 31);
             this.label3.TabIndex = 4;
@@ -142,7 +141,7 @@ namespace EnrollmentSystemApp
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtID.Location = new System.Drawing.Point(179, 60);
+            this.txtID.Location = new System.Drawing.Point(182, 64);
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(204, 38);
@@ -151,7 +150,7 @@ namespace EnrollmentSystemApp
             // txtCourseID
             // 
             this.txtCourseID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCourseID.Location = new System.Drawing.Point(179, 123);
+            this.txtCourseID.Location = new System.Drawing.Point(182, 123);
             this.txtCourseID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCourseID.Name = "txtCourseID";
             this.txtCourseID.Size = new System.Drawing.Size(204, 38);
@@ -160,7 +159,7 @@ namespace EnrollmentSystemApp
             // txtProgress
             // 
             this.txtProgress.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtProgress.Location = new System.Drawing.Point(179, 168);
+            this.txtProgress.Location = new System.Drawing.Point(182, 174);
             this.txtProgress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProgress.Name = "txtProgress";
             this.txtProgress.Size = new System.Drawing.Size(204, 38);
