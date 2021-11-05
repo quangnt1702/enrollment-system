@@ -44,6 +44,7 @@ namespace EnrollmentSystemApp
             }
             else
             {
+                lbTitle.Text = "Update";
                 cbStatusID.DataSource = null;
                 cbStatusID.DataSource = statusUpdate;
             }

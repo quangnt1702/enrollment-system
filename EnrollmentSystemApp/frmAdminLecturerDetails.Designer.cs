@@ -45,6 +45,7 @@ namespace EnrollmentSystemApp
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.txtRoleID = new System.Windows.Forms.TextBox();
             this.txtStatusID = new System.Windows.Forms.TextBox();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -54,7 +55,7 @@ namespace EnrollmentSystemApp
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnCancel.Location = new System.Drawing.Point(387, 465);
+            this.btnCancel.Location = new System.Drawing.Point(383, 490);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(139, 59);
             this.btnCancel.TabIndex = 35;
@@ -70,7 +71,7 @@ namespace EnrollmentSystemApp
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnSave.Location = new System.Drawing.Point(175, 465);
+            this.btnSave.Location = new System.Drawing.Point(171, 490);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 59);
             this.btnSave.TabIndex = 34;
@@ -81,7 +82,7 @@ namespace EnrollmentSystemApp
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(275, 273);
+            this.txtEmail.Location = new System.Drawing.Point(271, 298);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(329, 38);
             this.txtEmail.TabIndex = 30;
@@ -89,7 +90,7 @@ namespace EnrollmentSystemApp
             // txtLecturerName
             // 
             this.txtLecturerName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLecturerName.Location = new System.Drawing.Point(275, 111);
+            this.txtLecturerName.Location = new System.Drawing.Point(271, 136);
             this.txtLecturerName.Name = "txtLecturerName";
             this.txtLecturerName.Size = new System.Drawing.Size(329, 38);
             this.txtLecturerName.TabIndex = 27;
@@ -97,7 +98,7 @@ namespace EnrollmentSystemApp
             // txtLecturerID
             // 
             this.txtLecturerID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLecturerID.Location = new System.Drawing.Point(275, 52);
+            this.txtLecturerID.Location = new System.Drawing.Point(271, 77);
             this.txtLecturerID.Name = "txtLecturerID";
             this.txtLecturerID.Size = new System.Drawing.Size(329, 38);
             this.txtLecturerID.TabIndex = 26;
@@ -106,7 +107,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbStatusID.AutoSize = true;
             this.lbStatusID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbStatusID.Location = new System.Drawing.Point(76, 395);
+            this.lbStatusID.Location = new System.Drawing.Point(72, 420);
             this.lbStatusID.Name = "lbStatusID";
             this.lbStatusID.Size = new System.Drawing.Size(76, 31);
             this.lbStatusID.TabIndex = 25;
@@ -116,7 +117,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbRoleID.AutoSize = true;
             this.lbRoleID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbRoleID.Location = new System.Drawing.Point(76, 331);
+            this.lbRoleID.Location = new System.Drawing.Point(72, 356);
             this.lbRoleID.Name = "lbRoleID";
             this.lbRoleID.Size = new System.Drawing.Size(58, 31);
             this.lbRoleID.TabIndex = 24;
@@ -126,7 +127,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEmail.Location = new System.Drawing.Point(76, 276);
+            this.lbEmail.Location = new System.Drawing.Point(72, 301);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(70, 31);
             this.lbEmail.TabIndex = 23;
@@ -136,7 +137,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPhone.Location = new System.Drawing.Point(76, 220);
+            this.lbPhone.Location = new System.Drawing.Point(72, 245);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(78, 31);
             this.lbPhone.TabIndex = 22;
@@ -146,7 +147,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPassword.Location = new System.Drawing.Point(76, 167);
+            this.lbPassword.Location = new System.Drawing.Point(72, 192);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(110, 31);
             this.lbPassword.TabIndex = 20;
@@ -156,7 +157,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbLecturerName.AutoSize = true;
             this.lbLecturerName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbLecturerName.Location = new System.Drawing.Point(72, 114);
+            this.lbLecturerName.Location = new System.Drawing.Point(68, 139);
             this.lbLecturerName.Name = "lbLecturerName";
             this.lbLecturerName.Size = new System.Drawing.Size(164, 31);
             this.lbLecturerName.TabIndex = 19;
@@ -166,7 +167,7 @@ namespace EnrollmentSystemApp
             // 
             this.lbLecturerID.AutoSize = true;
             this.lbLecturerID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbLecturerID.Location = new System.Drawing.Point(76, 55);
+            this.lbLecturerID.Location = new System.Drawing.Point(72, 80);
             this.lbLecturerID.Name = "lbLecturerID";
             this.lbLecturerID.Size = new System.Drawing.Size(125, 31);
             this.lbLecturerID.TabIndex = 18;
@@ -175,7 +176,7 @@ namespace EnrollmentSystemApp
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(275, 164);
+            this.txtPassword.Location = new System.Drawing.Point(271, 189);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(329, 38);
             this.txtPassword.TabIndex = 36;
@@ -183,7 +184,7 @@ namespace EnrollmentSystemApp
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhone.Location = new System.Drawing.Point(275, 220);
+            this.txtPhone.Location = new System.Drawing.Point(271, 245);
             this.txtPhone.Mask = "00000000";
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(329, 38);
@@ -192,7 +193,7 @@ namespace EnrollmentSystemApp
             // txtRoleID
             // 
             this.txtRoleID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtRoleID.Location = new System.Drawing.Point(275, 328);
+            this.txtRoleID.Location = new System.Drawing.Point(271, 353);
             this.txtRoleID.Name = "txtRoleID";
             this.txtRoleID.Size = new System.Drawing.Size(329, 38);
             this.txtRoleID.TabIndex = 38;
@@ -200,10 +201,20 @@ namespace EnrollmentSystemApp
             // txtStatusID
             // 
             this.txtStatusID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStatusID.Location = new System.Drawing.Point(275, 392);
+            this.txtStatusID.Location = new System.Drawing.Point(271, 417);
             this.txtStatusID.Name = "txtStatusID";
             this.txtStatusID.Size = new System.Drawing.Size(329, 38);
             this.txtStatusID.TabIndex = 39;
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.Location = new System.Drawing.Point(280, 9);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(113, 45);
+            this.lbTitle.TabIndex = 40;
+            this.lbTitle.Text = "Create";
             // 
             // frmAdminLecturerDetails
             // 
@@ -212,6 +223,7 @@ namespace EnrollmentSystemApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(736, 577);
+            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.txtStatusID);
             this.Controls.Add(this.txtRoleID);
             this.Controls.Add(this.txtPhone);
@@ -256,5 +268,6 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.MaskedTextBox txtPhone;
         private System.Windows.Forms.TextBox txtRoleID;
         private System.Windows.Forms.TextBox txtStatusID;
+        private System.Windows.Forms.Label lbTitle;
     }
 }

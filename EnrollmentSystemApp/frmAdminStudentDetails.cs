@@ -28,6 +28,7 @@ namespace EnrollmentSystemApp
             txtStatusID.Enabled = false;
             if (InsertOrUpdate == true)
             {
+                lbTitle.Text = "Update";
                 txtStudentID.Text = userInfo.UserId.ToString();
                 txtStudentName.Text = userInfo.UserName;
                 txtPassword.Text = userInfo.Password;
