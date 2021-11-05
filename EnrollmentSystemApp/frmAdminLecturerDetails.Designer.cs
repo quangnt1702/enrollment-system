@@ -44,8 +44,8 @@ namespace EnrollmentSystemApp
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.txtRoleID = new System.Windows.Forms.TextBox();
-            this.txtStatusID = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.cbStatusID = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -58,7 +58,7 @@ namespace EnrollmentSystemApp
             this.btnCancel.Location = new System.Drawing.Point(383, 490);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(139, 59);
-            this.btnCancel.TabIndex = 35;
+            this.btnCancel.TabIndex = 34;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -74,7 +74,7 @@ namespace EnrollmentSystemApp
             this.btnSave.Location = new System.Drawing.Point(171, 490);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 59);
-            this.btnSave.TabIndex = 34;
+            this.btnSave.TabIndex = 33;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -179,7 +179,7 @@ namespace EnrollmentSystemApp
             this.txtPassword.Location = new System.Drawing.Point(271, 189);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(329, 38);
-            this.txtPassword.TabIndex = 36;
+            this.txtPassword.TabIndex = 28;
             // 
             // txtPhone
             // 
@@ -188,7 +188,7 @@ namespace EnrollmentSystemApp
             this.txtPhone.Mask = "00000000";
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(329, 38);
-            this.txtPhone.TabIndex = 37;
+            this.txtPhone.TabIndex = 29;
             // 
             // txtRoleID
             // 
@@ -196,15 +196,7 @@ namespace EnrollmentSystemApp
             this.txtRoleID.Location = new System.Drawing.Point(271, 353);
             this.txtRoleID.Name = "txtRoleID";
             this.txtRoleID.Size = new System.Drawing.Size(329, 38);
-            this.txtRoleID.TabIndex = 38;
-            // 
-            // txtStatusID
-            // 
-            this.txtStatusID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStatusID.Location = new System.Drawing.Point(271, 417);
-            this.txtStatusID.Name = "txtStatusID";
-            this.txtStatusID.Size = new System.Drawing.Size(329, 38);
-            this.txtStatusID.TabIndex = 39;
+            this.txtRoleID.TabIndex = 31;
             // 
             // lbTitle
             // 
@@ -216,6 +208,15 @@ namespace EnrollmentSystemApp
             this.lbTitle.TabIndex = 40;
             this.lbTitle.Text = "Create";
             // 
+            // cbStatusID
+            // 
+            this.cbStatusID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbStatusID.FormattingEnabled = true;
+            this.cbStatusID.Location = new System.Drawing.Point(271, 417);
+            this.cbStatusID.Name = "cbStatusID";
+            this.cbStatusID.Size = new System.Drawing.Size(329, 39);
+            this.cbStatusID.TabIndex = 41;
+            // 
             // frmAdminLecturerDetails
             // 
             this.AcceptButton = this.btnSave;
@@ -223,8 +224,8 @@ namespace EnrollmentSystemApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(736, 577);
+            this.Controls.Add(this.cbStatusID);
             this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.txtStatusID);
             this.Controls.Add(this.txtRoleID);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtPassword);
@@ -267,7 +268,7 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.MaskedTextBox txtPhone;
         private System.Windows.Forms.TextBox txtRoleID;
-        private System.Windows.Forms.TextBox txtStatusID;
         private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.ComboBox cbStatusID;
     }
 }

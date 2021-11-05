@@ -15,7 +15,8 @@ namespace EnrollmentSystemApp
     public partial class frmAdminStudentDetails : Form
     {
         public IUserRepository UserRepository { get; set; }
-        public bool InsertOrUpdate { get; set; }
+        ICourseRepository courseRepository = new CourseRepository();
+        public bool InsertOrUpdate { get; set; } // true: update, false : add
         public User userInfo { get; set; }
         public frmAdminStudentDetails()
         {
@@ -25,7 +26,22 @@ namespace EnrollmentSystemApp
         private void frmAdminStudentDetails_Load(object sender, EventArgs e)
         {
             txtRoleID.Enabled = false;
-            txtStatusID.Enabled = false;
+            var context = new EnrollmentSystemContext();
+            txtRoleID.Text = "Student";
+            var statusList = context.StatusUsers.ToList();
+            var status = context.StatusUsers.Where(c => c.StatusId == 1).ToList();
+            cbStatusID.DisplayMember = "StatusName";
+            cbStatusID.ValueMember = "StatusID";
+            if (InsertOrUpdate == false)
+            {
+                cbStatusID.DataSource = null;
+                cbStatusID.DataSource = status;
+            }
+            else
+            {
+                cbStatusID.DataSource = null;
+                cbStatusID.DataSource = statusList;
+            }
             if (InsertOrUpdate == true)
             {
                 lbTitle.Text = "Update";
@@ -34,13 +50,14 @@ namespace EnrollmentSystemApp
                 txtPassword.Text = userInfo.Password;
                 txtPhone.Text = userInfo.Phone;
                 txtEmail.Text = userInfo.Email;
-                txtRoleID.Text = userInfo.RoleId.ToString();
-                txtStatusID.Text = userInfo.StatusId.ToString();
+                txtRoleID.Text = "Student";
+                cbStatusID.SelectedValue = userInfo.StatusId;
             }
         }
 
         public bool CheckData()
         {
+            string studentID = txtStudentID.Text;
             var studentList = UserRepository.GetUserList();
             foreach (var s in studentList)
             {
@@ -81,6 +98,14 @@ namespace EnrollmentSystemApp
                 txtEmail.Focus();
                 return false;
             }
+            //if ((int)(cbStatusID.SelectedValue == 2))
+            //{
+            //    if(courseRepository.GetCoursesByUserId(studentID) != null)
+            //    {
+            //        MessageBox.Show("Students who are studying cannot ban");
+            //        return false;
+            //    }
+            //}
             return true;
         }
 
@@ -116,7 +141,7 @@ namespace EnrollmentSystemApp
                         Phone = txtPhone.Text,
                         Email = txtEmail.Text,
                         RoleId = 3,
-                        StatusId = 1,
+                        StatusId = (int)cbStatusID.SelectedValue,
                     };
                     UserRepository.UpdateUser(lecturer);
                 }

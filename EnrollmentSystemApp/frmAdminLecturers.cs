@@ -16,6 +16,7 @@ namespace EnrollmentSystemApp
     {
         public User LoginUser { get; set; }
         IUserRepository userRepository = new UserRepository();
+        ICourseRepository courseRepository = new CourseRepository();
         BindingSource source;
         public frmAdminLecturers()
         {
@@ -109,9 +110,19 @@ namespace EnrollmentSystemApp
             try
             {
                 string lecturerID = txtUserID.Text;
-                if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (courseRepository.GetCourseListOfLecturer(lecturerID) != null)
                 {
-                    userRepository.RemoveUser(lecturerID);
+                    if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        var lecturer = userRepository.GetUserByID(lecturerID);
+                        lecturer.StatusId = 2;
+                        userRepository.UpdateUser(lecturer);
+                        LoadLecturerList();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lecturers who are teaching cannot delete");
                     LoadLecturerList();
                 }
             }
