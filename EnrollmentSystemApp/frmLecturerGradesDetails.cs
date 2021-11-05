@@ -44,25 +44,45 @@ namespace EnrollmentSystemApp
                     CourseId = grade.CourseId,
                     StudentId = grade.StudentId,
                 };
-                if (CheckNullAndMoreThanZero(txtProgress.Text))
+                if (CheckNull(txtProgress.Text))
                 {
                     g.ProgressTest = Convert.ToDouble(txtProgress.Text);
                     gradeRepository.UpdateGrade(g);
+                    if (Convert.ToDouble(txtProgress.Text) < 0 || Convert.ToDouble(txtProgress.Text) > 10)
+                    {
+                        MessageBox.Show("Grades bettween [0;10]");
+                        return;
+                    }
                 }
-                if (CheckNullAndMoreThanZero(txtPratical.Text))
+                if (CheckNull(txtPratical.Text))
                 {
                     g.PracticalTest = Convert.ToDouble(txtPratical.Text);
                     gradeRepository.UpdateGrade(g);
+                    if (Convert.ToDouble(txtPratical.Text) < 0 || Convert.ToDouble(txtPratical.Text) > 10)
+                    {
+                        MessageBox.Show("Grades bettween [0;10]");
+                        return;
+                    }
                 }
-                if (CheckNullAndMoreThanZero(txtMidterm.Text))
+                if (CheckNull(txtMidterm.Text))
                 {
                     g.MidTermTest = Convert.ToDouble(txtMidterm.Text);
                     gradeRepository.UpdateGrade(g);
+                    if (Convert.ToDouble(txtMidterm.Text) < 0 || Convert.ToDouble(txtMidterm.Text) > 10)
+                    {
+                        MessageBox.Show("Grades bettween [0;10]");
+                        return;
+                    }
                 }
-                if (CheckNullAndMoreThanZero(txtFinal.Text))
+                if (CheckNull(txtFinal.Text))
                 {
                     g.FinalTest = Convert.ToDouble(txtFinal.Text);
                     gradeRepository.UpdateGrade(g);
+                    if (Convert.ToDouble(txtFinal.Text) < 0 || Convert.ToDouble(txtFinal.Text) > 10)
+                    {
+                        MessageBox.Show("Grades bettween [0;10]");
+                        return;
+                    }
                 }
                 if (txtProgress.Text == "" && txtMidterm.Text == ""
                     && txtPratical.Text == "" && txtFinal.Text == "")
@@ -77,19 +97,12 @@ namespace EnrollmentSystemApp
             }
 
         }
-        public bool CheckNullAndMoreThanZero(string text)
+        public bool CheckNull(string text)
         {
             bool check = false;
             if (text != "")
             {
-                if (Convert.ToDouble(text) >= 0 && Convert.ToDouble(text) <= 10)
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Grades bettween [0;10]");
-                }
+                return true;
             }
             return check;
         }

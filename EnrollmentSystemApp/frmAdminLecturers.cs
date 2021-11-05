@@ -110,19 +110,11 @@ namespace EnrollmentSystemApp
             try
             {
                 string lecturerID = txtUserID.Text;
-                if (courseRepository.GetCourseListOfLecturer(lecturerID) != null)
+                if (MessageBox.Show("Do you want to ban?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (MessageBox.Show("Do you want to delete?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        var lecturer = userRepository.GetUserByID(lecturerID);
-                        lecturer.StatusId = 2;
-                        userRepository.UpdateUser(lecturer);
-                        LoadLecturerList();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Lecturers who are teaching cannot delete");
+                    var lecturer = userRepository.GetUserByID(lecturerID);
+                    lecturer.StatusId = 2;
+                    userRepository.UpdateUser(lecturer);
                     LoadLecturerList();
                 }
             }

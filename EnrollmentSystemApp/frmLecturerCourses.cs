@@ -168,8 +168,12 @@ namespace EnrollmentSystemApp
 
         private void btnAllCourses_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Text = "View List";
+            btnShowGrades.Enabled = false;
+            btnFilter.Enabled = false;
+            cbbSubject.Enabled = false;
             btnViewListStudent.Enabled = false;
-            txtSearch.Enabled = true;
+            txtSearch.Enabled = false;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
             
@@ -178,16 +182,8 @@ namespace EnrollmentSystemApp
 
         private void btnReady_Click(object sender, EventArgs e)
         {
-            btnViewListStudent.Enabled = false;
-            txtSearch.Enabled = true;
-            txtSearchStudent.Enabled = false;
+            btnViewListStudent.Text = "View List";
             btnShowGrades.Enabled = false;
-            
-            LoadCourseByStatusID(3);
-        }
-
-        private void btnStarting_Click(object sender, EventArgs e)
-        {
             btnViewListStudent.Enabled = false;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
@@ -196,8 +192,21 @@ namespace EnrollmentSystemApp
             LoadCourseByStatusID(1);
         }
 
+        private void btnStarting_Click(object sender, EventArgs e)
+        {
+            btnViewListStudent.Text = "View List";
+            btnShowGrades.Enabled = false;
+            btnViewListStudent.Enabled = false;
+            txtSearch.Enabled = true;
+            txtSearchStudent.Enabled = false;
+            btnShowGrades.Enabled = false;
+            LoadCourseByStatusID(3);
+        }
+
         private void btnEnded_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Text = "View List";
+            btnShowGrades.Enabled = false;
             btnViewListStudent.Enabled = false;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
@@ -207,7 +216,7 @@ namespace EnrollmentSystemApp
         }
         public void LoadCourseBySubject(int subjectID)
         {
-            var courses = courseRepository.GetCourseBySubject(subjectID);
+            var courses = courseRepository.GetCourseListOfLecturer(LoginUser.UserId).Where(c => c.SubjectId == subjectID);
             var list = (from c in courses
                         select new
                         {
@@ -276,7 +285,7 @@ namespace EnrollmentSystemApp
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            var listFilter = courseRepository.GetCourses().Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
+            var listFilter = courseRepository.GetCourseListOfLecturer(LoginUser.UserId).Where(c => c.StartDate >= dtpFrom.Value.Date && c.EndDate <= dtpTo.Value.Date).ToList();
             try
             {
                 var list = (from c in listFilter
@@ -310,6 +319,10 @@ namespace EnrollmentSystemApp
 
         private void btnYourCourse_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Text = "View List";
+            btnShowGrades.Enabled = false;
+            btnFilter.Enabled = true;
+            cbbSubject.Enabled = true;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
@@ -318,13 +331,25 @@ namespace EnrollmentSystemApp
         }
 
         private void btnViewListStudent_Click(object sender, EventArgs e)
-        {                      
-            txtSearch.Enabled = false;
-            txtSearchStudent.Enabled = true;
-            btnShowGrades.Enabled = true;
-            btnViewListStudent.Enabled = false;
-            int courseID = int.Parse(txtCourseID.Text);           
-            LoadStudentListByCourse(courseID);
+        {
+            if (btnViewListStudent.Text == "Back")
+            {
+                btnViewListStudent.Text = "View List";
+                txtSearch.Enabled = true;
+                txtSearchStudent.Enabled = false;
+                btnShowGrades.Enabled = false;
+                btnViewListStudent.Enabled = true;
+                LoadCourseByUserID();
+            }
+            else
+            {
+                btnViewListStudent.Text = "Back";
+                txtSearch.Enabled = false;
+                txtSearchStudent.Enabled = true;
+                btnShowGrades.Enabled = true;
+                int courseID = int.Parse(txtCourseID.Text);
+                LoadStudentListByCourse(courseID);
+            }
         }
         private void btnShowGrades_Click(object sender, EventArgs e)
         {
@@ -369,15 +394,10 @@ namespace EnrollmentSystemApp
 
         private void btnYourWaiting_Click(object sender, EventArgs e)
         {
-            txtSearch.Enabled = true;
-            txtSearchStudent.Enabled = false;
+            btnViewListStudent.Text = "View List";
             btnShowGrades.Enabled = false;
-            btnViewListStudent.Enabled = true;
-            LoadCourseByStatusIDAndCourseID(1, LoginUser.UserId);
-        }
-
-        private void btnYourReady_Click(object sender, EventArgs e)
-        {
+            btnFilter.Enabled = true;
+            cbbSubject.Enabled = true;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
@@ -385,8 +405,25 @@ namespace EnrollmentSystemApp
             LoadCourseByStatusIDAndCourseID(3, LoginUser.UserId);
         }
 
+        private void btnYourReady_Click(object sender, EventArgs e)
+        {
+            btnViewListStudent.Text = "View List";
+            btnShowGrades.Enabled = false;
+            btnFilter.Enabled = true;
+            cbbSubject.Enabled = true;
+            txtSearch.Enabled = true;
+            txtSearchStudent.Enabled = false;
+            btnShowGrades.Enabled = false;
+            btnViewListStudent.Enabled = true;
+            LoadCourseByStatusIDAndCourseID(1, LoginUser.UserId);
+        }
+
         private void btnYourEnd_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Text = "View List";
+            btnShowGrades.Enabled = false;
+            btnFilter.Enabled = true;
+            cbbSubject.Enabled = true;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
@@ -425,15 +462,6 @@ namespace EnrollmentSystemApp
 
                 MessageBox.Show(ex.Message, "Load courses list");
             }
-        }
-
-        private void btnStarting_Click_1(object sender, EventArgs e)
-        {
-            txtSearch.Enabled = true;
-            txtSearchStudent.Enabled = false;
-            btnShowGrades.Enabled = false;
-            btnViewListStudent.Enabled = true;
-            LoadCourseByStatusID(1);
         }
 
         private void cbbSubject_SelectedIndexChanged(object sender, EventArgs e)
