@@ -168,37 +168,41 @@ namespace EnrollmentSystemApp
 
         private void btnAllCourses_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Enabled = false;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
-            btnViewListStudent.Enabled = true;
+            
             LoadAllCourseList();
         }
 
         private void btnReady_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Enabled = false;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
-            btnViewListStudent.Enabled = true;
+            
             LoadCourseByStatusID(3);
         }
 
         private void btnStarting_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Enabled = false;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
-            btnViewListStudent.Enabled = true;
+            
             LoadCourseByStatusID(1);
         }
 
         private void btnEnded_Click(object sender, EventArgs e)
         {
+            btnViewListStudent.Enabled = false;
             txtSearch.Enabled = true;
             txtSearchStudent.Enabled = false;
             btnShowGrades.Enabled = false;
-            btnViewListStudent.Enabled = true;
+            
             LoadCourseByStatusID(2);
         }
         public void LoadCourseBySubject(int subjectID)
@@ -237,7 +241,7 @@ namespace EnrollmentSystemApp
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            var listSearch = courseRepository.GetCourses().Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
+            var listSearch = courseRepository.GetCourses().Where(c => c.CourseName.ToLower().Contains(txtSearch.Text.ToLower())&& c.LecturerId.ToLower().Contains(LoginUser.UserId.ToLower())).ToList();
             try
             {
                 var list = (from c in listSearch
@@ -432,5 +436,12 @@ namespace EnrollmentSystemApp
             LoadCourseByStatusID(1);
         }
 
+        private void cbbSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            {
+                int subject = (int)cbbSubject.SelectedValue;
+                LoadCourseBySubject(subject);
+            }
+        }
     }
 }
