@@ -88,7 +88,7 @@ namespace EnrollmentSystemApp
             // lbTo
             // 
             this.lbTo.AutoSize = true;
-            this.lbTo.Location = new System.Drawing.Point(368, 29);
+            this.lbTo.Location = new System.Drawing.Point(182, 60);
             this.lbTo.Name = "lbTo";
             this.lbTo.Size = new System.Drawing.Size(25, 20);
             this.lbTo.TabIndex = 33;
@@ -97,7 +97,7 @@ namespace EnrollmentSystemApp
             // lbFrom
             // 
             this.lbFrom.AutoSize = true;
-            this.lbFrom.Location = new System.Drawing.Point(195, 27);
+            this.lbFrom.Location = new System.Drawing.Point(9, 58);
             this.lbFrom.Name = "lbFrom";
             this.lbFrom.Size = new System.Drawing.Size(43, 20);
             this.lbFrom.TabIndex = 32;
@@ -238,7 +238,7 @@ namespace EnrollmentSystemApp
             this.btnYourEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYourEnd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnYourEnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnYourEnd.Location = new System.Drawing.Point(171, 33);
+            this.btnYourEnd.Location = new System.Drawing.Point(171, 31);
             this.btnYourEnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnYourEnd.Name = "btnYourEnd";
             this.btnYourEnd.Size = new System.Drawing.Size(65, 34);
@@ -266,7 +266,7 @@ namespace EnrollmentSystemApp
             // txtSearchStudent
             // 
             this.txtSearchStudent.BackColor = System.Drawing.Color.LightGray;
-            this.txtSearchStudent.Location = new System.Drawing.Point(665, 72);
+            this.txtSearchStudent.Location = new System.Drawing.Point(797, 69);
             this.txtSearchStudent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchStudent.Name = "txtSearchStudent";
             this.txtSearchStudent.PlaceholderText = "Search Student";
@@ -292,7 +292,7 @@ namespace EnrollmentSystemApp
             // 
             // txtStudentID
             // 
-            this.txtStudentID.Location = new System.Drawing.Point(973, 24);
+            this.txtStudentID.Location = new System.Drawing.Point(952, 100);
             this.txtStudentID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.Size = new System.Drawing.Size(94, 27);
@@ -319,7 +319,7 @@ namespace EnrollmentSystemApp
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbTitle.Location = new System.Drawing.Point(18, 25);
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(165, 42);
             this.lbTitle.TabIndex = 4;
@@ -332,7 +332,7 @@ namespace EnrollmentSystemApp
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnFilter.Location = new System.Drawing.Point(416, 59);
+            this.btnFilter.Location = new System.Drawing.Point(328, 56);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(92, 29);
@@ -343,7 +343,7 @@ namespace EnrollmentSystemApp
             // 
             // txtCourseID
             // 
-            this.txtCourseID.Location = new System.Drawing.Point(973, 72);
+            this.txtCourseID.Location = new System.Drawing.Point(797, 100);
             this.txtCourseID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCourseID.Name = "txtCourseID";
             this.txtCourseID.Size = new System.Drawing.Size(94, 27);
@@ -355,7 +355,7 @@ namespace EnrollmentSystemApp
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.Location = new System.Drawing.Point(665, 25);
+            this.txtSearch.Location = new System.Drawing.Point(797, 22);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
@@ -367,7 +367,7 @@ namespace EnrollmentSystemApp
             // dtpFrom
             // 
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(253, 24);
+            this.dtpFrom.Location = new System.Drawing.Point(67, 55);
             this.dtpFrom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(109, 27);
@@ -376,7 +376,7 @@ namespace EnrollmentSystemApp
             // dtpTo
             // 
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(399, 24);
+            this.dtpTo.Location = new System.Drawing.Point(213, 55);
             this.dtpTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(109, 27);
@@ -385,10 +385,10 @@ namespace EnrollmentSystemApp
             // cbbSubject
             // 
             this.cbbSubject.FormattingEnabled = true;
-            this.cbbSubject.Location = new System.Drawing.Point(195, 59);
+            this.cbbSubject.Location = new System.Drawing.Point(67, 90);
             this.cbbSubject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbSubject.Name = "cbbSubject";
-            this.cbbSubject.Size = new System.Drawing.Size(215, 28);
+            this.cbbSubject.Size = new System.Drawing.Size(255, 28);
             this.cbbSubject.TabIndex = 11;
             // 
             // panel1

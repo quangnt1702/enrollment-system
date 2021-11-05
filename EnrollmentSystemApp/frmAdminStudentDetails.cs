@@ -88,9 +88,10 @@ namespace EnrollmentSystemApp
         {
             try
             {
-                if (CheckData())
+
+                if (InsertOrUpdate == false)
                 {
-                    if (InsertOrUpdate == false)
+                    if (CheckData())
                     {
                         var lecturer = new User
                         {
@@ -104,20 +105,20 @@ namespace EnrollmentSystemApp
                         };
                         UserRepository.AddUser(lecturer);
                     }
-                    else
+                }
+                else
+                {
+                    var lecturer = new User
                     {
-                        var lecturer = new User
-                        {
-                            UserId = txtStudentID.Text,
-                            UserName = txtStudentName.Text,
-                            Password = txtPassword.Text,
-                            Phone = txtPhone.Text,
-                            Email = txtEmail.Text,
-                            RoleId = 3,
-                            StatusId = 1,
-                        };
-                        UserRepository.UpdateUser(lecturer);
-                    }
+                        UserId = txtStudentID.Text,
+                        UserName = txtStudentName.Text,
+                        Password = txtPassword.Text,
+                        Phone = txtPhone.Text,
+                        Email = txtEmail.Text,
+                        RoleId = 3,
+                        StatusId = 1,
+                    };
+                    UserRepository.UpdateUser(lecturer);
                 }
             }
             catch (Exception ex)
