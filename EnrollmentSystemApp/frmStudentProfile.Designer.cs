@@ -79,6 +79,7 @@ namespace EnrollmentSystemApp
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.Location = new System.Drawing.Point(233, 110);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(255, 38);
             this.txtConfirmPassword.TabIndex = 12;
             // 
@@ -87,6 +88,7 @@ namespace EnrollmentSystemApp
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPassword.Location = new System.Drawing.Point(233, 40);
             this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(255, 38);
             this.txtNewPassword.TabIndex = 11;
             // 

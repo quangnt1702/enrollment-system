@@ -167,6 +167,7 @@ namespace EnrollmentSystemApp
             this.txtConfirm.Location = new System.Drawing.Point(252, 106);
             this.txtConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(279, 34);
             this.txtConfirm.TabIndex = 12;
             // 
@@ -175,6 +176,7 @@ namespace EnrollmentSystemApp
             this.txtPassword.Location = new System.Drawing.Point(252, 50);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(279, 34);
             this.txtPassword.TabIndex = 11;
             // 
