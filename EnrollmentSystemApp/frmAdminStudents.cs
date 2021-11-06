@@ -160,11 +160,7 @@ namespace EnrollmentSystemApp
                 InsertOrUpdate = false,
                 UserRepository = userRepository
             };
-            if (frmAdminStudentDetails.ShowDialog() == DialogResult.OK)
-            {
-                LoadStudentList();
-                source.Position = source.Count - 1;
-            }
+            frmAdminStudentDetails.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

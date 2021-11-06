@@ -33,6 +33,7 @@ namespace EnrollmentSystemApp
             cbStatusID.ValueMember = "StatusID";
             if (InsertOrUpdate == false)
             {
+                txtLecturerID.Enabled = true;
                 cbStatusID.DataSource = null;
                 cbStatusID.DataSource = status;
             }
@@ -43,6 +44,7 @@ namespace EnrollmentSystemApp
             }
             if (InsertOrUpdate == true)
             {
+                txtLecturerID.Enabled = false;
                 lbTitle.Text = "Update";
                 txtLecturerID.Text = userInfo.UserId.ToString();
                 txtLecturerName.Text = userInfo.UserName;
@@ -99,6 +101,35 @@ namespace EnrollmentSystemApp
             return true;
         }
 
+        public bool CheckDataUpdate()
+        {
+            if (string.IsNullOrWhiteSpace(txtLecturerName.Text))
+            {
+                MessageBox.Show("Lecturer Name is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLecturerName.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                MessageBox.Show("Password is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                MessageBox.Show("Phone is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPhone.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Email is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return false;
+            }
+            return true;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -119,26 +150,33 @@ namespace EnrollmentSystemApp
                             StatusId = 1,
                         };
                         UserRepository.AddUser(lecturer);
+                        MessageBox.Show("Create Successfully");
+                        this.Close();
                     }
                 }
                 else
                 {
-                    var lecturer = new User
+                    if (CheckDataUpdate())
                     {
-                        UserId = txtLecturerID.Text,
-                        UserName = txtLecturerName.Text,
-                        Password = txtPassword.Text,
-                        Phone = txtPhone.Text,
-                        Email = txtEmail.Text,
-                        RoleId = 2,
-                        StatusId = (int)cbStatusID.SelectedValue,
-                    };
-                    UserRepository.UpdateUser(lecturer);
+                        var lecturer = new User
+                        {
+                            UserId = txtLecturerID.Text,
+                            UserName = txtLecturerName.Text,
+                            Password = txtPassword.Text,
+                            Phone = txtPhone.Text,
+                            Email = txtEmail.Text,
+                            RoleId = 2,
+                            StatusId = (int)cbStatusID.SelectedValue,
+                        };
+                        UserRepository.UpdateUser(lecturer);
+                        MessageBox.Show("Update Successfully");
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add new course" : "Update course");
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add new lecturer" : "Update lecturer");
             }
         }
 

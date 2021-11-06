@@ -70,11 +70,7 @@ namespace EnrollmentSystemApp
                 InsertOrUpdate = false,
                 UserRepository = userRepository
             };
-            if (frmAdminLecturerDetails.ShowDialog() == DialogResult.OK)
-            {
-                LoadLecturerList();
-                source.Position = source.Count - 1;
-            }
+            frmAdminLecturerDetails.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -155,6 +151,11 @@ namespace EnrollmentSystemApp
             {
                 MessageBox.Show(ex.Message, "Load lecturer list");
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadLecturerList();
         }
     }
 }

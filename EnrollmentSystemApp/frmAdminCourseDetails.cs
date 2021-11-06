@@ -85,9 +85,9 @@ namespace EnrollmentSystemApp
                 {
                     MessageBox.Show("Start date can not be greater than end date", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     dtpStartDate.Focus();
-
+                    return false;
                 }
-                if (dateStart < now || dateEnd < now)
+                else if (dateStart < now || dateEnd < now)
                 {
                     MessageBox.Show("Start date can not be less than current", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     dtpStartDate.Focus();
@@ -117,6 +117,8 @@ namespace EnrollmentSystemApp
                             StatusId = 3,
                         };
                         CourseRepository.InsertCourse(course);
+                        MessageBox.Show("Create Successfully");
+                        this.Close();
                     }
                     else
                     {
@@ -132,6 +134,8 @@ namespace EnrollmentSystemApp
                             StatusId = (int)cbStatusID.SelectedValue,
                         };
                         CourseRepository.UpdateCourse(course);
+                        MessageBox.Show("Update Successfully");
+                        this.Close();
                     }
 
                 }

@@ -30,6 +30,7 @@ namespace EnrollmentSystemApp
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.lbTo = new System.Windows.Forms.Label();
             this.lbFrom = new System.Windows.Forms.Label();
             this.btnEnding = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@ namespace EnrollmentSystemApp
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Controls.Add(this.btnLoad);
             this.panel2.Controls.Add(this.lbTo);
             this.panel2.Controls.Add(this.lbFrom);
             this.panel2.Controls.Add(this.btnEnding);
@@ -76,6 +78,21 @@ namespace EnrollmentSystemApp
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 205);
             this.panel2.TabIndex = 17;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.LightGray;
+            this.btnLoad.FlatAppearance.BorderSize = 2;
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLoad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnLoad.Location = new System.Drawing.Point(316, 167);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(149, 35);
+            this.btnLoad.TabIndex = 34;
+            this.btnLoad.Text = "Reload";
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // lbTo
             // 
@@ -134,7 +151,7 @@ namespace EnrollmentSystemApp
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnDelete.Location = new System.Drawing.Point(644, 167);
+            this.btnDelete.Location = new System.Drawing.Point(775, 167);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(144, 35);
             this.btnDelete.TabIndex = 28;
@@ -149,7 +166,7 @@ namespace EnrollmentSystemApp
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnUpdate.Location = new System.Drawing.Point(495, 167);
+            this.btnUpdate.Location = new System.Drawing.Point(626, 167);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(144, 35);
             this.btnUpdate.TabIndex = 27;
@@ -164,7 +181,7 @@ namespace EnrollmentSystemApp
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnAdd.Location = new System.Drawing.Point(331, 167);
+            this.btnAdd.Location = new System.Drawing.Point(471, 167);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(149, 35);
             this.btnAdd.TabIndex = 26;
@@ -337,5 +354,6 @@ namespace EnrollmentSystemApp
         private System.Windows.Forms.Button btnReady;
         private System.Windows.Forms.Label lbTo;
         private System.Windows.Forms.Label lbFrom;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
