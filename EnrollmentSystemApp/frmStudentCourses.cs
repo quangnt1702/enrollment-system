@@ -107,7 +107,7 @@ namespace EnrollmentSystemApp
             }
             else if (!checkEnroll())
             {
-                MessageBox.Show("You have enrolled into this course!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You are already enrolled in the same course!", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

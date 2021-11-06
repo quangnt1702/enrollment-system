@@ -34,6 +34,7 @@ namespace EnrollmentSystemApp
             cbStatusID.ValueMember = "StatusID";
             if (InsertOrUpdate == false)
             {
+                txtStudentID.Enabled = true;
                 cbStatusID.DataSource = null;
                 cbStatusID.DataSource = status;
             }
@@ -44,6 +45,7 @@ namespace EnrollmentSystemApp
             }
             if (InsertOrUpdate == true)
             {
+                txtStudentID.Enabled = false;
                 lbTitle.Text = "Update";
                 txtStudentID.Text = userInfo.UserId.ToString();
                 txtStudentName.Text = userInfo.UserName;
@@ -98,14 +100,35 @@ namespace EnrollmentSystemApp
                 txtEmail.Focus();
                 return false;
             }
-            //if ((int)(cbStatusID.SelectedValue == 2))
-            //{
-            //    if(courseRepository.GetCoursesByUserId(studentID) != null)
-            //    {
-            //        MessageBox.Show("Students who are studying cannot ban");
-            //        return false;
-            //    }
-            //}
+            return true;
+        }
+
+        public bool CheckDataUpdate()
+        {
+            if (string.IsNullOrWhiteSpace(txtStudentName.Text))
+            {
+                MessageBox.Show("Student Name is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtStudentName.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                MessageBox.Show("Password is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                MessageBox.Show("Phone is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPhone.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Email is blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -129,26 +152,33 @@ namespace EnrollmentSystemApp
                             StatusId = 1,
                         };
                         UserRepository.AddUser(lecturer);
+                        MessageBox.Show("Create Successfully");
+                        this.Close();
                     }
                 }
                 else
                 {
-                    var lecturer = new User
+                    if (CheckDataUpdate())
                     {
-                        UserId = txtStudentID.Text,
-                        UserName = txtStudentName.Text,
-                        Password = txtPassword.Text,
-                        Phone = txtPhone.Text,
-                        Email = txtEmail.Text,
-                        RoleId = 3,
-                        StatusId = (int)cbStatusID.SelectedValue,
-                    };
-                    UserRepository.UpdateUser(lecturer);
+                        var lecturer = new User
+                        {
+                            UserId = txtStudentID.Text,
+                            UserName = txtStudentName.Text,
+                            Password = txtPassword.Text,
+                            Phone = txtPhone.Text,
+                            Email = txtEmail.Text,
+                            RoleId = 3,
+                            StatusId = (int)cbStatusID.SelectedValue,
+                        };
+                        UserRepository.UpdateUser(lecturer);
+                        MessageBox.Show("Update Successfully");
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add new course" : "Update course");
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add new student" : "Update student");
             }
         }
 

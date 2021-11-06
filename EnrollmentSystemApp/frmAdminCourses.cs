@@ -85,11 +85,7 @@ namespace EnrollmentSystemApp
                 InsertOrUpdate = false,
                 CourseRepository = courseRepository
             };
-            if (frmAdminCourseDetails.ShowDialog() == DialogResult.OK)
-            {
-                LoadCourseList();
-                source.Position = source.Count - 1;
-            }
+            frmAdminCourseDetails.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -334,6 +330,12 @@ namespace EnrollmentSystemApp
             {
                 MessageBox.Show(ex.Message, "Load course list");
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadSubjectList();
+            LoadCourseList();
         }
     }
 }
